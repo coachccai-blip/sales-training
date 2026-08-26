@@ -2,38 +2,48 @@
 
 Site de formation **« L'excellence commerciale pour les Ingénieurs d'affaires »**.
 
-Page unique, autonome (aucune dépendance à installer) : ouvrir `index.html` dans un navigateur.
+Une seule page, autonome, sans dépendance : ouvrir `index.html` dans un navigateur.
 
-## Contenu
+## Parcours de lecture
 
-| Section | Ce qu'on y trouve |
-|---|---|
-| **01 · Le parcours** | Promesse du programme, les 5 leviers de l'excellence commerciale, déroulé sur 8 semaines |
-| **02 · Les 8 modules** | Programme détaillé : objectifs, contenu, atelier, livrable — avec suivi de progression |
-| **03 · Boîte à outils** | 10 fiches méthode : ICP, séquence de prospection, accroche téléphonique, trame de découverte, MEDDPICC, carte du pouvoir, proposition de valeur, ACRAC, honoraires, closing |
-| **04 · Entraînement** | Simulateur d'objections (12 objections + réponses modèles), 3 jeux de rôle, grille d'observation |
-| **05 · Évaluation** | Auto-diagnostic sur les 5 leviers + quiz de 12 questions avec corrigé commenté |
-| **06 · Pilotage** | Les 6 indicateurs à suivre, lecture d'entonnoir, rituels d'équipe, glossaire |
+Sept sections qui se suivent au défilement, avec un sommaire fixe à gauche
+(bouton « Sommaire » sur mobile) pour aller directement où l'on veut.
 
-## Fonctionnalités
+| # | Section | Contenu |
+|---|---|---|
+| 01 | Le parcours | La promesse du programme en trois idées |
+| 02 | Les 5 leviers | Cibler, Ouvrir, Comprendre, Convaincre, Conclure — dépliables |
+| 03 | Les 8 modules | Objectifs, atelier et livrable de chaque module |
+| 04 | Les méthodes | 10 fiches affichées une par une : ICP, séquence de prospection, accroche, découverte, MEDDPICC, carte du pouvoir, proposition de valeur, ACRAC, honoraires, closing |
+| 05 | Les objections | 12 objections tirées une par une, avec ce qu'elles cachent et la réponse modèle |
+| 06 | S'évaluer | Auto-diagnostic sur les 5 leviers + quiz de 12 questions, une question à la fois |
+| 07 | Piloter | Les 6 indicateurs, lecture d'entonnoir |
 
-- Navigation par onglets (lien direct possible : `index.html#outils`)
-- Thème clair / sombre, avec respect des préférences système
-- Progression des modules mémorisée dans le navigateur (localStorage)
-- Simulateur d'objections et quiz interactifs
-- Mise en page d'impression : le bouton « Imprimer » sort l'intégralité du support en PDF
+## Fonctionnement
+
+- Navigation au défilement, sommaire actif qui suit la lecture, jauge de progression en haut
+- Contenu replié par défaut : on ne déplie que ce qu'on veut lire
+- Thème clair / sombre (mémorisé), respect des préférences système
+- Bouton « Imprimer » : tout le contenu est déplié à l'impression
 - Responsive mobile / tablette / desktop
-
-## Identité visuelle
-
-Charte Leyton V01.2026 : bleu `#002C49` dominant, orange `#FF6633` en accent uniquement,
-titres en Avenir Next (repli Montserrat), corps de texte en Montserrat (Google Fonts).
 
 ## Modifier le contenu
 
-Tout est dans `index.html` :
+Tout le texte est regroupé en haut du `<script>`, dans des tableaux :
 
-- les **objections** du simulateur : tableau `OBJECTIONS` dans le `<script>`
-- les **questions du quiz** : tableau `QUIZ` (`a` = index de la bonne réponse)
-- l'**entonnoir** de la section Pilotage : tableau `FUNNEL`
-- les **modules**, **fiches** et **jeux de rôle** : directement dans le HTML
+| Tableau | Ce qu'il pilote |
+|---|---|
+| `LEVIERS` | les 5 leviers (aussi utilisés par l'auto-diagnostic) |
+| `MODULES` | les 8 modules — `p` objectifs, `a` atelier, `l` livrable |
+| `METHODES` | les fiches — `c` libellé du bouton, `b` blocs (`text`, `list`, `steps`, `pairs`, `said`, `rule`) |
+| `OBJECTIONS` | `q` l'objection, `b` ce qu'elle cache, `h` la réponse, `s` la phrase modèle |
+| `QUIZ` | `o` les réponses, `a` l'index de la bonne, `w` l'explication |
+| `KPIS`, `FUNNEL`, `CONSEILS` | indicateurs, entonnoir, conseils du diagnostic |
+
+Ajouter une entrée à un tableau suffit : l'affichage se met à jour tout seul.
+
+## Identité visuelle
+
+Charte Leyton V01.2026 : bleu `#002C49` dominant, orange `#FF6633` réservé aux accents
+(sommaire actif, ponctuation, boutons), Montserrat via Google Fonts, Avenir Next pour
+les titres quand la police est installée.
