@@ -44,6 +44,12 @@ Ajouter une entrée à un tableau suffit : l'affichage se met à jour tout seul.
 
 ## Identité visuelle
 
-Charte Leyton V01.2026 : bleu `#002C49` dominant, orange `#FF6633` réservé aux accents
-(sommaire actif, ponctuation, boutons), Montserrat via Google Fonts, Avenir Next pour
-les titres quand la police est installée.
+Bleu `#002C49` dominant, orange `#FF6633` réservé aux accents (sommaire actif,
+ponctuation, boutons). Montserrat via Google Fonts, Avenir Next pour les titres
+quand la police est installée. Les couleurs sont des variables CSS en tête de
+fichier (`--blue`, `--orange`) : les changer suffit à rehabiller tout le site.
+
+## Mise en ligne
+
+Le site est publié sur GitHub Pages par `.github/workflows/pages.yml` à chaque
+push sur `main`.

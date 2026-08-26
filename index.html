@@ -11,7 +11,7 @@
 <style>
 /* ===========================================================
    Académie de l'Ingénieur d'Affaires
-   Charte Leyton V01.2026 — bleu #002C49 dominant, orange #FF6633 en accent
+   Palette : bleu #002C49 dominant, orange #FF6633 en accent uniquement
    =========================================================== */
 
 :root{
@@ -361,7 +361,7 @@ footer{padding:96px 0 72px;border-top:1px solid var(--hairline)}
 <aside class="rail">
   <a class="mark" href="#haut">
     <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3a17 17 0 1 0 15.5 10" fill="none" stroke="#FF6633" stroke-width="6" stroke-linecap="round"/></svg>
-    <span>LEYTON</span>
+    <span>ACADÉMIE</span>
   </a>
   <nav class="toc" id="toc" aria-label="Sommaire">
     <a href="#parcours"><i>01</i>Le parcours</a>
@@ -375,14 +375,14 @@ footer{padding:96px 0 72px;border-top:1px solid var(--hairline)}
   <div class="rail-foot">
     <button class="mini" id="themeBtn" type="button">Thème sombre</button>
     <button class="mini" type="button" onclick="window.print()">Imprimer</button>
-    <span>Académie commerciale</span>
+    <span>Excellence commerciale</span>
   </div>
 </aside>
 
 <div class="topbar">
   <a class="mark" href="#haut">
     <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3a17 17 0 1 0 15.5 10" fill="none" stroke="#FF6633" stroke-width="6" stroke-linecap="round"/></svg>
-    <span>LEYTON</span>
+    <span>ACADÉMIE</span>
   </a>
   <button class="mini" id="menuBtn" type="button">Sommaire</button>
 </div>
@@ -547,7 +547,7 @@ footer{padding:96px 0 72px;border-top:1px solid var(--hairline)}
   <footer>
     <div class="shell foot">
       <span>Académie commerciale — L'excellence commerciale pour les Ingénieurs d'affaires</span>
-      <span>Leyton · Académie commerciale · Version 2.0</span>
+      <span>Version 2.0</span>
     </div>
   </footer>
 </main>
@@ -620,7 +620,7 @@ footer{padding:96px 0 72px;border-top:1px solid var(--hairline)}
 
     { c:"Accroche", t:"L'appel en 5 temps",
       b:[ {k:"steps", v:["Identification — nom, société. Posé, articulé, sans excuse.","Permission — « Vous avez deux minutes ou je vous rappelle ? »","Raison d'appeler — un fait qui le concerne, lui.","Preuve — une entreprise comparable, un résultat, une phrase.","Demande — 30 minutes, deux créneaux proposés."]},
-          {k:"said", v:"Bonjour, Camille Rivière, Leyton. Vous avez deux minutes ou je vous rappelle ? … Je vous appelle parce que vous avez recruté six ingénieurs cette année. Sur des structures comme la vôtre, nous récupérons l'équivalent d'un poste et demi de financement non réclamé. 30 minutes pour vérifier : jeudi 9h ou vendredi 14h ?"},
+          {k:"said", v:"Bonjour, Camille Rivière, [votre société]. Vous avez deux minutes ou je vous rappelle ? … Je vous appelle parce que vous avez recruté six ingénieurs cette année. Sur des structures comme la vôtre, nous récupérons l'équivalent d'un poste et demi de financement non réclamé. 30 minutes pour vérifier : jeudi 9h ou vendredi 14h ?"},
           {k:"rule", v:"L'objectif de l'appel n'est pas de vendre, c'est d'obtenir le rendez-vous."} ] },
 
     { c:"Découverte", t:"Les 12 questions",
@@ -940,14 +940,14 @@ footer{padding:96px 0 72px;border-top:1px solid var(--hairline)}
     $("#themeBtn").textContent = l; $("#themeBtn2").textContent = l;
   }
   try {
-    var saved = window.localStorage.getItem("lty-theme");
+    var saved = window.localStorage.getItem("theme-academie");
     if (saved) { document.documentElement.setAttribute("data-theme", saved); }
   } catch (e) {}
   labelTheme();
   function toggleTheme() {
     var next = darkNow() ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
-    try { window.localStorage.setItem("lty-theme", next); } catch (e) {}
+    try { window.localStorage.setItem("theme-academie", next); } catch (e) {}
     labelTheme();
   }
   $("#themeBtn").addEventListener("click", toggleTheme);
