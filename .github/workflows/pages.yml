@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - claude/site-formation-excellence-commerciale-km94lm
   workflow_dispatch:
 
 permissions:
