@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Académie de l'Ingénieur d'Affaires</title>
-<meta name="description" content="Parcours de formation à l'excellence commerciale pour les Ingénieurs d'affaires : 8 modules, 10 méthodes, entraînement aux objections, diagnostic et quiz.">
+<meta name="description" content="L'excellence commerciale pour les Ingénieurs d'affaires : prospection, rendez-vous, objections, négociation, réseau. Le support de formation, en une page interactive.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,800;1,400&display=swap">
 <style>
 /* ===========================================================
-   Académie de l'Ingénieur d'Affaires
-   Palette : bleu #002C49 dominant, orange #FF6633 en accent uniquement
+   L'excellence commerciale pour les Ingénieurs d'affaires
+   Palette : bleu #002C49 dominant, orange #FF6633 en accent
    =========================================================== */
 
 :root{
@@ -19,51 +19,88 @@
   --blue-deep:#002235;
   --orange:#FF6633;
 
-  --ground:#FBFCFD;
+  --ground:#FAFCFD;
   --raised:#FFFFFF;
-  --hairline:#E2E9EF;
+  --hairline:#E0E8EE;
   --ink:#002235;
-  --ink-2:#325A73;
-  --muted:#7B94A5;
-  --tint:#F1F5F8;
+  --ink-2:#33586F;
+  --muted:#7791A3;
+  --tint:#EFF4F8;
   --accent-text:#C34024;
+  --glow-a:rgba(0,44,73,.20);
+  --glow-b:rgba(255,102,51,.16);
+  --glow-c:rgba(43,124,168,.20);
+
+  --stage:#002C49;
+  --stage-2:#00203A;
+  --stage-ink:#F4F8FB;
+  --stage-muted:#9DB6C6;
+  --stage-line:rgba(255,255,255,.14);
+  --wm-a:rgba(0,44,73,.16);
+  --wm-b:rgba(0,44,73,.02);
+  --ring:rgba(0,44,73,.14);
+  --grain:.05;
 
   --title:"Avenir Next","Avenir",Montserrat,"Helvetica Neue",Arial,sans-serif;
   --body:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 
-  --rail:250px;
-  --measure:60ch;
+  --rail:252px;
+  --measure:62ch;
 }
 
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --ground:#00151F;
-    --raised:#002235;
+    --ground:#00131C;
+    --raised:#002133;
     --hairline:rgba(255,255,255,.12);
     --ink:#EDF3F7;
-    --ink-2:#B7CCD9;
-    --muted:#8AA5B6;
-    --tint:#012C43;
+    --ink-2:#B4CAD8;
+    --muted:#87A2B4;
+    --tint:#012B41;
     --accent-text:#FF9068;
+    --glow-a:rgba(30,110,160,.34);
+    --glow-b:rgba(255,102,51,.24);
+    --glow-c:rgba(0,80,130,.40);
+    --stage:#012B44;
+    --stage-2:#001A2B;
+    --stage-ink:#F4F8FB;
+    --stage-muted:#8FAEC1;
+    --stage-line:rgba(255,255,255,.14);
+    --wm-a:rgba(140,190,225,.20);
+    --wm-b:rgba(140,190,225,.02);
+    --ring:rgba(150,200,235,.17);
+    --grain:.09;
   }
 }
 :root[data-theme="dark"]{
-  --ground:#00151F;
-  --raised:#002235;
+  --ground:#00131C;
+  --raised:#002133;
   --hairline:rgba(255,255,255,.12);
   --ink:#EDF3F7;
-  --ink-2:#B7CCD9;
-  --muted:#8AA5B6;
-  --tint:#012C43;
+  --ink-2:#B4CAD8;
+  --muted:#87A2B4;
+  --tint:#012B41;
   --accent-text:#FF9068;
+  --glow-a:rgba(30,110,160,.34);
+  --glow-b:rgba(255,102,51,.24);
+  --glow-c:rgba(0,80,130,.40);
+  --stage:#012B44;
+  --stage-2:#001A2B;
+  --stage-ink:#F4F8FB;
+  --stage-muted:#8FAEC1;
+  --stage-line:rgba(255,255,255,.14);
+  --wm-a:rgba(140,190,225,.20);
+  --wm-b:rgba(140,190,225,.02);
+  --ring:rgba(150,200,235,.17);
+  --grain:.09;
 }
 
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   margin:0;background:var(--ground);color:var(--ink);
-  font-family:var(--body);font-size:17px;line-height:1.7;font-weight:400;
-  -webkit-font-smoothing:antialiased;
+  font-family:var(--body);font-size:17px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 h1,h2,h3,h4{font-family:var(--title);font-weight:800;line-height:1.1;letter-spacing:-.025em;margin:0;text-wrap:balance}
 p{margin:0}
@@ -72,253 +109,300 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 :focus-visible{outline:2px solid var(--orange);outline-offset:4px;border-radius:2px}
 ::selection{background:var(--orange);color:#fff}
 
-/* ---------- Jauge de lecture ---------- */
-.scrollbar{position:fixed;top:0;left:0;height:2px;width:0;background:var(--orange);z-index:90}
+/* ---------- Aurore animée ---------- */
+#aurora{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;filter:blur(46px);opacity:.9}
+.page,.rail,.topbar,.sheet{position:relative;z-index:2}
 
-/* ---------- Sommaire fixe ---------- */
+/* ---------- Grain (signature studio) ---------- */
+.grain{
+  position:fixed;inset:-50%;width:200%;height:200%;z-index:96;pointer-events:none;
+  opacity:var(--grain);mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 9s steps(6) infinite;
+}
+@keyframes grain{
+  0%,100%{transform:translate(0,0)}
+  20%{transform:translate(-3%,2%)}
+  40%{transform:translate(2%,-3%)}
+  60%{transform:translate(-2%,-2%)}
+  80%{transform:translate(3%,3%)}
+}
+
+/* ---------- Curseur (halo discret) ---------- */
+.cursor{
+  position:fixed;left:0;top:0;width:34px;height:34px;z-index:97;pointer-events:none;
+  border:1.5px solid var(--orange);border-radius:50%;opacity:0;
+  transform:translate(-50%,-50%);
+  transition:width .3s cubic-bezier(.3,.8,.3,1),height .3s cubic-bezier(.3,.8,.3,1),opacity .4s,border-color .3s,background .3s;
+  display:none;
+}
+.cursor.live{opacity:.55}
+.cursor.hot{width:52px;height:52px;opacity:.9;background:rgba(255,102,51,.07)}
+.cursor.down{width:22px;height:22px;opacity:1}
+@media (hover:hover) and (pointer:fine){ .cursor{display:block} }
+
+/* ---------- Jauge de lecture ---------- */
+.scrollbar{position:fixed;top:0;left:0;height:2px;width:0;background:var(--orange);z-index:90;box-shadow:0 0 18px var(--orange)}
+
+/* ---------- Sommaire ---------- */
 .rail{
   position:fixed;top:0;left:0;bottom:0;width:var(--rail);z-index:70;
-  display:flex;flex-direction:column;gap:34px;padding:38px 30px;
-  border-right:1px solid var(--hairline);background:var(--ground);
+  display:flex;flex-direction:column;gap:30px;padding:38px 30px;
+  border-right:1px solid var(--hairline);
+  background:color-mix(in srgb,var(--ground) 82%,transparent);
+  backdrop-filter:blur(14px) saturate(150%);
 }
 .mark{display:flex;align-items:center;gap:11px}
-.mark svg{width:17px;height:17px;flex:none}
+.mark svg{width:17px;height:17px;flex:none;animation:spin 26s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 .mark span{font-family:var(--title);font-weight:800;letter-spacing:.22em;font-size:13px}
-.toc{display:flex;flex-direction:column;gap:2px;margin-top:4px}
+.toc{display:flex;flex-direction:column;gap:1px;margin-top:2px;position:relative}
 .toc a{
   display:grid;grid-template-columns:26px 1fr;align-items:baseline;gap:10px;
-  padding:7px 0;font-size:14px;color:var(--muted);font-weight:500;
-  transition:color .2s;
+  padding:9px 0 9px 12px;font-size:14px;color:var(--muted);font-weight:500;
+  transition:color .25s, transform .25s;position:relative;
 }
-.toc a i{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--muted);transition:color .2s}
-.toc a:hover{color:var(--ink)}
-.toc a.is-current{color:var(--ink);font-weight:600}
-.toc a.is-current i{color:var(--orange)}
-.rail-foot{margin-top:auto;display:flex;flex-direction:column;gap:14px;font-size:12px;color:var(--muted)}
-.mini{
-  display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;
-  color:var(--muted);letter-spacing:.04em;transition:color .2s;
+.toc a i{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.08em;transition:color .25s}
+.toc a::before{
+  content:"";position:absolute;left:0;top:50%;width:2px;height:0;background:var(--orange);
+  transform:translateY(-50%);transition:height .35s cubic-bezier(.3,.8,.3,1);
 }
-.mini:hover{color:var(--ink)}
+.toc a:hover{color:var(--ink);transform:translateX(2px)}
+.toc a.on{color:var(--ink);font-weight:600}
+.toc a.on::before{height:22px}
+.toc a.on i{color:var(--orange)}
+.rail-foot{margin-top:auto;display:flex;flex-direction:column;gap:13px;font-size:12px;color:var(--muted)}
+.mini{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.04em;transition:color .2s}
+.mini:hover{color:var(--orange)}
 
 /* ---------- Barre mobile ---------- */
 .topbar{
   display:none;position:fixed;top:0;left:0;right:0;z-index:80;height:58px;
   align-items:center;justify-content:space-between;padding:0 20px;
-  background:var(--ground);border-bottom:1px solid var(--hairline);
+  background:color-mix(in srgb,var(--ground) 88%,transparent);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline);
 }
-.sheet{
-  position:fixed;inset:0;z-index:95;background:var(--ground);
-  padding:76px 24px 32px;display:none;flex-direction:column;gap:6px;overflow:auto;
-}
-.sheet.is-open{display:flex;animation:fade .25s ease both}
-.sheet a{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--hairline);font-size:19px;font-family:var(--title);font-weight:800;letter-spacing:-.02em}
-.sheet a i{font-style:normal;font-size:12px;font-weight:600;color:var(--orange);font-family:var(--body);letter-spacing:.08em}
+.sheet{position:fixed;inset:0;z-index:95;background:var(--ground);padding:74px 24px 32px;display:none;flex-direction:column;gap:2px;overflow:auto}
+.sheet.open{display:flex;animation:fade .28s ease both}
+.sheet a{display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:baseline;padding:15px 0;border-bottom:1px solid var(--hairline);font-size:20px;font-family:var(--title);font-weight:800;letter-spacing:-.02em}
+.sheet a i{font-style:normal;font-size:12px;font-weight:600;color:var(--orange);font-family:var(--body)}
 .sheet-close{position:absolute;top:16px;right:20px;font-size:14px;font-weight:600;color:var(--muted)}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 
 /* ---------- Trame ---------- */
 .page{margin-left:var(--rail)}
-.shell{width:100%;max-width:920px;margin:0 auto;padding:0 56px}
-section{padding:132px 0}
+.shell{width:100%;max-width:940px;margin:0 auto;padding:0 56px}
+section{padding:126px 0;position:relative}
 section + section{border-top:1px solid var(--hairline)}
-.lede{max-width:var(--measure);font-size:19px;color:var(--ink-2);font-weight:400}
-.tag{
-  display:block;font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--muted);margin-bottom:26px;
-}
-.tag b{color:var(--orange);font-weight:600}
-h2{font-size:clamp(30px,4.4vw,46px);max-width:18ch;margin-bottom:26px}
+.lede{max-width:var(--measure);font-size:19px;color:var(--ink-2)}
+h2{font-size:clamp(30px,4.6vw,50px);max-width:17ch;margin-bottom:24px}
 h3{font-size:20px}
 
+/* filigrane de section */
+.wm{
+  position:absolute;right:2%;top:24px;font-family:var(--title);font-weight:800;
+  font-size:clamp(140px,24vw,340px);line-height:1;letter-spacing:-.06em;
+  background:linear-gradient(178deg,var(--wm-a),var(--wm-b) 78%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  pointer-events:none;user-select:none;z-index:0;
+}
+.shell > *{position:relative;z-index:1}
+
+/* ligne de chapitre qui se dessine au scroll */
+section + section::before{
+  content:"";position:absolute;left:0;top:-1px;height:1px;width:100%;
+  background:linear-gradient(90deg,var(--orange) 0 90px,var(--hairline) 90px);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 1.2s cubic-bezier(.2,.8,.2,1);
+}
+section.lit::before{transform:scaleX(1)}
+section + section{border-top-color:transparent}
+
+.tag{display:block;font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+.tag b{color:var(--orange);font-weight:600}
+
 /* ---------- Hero ---------- */
-.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 96px;border:0}
-.hero h1{font-size:clamp(38px,6vw,70px);max-width:none;margin:26px 0 34px}
-.hero h1 em{font-style:normal;color:var(--orange)}
-.hero h1{text-wrap:pretty}
-.hero .lede{font-size:21px;max-width:52ch}
-.slash{display:inline-block;width:26px;height:3px;background:var(--orange);transform:skewX(-24deg)}
-.facts{display:flex;flex-wrap:wrap;gap:14px 56px;margin-top:64px;padding-top:34px;border-top:1px solid var(--hairline)}
-.fact{display:flex;flex-direction:column;gap:2px}
-.fact b{font-family:var(--title);font-size:34px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:110px 0 90px;border:0;overflow:hidden}
+.hero .shell{position:relative}
+
+/* Emblème monumental : le cercle ouvert devient une constellation d'anneaux */
+.hero-art{
+  position:absolute;top:50%;right:-4%;
+  width:min(52vw,680px);aspect-ratio:1;
+  pointer-events:none;z-index:0;
+  transform:translateY(-50%) translate3d(calc(var(--hx,0)*26px),calc(var(--hy,0)*26px),0);
+  will-change:transform;
+}
+.hero-art svg{width:100%;height:100%;display:block;overflow:visible}
+.ring-hair{fill:none;stroke:var(--ring);stroke-width:1}
+.ring-dash{fill:none;stroke:var(--ring);stroke-width:1;stroke-dasharray:2 7;animation:spin 90s linear infinite;transform-origin:50% 50%}
+.ring-arc{
+  fill:none;stroke:var(--orange);stroke-width:9;stroke-linecap:round;
+  stroke-dasharray:1131;stroke-dashoffset:1131;
+  animation:arcDraw 2.1s .3s cubic-bezier(.6,0,.2,1) forwards;
+  filter:drop-shadow(0 0 26px rgba(255,102,51,.45));
+}
+@keyframes arcDraw{to{stroke-dashoffset:283}}
+.ring-arc2{fill:none;stroke:var(--orange);stroke-width:2;stroke-linecap:round;opacity:.5;animation:spin 34s linear infinite reverse;transform-origin:50% 50%}
+.orbit{animation:spin 16s linear infinite;transform-origin:50% 50%}
+.orbit circle{fill:var(--orange)}
+.hero-halo{
+  position:absolute;inset:12%;border-radius:50%;
+  background:radial-gradient(closest-side,var(--glow-b),transparent 70%);
+  filter:blur(30px);
+}
+
+.hero h1{font-size:clamp(42px,7vw,88px);margin:24px 0 30px;max-width:16ch;position:relative}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(.6em) rotate(2deg);filter:blur(6px);animation:wordIn 1s cubic-bezier(.2,.8,.25,1) forwards}
+@keyframes wordIn{60%{filter:blur(0)}to{opacity:1;transform:none;filter:blur(0)}}
+.hero h1 em{font-style:normal;color:var(--orange);position:relative;text-shadow:0 0 34px rgba(255,102,51,.30)}
+.hero h1 em::after{
+  content:"";position:absolute;left:.02em;right:.05em;bottom:-.06em;height:.055em;
+  background:linear-gradient(90deg,var(--orange),rgba(255,102,51,.25));
+  transform:scaleX(0);transform-origin:left;border-radius:2px;
+  animation:sweep 1s 1.35s cubic-bezier(.2,.8,.2,1) forwards;
+}
+@keyframes sweep{to{transform:scaleX(1)}}
+.hero .lede{font-size:20px;max-width:54ch;opacity:0;animation:fadeUp .9s .5s cubic-bezier(.2,.8,.25,1) forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.slash{display:inline-block;width:28px;height:3px;background:var(--orange);transform:skewX(-24deg);opacity:0;animation:fadeUp .7s .1s forwards}
+.facts{display:flex;flex-wrap:wrap;gap:16px 0;margin-top:60px;padding-top:0;border-top:0;opacity:0;animation:fadeUp .9s .75s cubic-bezier(.2,.8,.25,1) forwards}
+.fact{position:relative;padding:26px 54px 4px 0;margin-right:54px;border-top:1px solid var(--hairline)}
+.fact::before{content:"";position:absolute;left:0;top:-1px;width:34px;height:2px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.fact:hover::before{transform:scaleX(1)}
+.fact b{font-family:var(--title);font-size:38px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;display:block}
 .fact b i{font-style:normal;color:var(--orange);font-size:20px}
 .fact span{font-size:13px;color:var(--muted);font-weight:500}
-.scroll-hint{margin-top:74px;display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.scroll-hint::after{content:"";width:44px;height:1px;background:var(--muted);animation:slide 2.6s ease-in-out infinite}
-@keyframes slide{0%,100%{transform:translateX(0);opacity:.5}50%{transform:translateX(10px);opacity:1}}
+.cue{margin-top:64px;display:flex;align-items:center;gap:12px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600;opacity:0;animation:fadeUp .9s 1s forwards}
+.cue::after{content:"";width:46px;height:1px;background:currentColor;animation:slide 2.6s ease-in-out infinite}
+@keyframes slide{0%,100%{transform:translateX(0);opacity:.4}50%{transform:translateX(12px);opacity:1}}
 
-/* ---------- Listes dépliables ---------- */
-.rows{margin-top:8px;border-top:1px solid var(--hairline)}
-.row{border-bottom:1px solid var(--hairline)}
-.row-head{
-  width:100%;display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:20px;
-  padding:26px 0;text-align:left;
+/* ---------- Chapitres & fiches dépliables ---------- */
+.chap{margin-top:64px}
+.chap-t{
+  font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:14px;display:flex;align-items:center;gap:12px;
 }
-.row-n{font-family:var(--title);font-size:13px;font-weight:800;letter-spacing:.06em;color:var(--muted);font-variant-numeric:tabular-nums;transition:color .2s}
-.row.is-open .row-n,.row-head:hover .row-n{color:var(--orange)}
-.row-title{display:block;font-family:var(--title);font-weight:800;font-size:clamp(19px,2.3vw,24px);letter-spacing:-.02em;line-height:1.25}
-.row-sub{display:block;font-size:14px;color:var(--muted);margin-top:5px;font-weight:500}
+.chap-t::after{content:"";flex:1;height:1px;background:var(--hairline)}
+.rows{border-top:1px solid var(--hairline)}
+.row{border-bottom:1px solid var(--hairline);transition:background .3s}
+.row.open{background:color-mix(in srgb,var(--tint) 55%,transparent)}
+.row-head{width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:24px 16px 24px 4px;text-align:left;transition:padding-left .3s}
+.row.open .row-head,.row-head:hover{padding-left:14px}
+.row-title{display:block;font-family:var(--title);font-weight:800;font-size:clamp(18px,2.2vw,23px);letter-spacing:-.02em;line-height:1.25;transition:color .25s}
+.row-head:hover .row-title{color:var(--orange)}
+.row-sub{display:block;font-size:13.5px;color:var(--muted);margin-top:5px;font-weight:500}
 .row-plus{position:relative;width:15px;height:15px;flex:none}
-.row-plus::before,.row-plus::after{content:"";position:absolute;background:var(--muted);transition:transform .3s ease, background .2s}
+.row-plus::before,.row-plus::after{content:"";position:absolute;background:var(--muted);transition:transform .35s cubic-bezier(.3,.8,.3,1),background .25s}
 .row-plus::before{left:0;top:7px;width:15px;height:1.5px}
 .row-plus::after{left:6.75px;top:0;width:1.5px;height:15px}
-.row.is-open .row-plus::after{transform:rotate(90deg)}
-.row.is-open .row-plus::before,.row.is-open .row-plus::after{background:var(--orange)}
-.row-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.3,.8,.3,1)}
-.row.is-open .row-body{grid-template-rows:1fr}
+.row.open .row-plus::after{transform:rotate(90deg)}
+.row.open .row-plus::before,.row.open .row-plus::after{background:var(--orange)}
+.row-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.3,.85,.3,1)}
+.row.open .row-body{grid-template-rows:1fr}
 .row-inner{overflow:hidden}
-.row-content{padding:0 0 34px 64px;max-width:var(--measure);display:flex;flex-direction:column;gap:20px}
+.row-content{padding:2px 16px 34px 4px;max-width:var(--measure);display:flex;flex-direction:column;gap:20px}
 .row-content p{color:var(--ink-2);font-size:16px}
 
 .mini-label{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:9px}
-ul.clean{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
-ul.clean li{position:relative;padding-left:20px;font-size:16px;color:var(--ink-2)}
-ul.clean li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:1.5px;background:var(--orange)}
-.note{font-size:15px;color:var(--muted);font-style:italic}
-
-/* ---------- Chiffres / repères en ligne ---------- */
-.inline-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-top:56px}
-.inline-facts div{display:flex;flex-direction:column;gap:8px}
-.inline-facts h3{font-size:17px}
-.inline-facts p{font-size:15px;color:var(--ink-2)}
-
-/* ---------- Sélecteur de méthodes ---------- */
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:44px}
-.chip{
-  padding:9px 16px;border:1px solid var(--hairline);border-radius:999px;
-  font-size:13.5px;font-weight:500;color:var(--muted);transition:all .2s;
-}
-.chip:hover{color:var(--ink);border-color:var(--muted)}
-.chip.is-on{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:600}
-:root[data-theme="dark"] .chip.is-on{background:var(--orange);border-color:var(--orange);color:#2A0C00}
-.method{min-height:340px}
-.method h3{font-size:clamp(24px,3vw,32px);margin-bottom:22px;letter-spacing:-.02em}
-.method-grid{display:grid;gap:34px;max-width:var(--measure)}
-.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:flex;flex-direction:column;gap:16px}
+ul.clean{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+ul.clean li{position:relative;padding-left:22px;font-size:16px;color:var(--ink-2)}
+ul.clean li::before{content:"";position:absolute;left:0;top:11px;width:9px;height:1.5px;background:var(--orange)}
+ul.clean li b{color:var(--ink);font-weight:600}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:flex;flex-direction:column;gap:14px}
 .steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:16px;font-size:16px;color:var(--ink-2)}
-.steps li::before{content:"0" counter(s);font-family:var(--title);font-size:12px;font-weight:800;color:var(--orange);padding-top:5px;letter-spacing:.04em}
-.said{
-  font-size:17px;font-style:italic;color:var(--ink);line-height:1.65;
-  padding-left:22px;border-left:2px solid var(--orange);
-}
-.pairs{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--hairline)}
-.pair{display:grid;grid-template-columns:minmax(120px,.7fr) 1fr;gap:24px;padding:15px 0;border-bottom:1px solid var(--hairline);font-size:15.5px}
+.steps li::before{content:"0" counter(s);font-family:var(--title);font-size:12px;font-weight:800;color:var(--orange);padding-top:5px}
+.said{font-size:16.5px;font-style:italic;color:var(--ink);line-height:1.65;padding-left:22px;border-left:2px solid var(--orange)}
+.pairs{border-top:1px solid var(--hairline)}
+.pair{display:grid;grid-template-columns:minmax(140px,.8fr) 1fr;gap:24px;padding:15px 0;border-bottom:1px solid var(--hairline);font-size:15.5px}
 .pair b{font-weight:600;color:var(--ink)}
 .pair span{color:var(--ink-2)}
 .rule-line{font-size:15.5px;color:var(--ink-2)}
 .rule-line b{color:var(--accent-text);font-weight:600}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.split > div{padding:18px 20px;border:1px solid var(--hairline);border-radius:4px;background:color-mix(in srgb,var(--raised) 60%,transparent)}
+.split h5{font-family:var(--title);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
+.yes h5{color:#2E7D5B}
+.no h5{color:var(--accent-text)}
 
-/* ---------- Objections ---------- */
-.obj{max-width:760px}
-.obj-q{
-  font-family:var(--title);font-weight:800;letter-spacing:-.025em;
-  font-size:clamp(26px,4vw,42px);line-height:1.2;min-height:2.4em;
+/* ---------- SONCAS (cartes 3D) ---------- */
+.soncas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;perspective:900px}
+.sc{
+  padding:20px;border:1px solid var(--hairline);border-radius:6px;
+  background:var(--raised);transform-style:preserve-3d;position:relative;overflow:hidden;
+  transition:transform .3s cubic-bezier(.3,.8,.3,1),box-shadow .3s,border-color .3s;
 }
-.obj-meta{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:18px}
-.obj-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.3,.8,.3,1)}
-.obj-more.is-open{grid-template-rows:1fr}
+.sc::after{
+  content:"";position:absolute;inset:0;opacity:0;transition:opacity .3s;pointer-events:none;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,102,51,.16),transparent 45%);
+}
+.sc:hover{box-shadow:0 18px 42px rgba(0,34,53,.16);border-color:color-mix(in srgb,var(--orange) 40%,var(--hairline))}
+.sc:hover::after{opacity:1}
+.sc b{display:block;font-family:var(--title);font-size:15px;letter-spacing:-.01em;margin-bottom:6px}
+.sc i{font-style:normal;display:block;font-size:26px;font-family:var(--title);font-weight:800;color:var(--orange);line-height:1;margin-bottom:10px}
+.sc span{font-size:13.5px;color:var(--ink-2);display:block}
+
+/* ---------- Entraînement ---------- */
+.obj{max-width:780px;margin-top:44px;perspective:1200px}
+.obj-card{transform-style:preserve-3d;transition:transform .5s cubic-bezier(.3,.8,.3,1),opacity .3s}
+.obj-card.flip{transform:rotateX(-8deg) translateY(-10px);opacity:.25}
+.obj-meta{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px}
+.obj-q{font-family:var(--title);font-weight:800;letter-spacing:-.025em;font-size:clamp(26px,4.2vw,44px);line-height:1.15;min-height:2.2em}
+.obj-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.3,.85,.3,1)}
+.obj-more.open{grid-template-rows:1fr}
 .obj-more > div{overflow:hidden}
-.obj-more-inner{padding-top:34px;display:flex;flex-direction:column;gap:26px;max-width:var(--measure)}
-.actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:40px}
+.obj-more-inner{padding-top:32px;display:flex;flex-direction:column;gap:24px;max-width:var(--measure)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:38px}
 .btn{
-  display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 24px;border-radius:999px;
-  font-size:14px;font-weight:600;transition:all .2s;border:1px solid transparent;
+  display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 26px;border-radius:999px;
+  font-size:14px;font-weight:600;border:1px solid transparent;position:relative;overflow:hidden;
+  transition:transform .25s cubic-bezier(.3,.8,.3,1),background .25s,color .25s,border-color .25s,box-shadow .25s;
 }
 .btn-fill{background:var(--blue);color:#fff}
-.btn-fill:hover{background:var(--orange);color:#2A0C00}
-:root[data-theme="dark"] .btn-fill{background:var(--orange);color:#2A0C00}
-:root[data-theme="dark"] .btn-fill:hover{background:#FF8355}
+.btn-fill:hover{background:var(--orange);color:#2A0C00;box-shadow:0 12px 30px rgba(255,102,51,.34)}
 .btn-line{border-color:var(--hairline);color:var(--ink-2)}
-.btn-line:hover{border-color:var(--ink);color:var(--ink)}
+.btn-line:hover{border-color:var(--orange);color:var(--orange)}
 .count{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;margin-left:6px}
 
-/* ---------- Diagnostic ---------- */
-.diag{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:48px}
-.slide{display:flex;flex-direction:column;gap:10px;padding:16px 0;border-bottom:1px solid var(--hairline)}
-.slide:first-child{padding-top:0}
-.slide-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
-.slide-top label{font-size:15.5px;font-weight:500;color:var(--ink)}
-.slide-top b{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;font-weight:600}
-input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer}
-.bars{display:flex;flex-direction:column;gap:18px}
-.bar-top{display:flex;justify-content:space-between;font-size:14px;margin-bottom:7px}
-.bar-top b{font-weight:500}
-.bar-top span{color:var(--muted);font-variant-numeric:tabular-nums}
-.bar-track{height:3px;background:var(--hairline)}
-.bar-fill{height:100%;background:var(--blue);width:0;transition:width .5s cubic-bezier(.3,.8,.3,1)}
-:root[data-theme="dark"] .bar-fill{background:#5C9FC9}
-.bar-fill.is-low{background:var(--orange)}
-.advice{margin-top:34px;padding-top:24px;border-top:1px solid var(--hairline);font-size:15.5px;color:var(--ink-2)}
-.advice b{color:var(--ink);font-weight:600}
-
 /* ---------- Quiz ---------- */
-.quiz{max-width:720px;margin-top:44px}
-.quiz-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:22px}
-.quiz-track{height:2px;background:var(--hairline);margin-bottom:38px}
-.quiz-progress{height:100%;background:var(--orange);width:0;transition:width .4s ease}
-.quiz h3{font-size:clamp(21px,2.6vw,27px);line-height:1.3;margin-bottom:28px;letter-spacing:-.02em}
-.answers{display:flex;flex-direction:column;gap:1px}
+.quiz{max-width:740px;margin-top:76px}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:20px}
+.quiz-track{height:2px;background:var(--hairline);margin-bottom:36px;overflow:hidden}
+.quiz-progress{height:100%;background:var(--orange);width:0;transition:width .5s cubic-bezier(.3,.8,.3,1);box-shadow:0 0 14px var(--orange)}
+.quiz h3{font-size:clamp(21px,2.7vw,29px);line-height:1.28;margin-bottom:26px;letter-spacing:-.02em}
+.answers{display:flex;flex-direction:column}
 .answer{
   display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;
   padding:17px 16px 17px 4px;text-align:left;font-size:16px;color:var(--ink-2);
-  border-bottom:1px solid var(--hairline);transition:color .2s, background .2s;
+  border-bottom:1px solid var(--hairline);transition:color .2s,background .3s,padding-left .25s;
 }
 .answer:first-child{border-top:1px solid var(--hairline)}
-.answer u{text-decoration:none;font-size:12px;font-weight:600;color:var(--muted);padding-top:4px;letter-spacing:.06em}
-.answer:hover{color:var(--ink)}
-.answer.right{color:var(--ink);background:var(--tint)}
-.answer.right u{color:#1F7A57}
+.answer u{text-decoration:none;font-size:12px;font-weight:600;color:var(--muted);padding-top:4px}
+.answer:not([disabled]):hover{color:var(--ink);padding-left:12px}
+.answer.right{color:var(--ink);background:color-mix(in srgb,#2E7D5B 10%,transparent)}
+.answer.right u{color:#2E7D5B}
 .answer.wrong u{color:#C0392B}
-.answer[disabled]{cursor:default}
-.why{
-  display:none;margin-top:26px;padding-left:22px;border-left:2px solid var(--orange);
-  font-size:15.5px;color:var(--ink-2);max-width:var(--measure);
-}
-.why.is-on{display:block;animation:fade .3s ease both}
+.why{display:none;margin-top:24px;padding-left:22px;border-left:2px solid var(--orange);font-size:15.5px;color:var(--ink-2);max-width:var(--measure)}
+.why.on{display:block;animation:fadeUp .35s ease both}
 .why b{color:var(--ink);font-weight:600}
-.quiz-end{display:none;padding-top:8px}
-.quiz-end.is-on{display:block;animation:fade .35s ease both}
-.score{font-family:var(--title);font-size:clamp(52px,9vw,86px);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
-.score i{font-style:normal;color:var(--orange);font-size:.42em}
-
-/* ---------- Pilotage ---------- */
-.kpis{border-top:1px solid var(--hairline);margin-top:44px}
-.kpi{display:grid;grid-template-columns:minmax(160px,1fr) 2fr auto;gap:28px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--hairline)}
-.kpi b{font-weight:600;font-size:16px}
-.kpi span{font-size:15.5px;color:var(--ink-2)}
-.kpi u{text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;white-space:nowrap}
-.funnel{display:flex;flex-direction:column;gap:12px;margin-top:52px;max-width:620px}
-.fun{display:grid;grid-template-columns:180px 1fr 46px;gap:18px;align-items:center;font-size:14.5px}
-.fun span{color:var(--ink-2)}
-.fun-track{height:14px;background:var(--tint)}
-.fun-fill{height:100%;background:var(--blue);width:0;transition:width .8s cubic-bezier(.3,.8,.3,1)}
-:root[data-theme="dark"] .fun-fill{background:#5C9FC9}
-.fun-fill.is-end{background:var(--orange)}
-.fun b{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;font-size:14px}
+.quiz-end{display:none}
+.quiz-end.on{display:block;animation:fadeUp .4s ease both}
+.score{font-family:var(--title);font-size:clamp(56px,10vw,96px);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.score i{font-style:normal;color:var(--orange);font-size:.38em}
 
 /* ---------- Pied ---------- */
-footer{padding:96px 0 72px;border-top:1px solid var(--hairline)}
+footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
 .foot{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
 
-/* ---------- Thème sombre système : mêmes surcharges ---------- */
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]) .chip.is-on{background:var(--orange);border-color:var(--orange);color:#2A0C00}
-  :root:not([data-theme="light"]) .btn-fill{background:var(--orange);color:#2A0C00}
-  :root:not([data-theme="light"]) .btn-fill:hover{background:#FF8355;color:#2A0C00}
-  :root:not([data-theme="light"]) .bar-fill,
-  :root:not([data-theme="light"]) .fun-fill{background:#5C9FC9}
-  :root:not([data-theme="light"]) .bar-fill.is-low,
-  :root:not([data-theme="light"]) .fun-fill.is-end{background:var(--orange)}
-}
-
 /* ---------- Apparition ---------- */
-.up{opacity:0;transform:translateY(18px)}
-.up.in{opacity:1;transform:none;transition:opacity .7s ease, transform .7s cubic-bezier(.3,.8,.3,1)}
+.up{opacity:0;transform:translateY(20px)}
+.up.in{opacity:1;transform:none;transition:opacity .8s ease,transform .8s cubic-bezier(.25,.8,.3,1)}
 
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
-  .up{opacity:1;transform:none}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+  .up,.hero h1 .w,.hero .lede,.facts,.cue,.slash{opacity:1;transform:none}
+  #aurora{display:none}
 }
 
 /* ---------- Responsive ---------- */
@@ -327,35 +411,35 @@ footer{padding:96px 0 72px;border-top:1px solid var(--hairline)}
   .rail{display:none}
   .topbar{display:flex}
   .page{margin-left:0;padding-top:58px}
-  .shell{padding:0 28px;max-width:760px}
-  section{padding:96px 0}
-  .diag{grid-template-columns:1fr;gap:44px}
-  .inline-facts{grid-template-columns:1fr;gap:32px}
+  .shell{padding:0 28px;max-width:780px}
+  section{padding:92px 0}
+  .soncas{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
 }
 @media (max-width:620px){
   body{font-size:16px}
-  .shell{padding:0 22px}
-  section{padding:76px 0}
-  .hero{min-height:auto;padding:64px 0 72px}
-  .row-content{padding-left:0}
-  .row-head{grid-template-columns:34px 1fr auto;gap:12px}
-  .facts{gap:22px 34px}
-  .fun{grid-template-columns:118px 1fr 36px;gap:12px;font-size:13px}
-  .kpi{grid-template-columns:1fr;gap:6px}
+  .shell{padding:0 20px}
+  section{padding:72px 0}
+  .hero{min-height:auto;padding:56px 0 72px}
+  .soncas{grid-template-columns:1fr}
+  .facts{gap:20px 34px}
   .pair{grid-template-columns:1fr;gap:4px}
+  .wm{font-size:96px;top:44px}
 }
 
 @media print{
-  .rail,.topbar,.scrollbar,.actions,.chips{display:none !important}
+  .rail,.topbar,.scrollbar,.actions,#aurora,.cue{display:none !important}
   .page{margin:0}
   body{background:#fff;color:#000;font-size:11pt}
-  section{padding:24px 0;break-inside:avoid}
+  section{padding:20px 0;break-inside:avoid}
   .row-body{grid-template-rows:1fr !important}
+  .up{opacity:1 !important;transform:none !important}
 }
 </style>
 </head>
 <body>
 
+<canvas id="aurora" aria-hidden="true"></canvas>
 <div class="scrollbar" id="scrollbar"></div>
 
 <aside class="rail">
@@ -363,15 +447,7 @@ footer{padding:96px 0 72px;border-top:1px solid var(--hairline)}
     <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3a17 17 0 1 0 15.5 10" fill="none" stroke="#FF6633" stroke-width="6" stroke-linecap="round"/></svg>
     <span>ACADÉMIE</span>
   </a>
-  <nav class="toc" id="toc" aria-label="Sommaire">
-    <a href="#parcours"><i>01</i>Le parcours</a>
-    <a href="#leviers"><i>02</i>Les 5 leviers</a>
-    <a href="#modules"><i>03</i>Les 8 modules</a>
-    <a href="#methodes"><i>04</i>Les méthodes</a>
-    <a href="#objections"><i>05</i>Les objections</a>
-    <a href="#evaluer"><i>06</i>S'évaluer</a>
-    <a href="#piloter"><i>07</i>Piloter</a>
-  </nav>
+  <nav class="toc" id="toc" aria-label="Sommaire"></nav>
   <div class="rail-foot">
     <button class="mini" id="themeBtn" type="button">Thème sombre</button>
     <button class="mini" type="button" onclick="window.print()">Imprimer</button>
@@ -389,165 +465,33 @@ footer{padding:96px 0 72px;border-top:1px solid var(--hairline)}
 
 <div class="sheet" id="sheet">
   <button class="sheet-close" id="sheetClose" type="button">Fermer</button>
-  <a href="#parcours"><i>01</i>Le parcours</a>
-  <a href="#leviers"><i>02</i>Les 5 leviers</a>
-  <a href="#modules"><i>03</i>Les 8 modules</a>
-  <a href="#methodes"><i>04</i>Les méthodes</a>
-  <a href="#objections"><i>05</i>Les objections</a>
-  <a href="#evaluer"><i>06</i>S'évaluer</a>
-  <a href="#piloter"><i>07</i>Piloter</a>
-  <button class="mini" id="themeBtn2" type="button" style="margin-top:28px">Thème sombre</button>
+  <nav id="tocMobile"></nav>
+  <button class="mini" id="themeBtn2" type="button" style="margin-top:26px">Thème sombre</button>
 </div>
 
 <main class="page" id="haut">
 
-  <!-- ================= HERO ================= -->
   <section class="hero">
     <div class="shell">
       <span class="slash"></span>
-      <h1>L'excellence commerciale,<br>méthode par méthode<em>.</em></h1>
-      <p class="lede">Un parcours pour les Ingénieurs d'affaires : cibler juste, ouvrir des portes, faire parler le client, et signer sans brader.</p>
+      <h1 id="heroTitle">L'excellence commerciale pour les <em>Ingénieurs d'affaires</em></h1>
+      <p class="lede">Le support de formation, en une page. Prospecter, mener le rendez-vous, traiter les objections, négocier, développer son réseau.</p>
       <div class="facts">
-        <div class="fact"><b>8</b><span>modules</span></div>
-        <div class="fact"><b>5</b><span>leviers</span></div>
-        <div class="fact"><b>10</b><span>méthodes</span></div>
-        <div class="fact"><b>12</b><span>objections</span></div>
+        <div class="fact"><b data-count="5"></b><span>parties</span></div>
+        <div class="fact"><b data-count="7"></b><span>étapes de rendez-vous</span></div>
+        <div class="fact"><b data-count="6"></b><span>leviers SONCAS</span></div>
+        <div class="fact"><b data-count="100"></b><span>appels = 5 rendez-vous</span></div>
       </div>
-      <div class="scroll-hint">Faites défiler</div>
+      <div class="cue">Faites défiler</div>
     </div>
   </section>
 
-  <!-- ================= 01 · PARCOURS ================= -->
-  <section id="parcours">
-    <div class="shell">
-      <span class="tag up"><b>01</b> &nbsp;Le parcours</span>
-      <h2 class="up">Vendre du conseil, ce n'est pas vendre un produit.</h2>
-      <p class="lede up">Il n'y a ni catalogue, ni démonstration. Il y a un dirigeant pressé, un enjeu mal formulé et un risque perçu. Tout le parcours sert à rendre la décision évidente.</p>
-      <div class="inline-facts up">
-        <div>
-          <h3>Sur vos vraies affaires</h3>
-          <p>Aucun cas fictif. On travaille sur votre portefeuille, le formateur intervient en coach.</p>
-        </div>
-        <div>
-          <h3>À votre rythme</h3>
-          <p>Aucun calendrier imposé : tout d'une traite en une journée, ou un module quand vous en avez besoin.</p>
-        </div>
-        <div>
-          <h3>Un livrable par module</h3>
-          <p>Vous repartez à chaque fois avec un outil prêt à utiliser dès le lendemain.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 02 · LEVIERS ================= -->
-  <section id="leviers">
-    <div class="shell">
-      <span class="tag up"><b>02</b> &nbsp;Les 5 leviers</span>
-      <h2 class="up">Un levier faible plafonne tous les suivants.</h2>
-      <p class="lede up">On ne rattrape pas en négociation ce qu'on a raté en découverte.</p>
-      <div class="rows up" id="leviersList"></div>
-    </div>
-  </section>
-
-  <!-- ================= 03 · MODULES ================= -->
-  <section id="modules">
-    <div class="shell">
-      <span class="tag up"><b>03</b> &nbsp;Les 8 modules</span>
-      <h2 class="up">Huit modules, huit gestes à installer.</h2>
-      <p class="lede up">Dans l'ordre pour un nouvel entrant, ou directement à celui qui vous manque. Cliquez pour ouvrir.</p>
-      <div class="rows up" id="modulesList"></div>
-    </div>
-  </section>
-
-  <!-- ================= 04 · MÉTHODES ================= -->
-  <section id="methodes">
-    <div class="shell">
-      <span class="tag up"><b>04</b> &nbsp;Les méthodes</span>
-      <h2 class="up">La boîte à outils, une fiche à la fois.</h2>
-      <div class="chips up" id="chips"></div>
-      <div class="method up" id="method"></div>
-    </div>
-  </section>
-
-  <!-- ================= 05 · OBJECTIONS ================= -->
-  <section id="objections">
-    <div class="shell">
-      <span class="tag up"><b>05</b> &nbsp;Les objections</span>
-      <h2 class="up">Répondez à voix haute. Puis comparez.</h2>
-      <div class="obj up">
-        <p class="obj-meta" id="objMeta"></p>
-        <p class="obj-q" id="objQ"></p>
-        <div class="obj-more" id="objMore"><div><div class="obj-more-inner">
-          <div><span class="mini-label">Ce que ça cache</span><p id="objBehind"></p></div>
-          <div><span class="mini-label">La réponse</span><p id="objHow"></p></div>
-          <p class="said" id="objModel"></p>
-        </div></div></div>
-        <div class="actions">
-          <button class="btn btn-fill" type="button" id="objNext">Objection suivante</button>
-          <button class="btn btn-line" type="button" id="objShow">Voir la réponse</button>
-          <span class="count" id="objCount"></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 06 · S'ÉVALUER ================= -->
-  <section id="evaluer">
-    <div class="shell">
-      <span class="tag up"><b>06</b> &nbsp;S'évaluer</span>
-      <h2 class="up">Où en êtes-vous ?</h2>
-      <p class="lede up">Notez-vous de 1 à 5. Le levier le plus faible ressort en orange : commencez par celui-là.</p>
-
-      <div class="diag up">
-        <div id="slides"></div>
-        <div>
-          <div class="bars" id="bars"></div>
-          <p class="advice" id="advice"></p>
-        </div>
-      </div>
-
-      <div class="quiz up">
-        <div class="quiz-top">
-          <span>Quiz</span>
-          <span id="quizCount"></span>
-        </div>
-        <div class="quiz-track"><div class="quiz-progress" id="quizProgress"></div></div>
-        <div id="quizCard">
-          <h3 id="quizQ"></h3>
-          <div class="answers" id="quizAnswers"></div>
-          <p class="why" id="quizWhy"></p>
-          <div class="actions">
-            <button class="btn btn-fill" type="button" id="quizNext">Question suivante</button>
-          </div>
-        </div>
-        <div class="quiz-end" id="quizEnd">
-          <p class="score"><span id="scoreVal">0</span><i>&nbsp;/ 12</i></p>
-          <p class="lede" style="margin-top:22px" id="scoreMsg"></p>
-          <div class="actions"><button class="btn btn-line" type="button" id="quizAgain">Recommencer</button></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 07 · PILOTER ================= -->
-  <section id="piloter">
-    <div class="shell">
-      <span class="tag up"><b>07</b> &nbsp;Piloter</span>
-      <h2 class="up">Le chiffre se constate. L'activité se pilote.</h2>
-      <div class="kpis up" id="kpis"></div>
-      <div class="up">
-        <p class="mini-label" style="margin-top:64px">Où fuit votre pipeline</p>
-        <div class="funnel" id="funnel"></div>
-        <p class="note" style="margin-top:22px;max-width:52ch">Sur 100 contacts utiles, 8 signatures. Le décrochage se situe avant la proposition : c'est un problème de découverte, pas de prospects.</p>
-      </div>
-    </div>
-  </section>
+  <div id="sections"></div>
 
   <footer>
     <div class="shell foot">
-      <span>Académie commerciale — L'excellence commerciale pour les Ingénieurs d'affaires</span>
-      <span>Version 2.0</span>
+      <span>L'excellence commerciale pour les Ingénieurs d'affaires</span>
+      <span>Version 3.0</span>
     </div>
   </footer>
 </main>
@@ -557,286 +501,590 @@ footer{padding:96px 0 72px;border-top:1px solid var(--hairline)}
   "use strict";
 
   /* =========================================================
-     CONTENU — tout le texte du site est ici
+     LE SUPPORT — tout le contenu de la formation est ici.
+     Blocs disponibles : text · list · steps · pairs · said · rule · split · soncas
      ========================================================= */
 
-  var LEVIERS = [
-    { t:"Cibler", sub:"Savoir où mettre son temps",
-      p:["Un client idéal décrit par 6 critères vérifiables","Un portefeuille trié en A / B / C, révisé chaque trimestre","Un plan de compte d'une page avant le premier appel"] },
-    { t:"Ouvrir", sub:"Provoquer la conversation",
-      p:["Une accroche en 5 temps qui tient en 3 minutes","Une séquence de 15 jours sur 3 canaux","Le bloc de prospection sanctuarisé dans l'agenda"] },
-    { t:"Comprendre", sub:"Faire parler, faire chiffrer",
-      p:["Une trame de 12 questions, de la situation au bénéfice","Le coût de l'inaction énoncé par le client lui-même","Le circuit de décision obtenu sans le demander frontalement"] },
-    { t:"Convaincre", sub:"Rendre la décision évidente",
-      p:["Une proposition de valeur chiffrée, tenable en 90 secondes","Un écrit qui se lit en 5 minutes par un dirigeant","Un champion armé d'une page qu'il porte sans vous"] },
-    { t:"Conclure & développer", sub:"Signer, puis faire grandir",
-      p:["Aucune concession sans contrepartie","Une prochaine étape datée à chaque rendez-vous","Le point de valeur trimestriel qui ouvre la mission suivante"] }
+  var SECTIONS = [
+
+  /* ---------------------------------------------------- 01 */
+  { id:"prospection", n:"01", t:"Prospection",
+    h:"Vendez un rendez-vous, pas un produit.",
+    lede:"100 appels, 20 conversations, 5 rendez-vous. Tout le reste du métier commence ici.",
+    chapitres:[
+      { fiches:[
+
+        { t:"L'état d'esprit", s:"Le volume fait la performance",
+          b:[ {k:"list", v:[
+                "<b>Oui, c'est difficile</b> — c'est précisément pour ça que peu de monde y arrive, et que les commerciaux sont bien payés.",
+                "<b>N'ayez pas peur du rejet.</b> C'est parce qu'il y a des rejets que la victoire est savoureuse ensuite.",
+                "<b>Il faut échouer plusieurs fois pour gagner :</b> 100 appels = 20 conversations = 5 rendez-vous.",
+                "<b>Soyez sûr de votre valeur</b> et de vos produits : dommage pour le prospect s'il refuse.",
+                "<b>Remettez-vous en question</b> — mais pas à chaque rejet.",
+                "<b>Soyez persévérant :</b> n'abandonnez pas au premier frein.",
+                "<b>Appelez tôt le matin et tard le soir,</b> quand vos prospects sont disponibles."]},
+              {k:"rule", v:"le nombre d'appels n'est pas un détail d'exécution, c'est le moteur du résultat."} ] },
+
+        { t:"Les 10 premières secondes", s:"Elles décident de tout le reste",
+          b:[ {k:"list", v:[
+                "Toujours <b>enthousiaste</b> dès le début de l'appel.",
+                "<b>Souriez</b> : cela s'entend.",
+                "<b>Parlez fort.</b>",
+                "<b>Prenez le contrôle</b> dès le début : pas d'hésitation, pas de blanc.",
+                "<b>Soyez tranchant</b> : dites vite pourquoi vous l'appelez lui, et pourquoi aujourd'hui.",
+                "Le prospect doit <b>comprendre son intérêt immédiatement</b> : gain financier, gain de temps.",
+                "<b>Phrases courtes et au présent</b> = dynamique, action."]} ] },
+
+        { t:"Ne pas passer pour un commercial", s:"Un ami expert, pas un téléprospecteur",
+          b:[ {k:"list", v:[
+                "<b>Démarquez-vous</b> des autres téléprospecteurs.",
+                "Ne sonnez pas comme un commercial — <i>« faire le point »</i>, <i>« notre nouvelle offre »</i> — mais comme <b>un ami expert de son domaine</b>.",
+                "<b>Ne lisez pas un script.</b> Un discours trop écrit s'entend : gardez votre authenticité.",
+                "Parlez de <b>manière plutôt familière</b>, avec respect, plutôt que formelle."]} ] },
+
+        { t:"Assertivité & adaptabilité", s:"Les mots qui vous placent d'égal à égal",
+          b:[ {k:"pairs", v:[
+                ["Pas de conditionnel","« Je cherche à joindre, je dois joindre » plutôt que « j'aurais souhaité parler à »"],
+                ["Pas de terme réducteur","Bannir « un petit peu », « une petite minute »"],
+                ["D'égal à égal","Pas de « je me permets », pas de « je vous appelle pour »"],
+                ["Pas de négation","Tournez systématiquement les choses de manière positive"],
+                ["Pas de forme durative","Éviter « je pense qu'il serait intéressant de nous rencontrer »"],
+                ["Adaptabilité","S'ajuster à chaque situation, à chaque objection, en direct"]]} ] },
+
+        { t:"Les erreurs à ne pas commettre", s:"Ne donnez jamais l'occasion de dire non",
+          b:[ {k:"list", v:[
+                "<b>Ne posez pas de question qui permet de répondre non</b> — « vous avez une minute ? », « seriez-vous intéressé ? ». Partez du principe qu'il est d'accord.",
+                "<b>Tournez vos questions pour obtenir un oui :</b> « quel jour êtes-vous disponible la semaine prochaine ? » plutôt que « seriez-vous disponible ? »",
+                "<b>Pas de blanc :</b> concluez après chaque prise de parole. À une assistante : « vous pouvez me le passer ? ». À un responsable : « vous êtes disponible le… ? »",
+                "<b>Pas de terme négatif</b> — problème, difficulté, danger, petit, peut-être."]},
+              {k:"said", v:"Il n'y aura aucun problème · vous pouvez être tranquille · vous ne courez aucun risque · vous serez en sécurité · nous sommes d'accord ? · vous ne le regretterez pas · vous vous en féliciterez"},
+              {k:"rule", v:"remplacez chaque mot négatif par son équivalent positif : succès, gagner, bénéfice, efficacité, sérieux, économie."} ] },
+
+        { t:"Passer le barrage secrétaire", s:"Elle est payée pour filtrer les commerciaux",
+          b:[ {k:"list", v:[
+                "<b>Être assertif et direct.</b> Ne passez pas pour un commercial mais pour une relation professionnelle qui a besoin de lui parler rapidement.",
+                "<b>Ne vous justifiez pas :</b> une formulation longue est une justification, et une justification trahit la prospection.",
+                "<b>Faites comprendre qu'elle ne maîtrise pas le sujet</b> — un terme technique suffit.",
+                "<b>Jouez sur le flou.</b>",
+                "<b>Ne soyez pas trop formel</b> : le formalisme signale le commercial."]},
+              {k:"said", v:"« Je dois joindre M. X. » — « C'est à quel sujet ? » — « Ça concerne les cotisations que vous acquittez à l'URSSAF, j'ai besoin d'échanger rapidement avec lui. Vous pouvez me le passer ? »"} ] },
+
+        { t:"Prendre le rendez-vous", s:"Le seul objectif de l'appel",
+          b:[ {k:"list", v:[
+                "<b>Présentez-vous rapidement.</b>",
+                "<b>Liez votre appel à une action antérieure</b> ou à un fait d'actualité : « nous avions rencontré votre prédécesseur il y a quelque temps… »",
+                "<b>Venez vite au fait</b> en expliquant ce que vous pouvez lui apporter.",
+                "<b>Adaptez vos arguments à l'interlocuteur :</b> au DAF, des montants, quelques éléments techniques, des références ; au DRH, de la valeur ajoutée, du gain de temps, des références.",
+                "<b>Ne vendez pas un produit, vendez un rendez-vous.</b> N'en dites pas trop, sinon le prospect n'a plus besoin de vous rencontrer : « c'est justement l'intérêt du rendez-vous ».",
+                "<b>Looping :</b> traitez l'objection, puis revenez toujours au rendez-vous, sans laisser de blanc."]},
+              {k:"said", v:"« Nous intervenons auprès de 1 000 sociétés en France sur l'optimisation des taxes. Je vous appelle aujourd'hui car nous avons un nouveau levier sur la TVA applicable chez vous ; nous l'avons mis en place avec plusieurs sociétés de votre secteur. Les enjeux financiers sont importants : je vous propose un rendez-vous de 30 minutes. Le jeudi 18 à 11h, ça vous irait ? »"},
+              {k:"rule", v:"après chaque objection traitée, reproposez une date précise. Jamais de blanc, jamais de « je vous rappelle »."} ] }
+      ]}
+    ]},
+
+  /* ---------------------------------------------------- 02 */
+  { id:"rendez-vous", n:"02", t:"Le rendez-vous",
+    h:"Motiver et rassurer, du début à la fin.",
+    lede:"Sept étapes, une heure. Chaque minute a une fonction : capter, comprendre, convaincre, conclure.",
+    chapitres:[
+
+      { t:"Le cadre", fiches:[
+        { t:"Motiver et rassurer", s:"L'essentiel du métier",
+          b:[ {k:"text", v:"Dans notre métier, vous passez votre temps à faire deux choses : motiver, et rassurer."},
+              {k:"pairs", v:[
+                ["Motiver","Enjeux financiers · mission peu chronophage pour eux · références de ceux qui l'ont fait · sécurisation de leurs pratiques"],
+                ["Rassurer","Références locales · appui juridique · storytelling · sécurisation des leviers · accompagnement en cas de contrôle · présentation du groupe"]]} ] },
+
+        { t:"Le plan du rendez-vous", s:"7 étapes, du bonjour à la signature",
+          b:[ {k:"steps", v:[
+                "Introduction — 1 minute",
+                "Questions sur l'interlocuteur et sa structure — 5 à 10 minutes",
+                "Présentation du cabinet — 3 minutes",
+                "Découverte technique — 5 à 10 minutes",
+                "Argumentaire — 5 à 10 minutes",
+                "Présentation du déroulement de la mission — 5 minutes",
+                "Closing — 5 minutes"]},
+              {k:"rule", v:"la présentation du cabinet ne dure que 3 minutes. Le reste du temps, c'est lui qui parle."} ] }
+      ]},
+
+      { t:"Introduction", fiches:[
+        { t:"La première impression", s:"Vous n'aurez qu'une seule occasion",
+          b:[ {k:"list", v:[
+                "<b>Poignée de main ferme</b> — une pression légèrement plus ferme que celle de l'interlocuteur — et <b>sourire</b>.",
+                "<b>Pas de mauvais brise-glace</b> du type « il fait beau aujourd'hui ».",
+                "<b>Installez-vous d'abord :</b> ne commencez pas le rendez-vous avant d'être correctement installé.",
+                "<b>Regardez-le dans les yeux</b> dès le début : c'est de la confiance.",
+                "<b>Présentez-vous</b>, nom et prénom, carte de visite.",
+                "<b>Rappelez l'objet</b> du rendez-vous, <b>validez le timing</b>, <b>rappelez l'objectif</b> : identifier des pistes d'économies et expliquer comment vous pouvez l'accompagner."]} ] },
+
+        { t:"Parler au reptilien", s:"Passer le filtre avant de convaincre",
+          b:[ {k:"text", v:"Notre cerveau est une colocation : le reptilien (200 millions d'années) trie les messages, le limbique gère les émotions, et Einstein (4 millions d'années) pense l'abstrait. Le reptilien filtre pour nous préserver de la fatigue et de la perte de temps : il faut capter son intérêt et attiser son désir, pas l'effrayer."},
+              {k:"list", l:"Deux techniques", v:[
+                "<b>L'appât</b> — présenter une expérience récente avec une société, si possible un concurrent du prospect. Du storytelling, tout de suite.",
+                "<b>La provocation</b> — poser le non sur la table."]},
+              {k:"said", v:"« Je vais vous présenter une offre que certains de vos confrères ont suivie avec intérêt, d'autres n'ont pas donné suite. N'hésitez pas à me dire si vous ne souhaitez pas aller plus loin. »"},
+              {k:"rule", v:"évitez les formulations bateau — « j'aimerais vous présenter une solution en adéquation avec votre stratégie ». Le reptilien les traite comme une menace."} ] },
+
+        { t:"Parler à Einstein", s:"Le maintenir éveillé",
+          b:[ {k:"list", v:[
+                "<b>Posez des « pourquoi »</b> pour comprendre ce qui compte vraiment, avant le « quoi » et le « comment ».",
+                "<b>Ne faites pas d'hypothèse :</b> interrogez, écoutez. Optimiste sur l'attitude, maniaque sur le détail.",
+                "<b>Évitez les questions bateau,</b> celles dont la réponse est évidente, les questions agressives ou maladroites : on se décrédibilise avec des questions idiotes, on se crédibilise avec des questions intelligentes.",
+                "<b>Faites vos devoirs :</b> l'interlocuteur (poste, relations communes, opinions sur le sujet) et l'entreprise (actualité, difficultés du secteur).",
+                "<b>Posez des questions stratégiques</b> qui le forcent à réfléchir : « comment pensez-vous mesurer les résultats ? »",
+                "<b>Interrogez ses douleurs</b> : les difficultés, les coûts, les chiffres.",
+                "<b>Osez la question personnelle :</b> « au-delà du cahier des charges, qu'est-ce qui est vraiment important pour vous ? »",
+                "<b>Proposez des alternatives.</b>"]} ] }
+      ]},
+
+      { t:"La découverte", fiches:[
+        { t:"S'intéresser à la personne et à sa structure", s:"Quand on parle on plaît parfois, quand on écoute on plaît toujours",
+          b:[ {k:"list", v:[
+                "« Vous êtes bien le DRH… ? Depuis combien de temps ? »",
+                "« Avez-vous travaillé dans d'autres secteurs avant ? »",
+                "« Au niveau de votre structure, j'ai vu que vous aviez tels établissements, c'est bien ça ? »",
+                "« Quelles sont vos sources de financement ? »",
+                "« Avez-vous des difficultés financières ? Êtes-vous à l'équilibre ? En recherche d'économies ? »",
+                "« Avez-vous travaillé avec un cabinet de conseil ? Lequel, sur quel sujet ? Si non, pourquoi ? »",
+                "« Avez-vous mené des actions d'optimisation en interne ? »"]} ] },
+
+        { t:"Présenter le cabinet", s:"Court et concis — 3 minutes",
+          b:[ {k:"steps", v:[
+                "Qui nous sommes : un cabinet de conseil spécialisé dans l'optimisation budgétaire des entreprises.",
+                "Quelques chiffres clés : effectifs, pays, nombre de clients, économies générées chaque année.",
+                "L'appui juridique : sécurisation des leviers, courriers à l'administration, veille réglementaire.",
+                "Les engagements du groupe.",
+                "Les labels et certifications.",
+                "Les références — prenez votre temps sur ce point : interrogez le prospect pour voir s'il connaît certains de nos clients, et faites du storytelling.",
+                "Les domaines d'expertise et le modèle de rémunération."]} ] },
+
+        { t:"Les questions ouvertes", s:"Faire parler",
+          b:[ {k:"list", v:[
+                "« Quelles sont vos attentes par rapport à notre rendez-vous ? »",
+                "« Avez-vous des sujets sur lesquels vous vous questionnez ? »",
+                "« À quand remonte votre dernier audit de la paie ? »",
+                "« Quelles actions d'optimisation avez-vous mises en place en interne ces dernières années ? »",
+                "« Comment faites-vous pour suivre les évolutions réglementaires et jurisprudentielles ? »",
+                "« Quelle organisation avez-vous mise en place pour le recouvrement des IJSS ? »",
+                "« Qu'est-ce qui est le plus compliqué chez vous dans la gestion des dossiers ? »",
+                "« Que souhaiteriez-vous supprimer dans votre chaîne de gestion de l'absentéisme ? »",
+                "« Qu'est-ce qui ferait que nous ne travaillions pas ensemble sur ce sujet ? »"]} ] },
+
+        { t:"Les questions rhétoriques", s:"Faire apparaître le manque",
+          b:[ {k:"list", v:[
+                "« Vous n'avez pas fait vérifier votre paie par un cabinet depuis plus de 3 ans ? »",
+                "« Vous n'avez pas fait d'audit de taxe foncière récemment ? Même depuis la réforme ? »",
+                "« Avez-vous le temps de suivre les évolutions réglementaires tous les mois ? »",
+                "« Êtes-vous sûr à 100 % que tous les dispositifs sont pris en compte chez vous ? »",
+                "« Étant donné que vous ne faites pas de pré-calcul, vous n'avez pas d'alerte comptable sur les sommes dehors ? »",
+                "« J'imagine qu'en ce moment vos gestionnaires n'ont pas le temps de relancer les CPAM ? »",
+                "« Êtes-vous, comme beaucoup de DAF et DRH que je rencontre, challengé sur les économies et la conformité ? »"]} ] },
+
+        { t:"Reformuler", s:"Verrouiller ce qui vient d'être dit",
+          b:[ {k:"list", v:[
+                "« Donc si je résume, vous n'avez pas fait d'audit depuis au moins 5 ans ? »",
+                "« On est d'accord que vous n'avez rien fait depuis la dernière réforme des valeurs locatives ? »",
+                "« Si je comprends bien, vous n'êtes pas totalement certain de la conformité de votre paramétrage, c'est bien ça ? »",
+                "« Si vous aviez la bande passante, vous feriez cette action, c'est bien ça ? »",
+                "« Ce que l'on se dit, c'est que vous ne voyez pas d'intérêt sur ce sujet, mais que sur celui-là vous en validez un. C'est bien ça ? »",
+                "« De mon point de vue il n'y a pas de sujet sur X ; en revanche il est pertinent de regarder Y. Vous partagez ? »"]} ] },
+
+        { t:"Passer pour un expert", s:"Des questions de qualité, dans le bon ordre",
+          b:[ {k:"text", v:"Une bonne découverte vous fait passer pour un expert et rassure votre prospect. Ne switchez pas de sujet en permanence : des questions de qualité, dans le bon ordre, de manière fluide."},
+              {k:"list", v:[
+                "« Avez-vous fait appel à un cabinet sur les cotisations sociales ces dernières années ? »",
+                "« Avez-vous eu un contrôle URSSAF ? Qu'est-ce que ça a donné ? »",
+                "« Quel est votre logiciel de paie ? Votre niveau de satisfaction ? Des mises à jour importantes récemment ? »",
+                "« Avez-vous fait des régularisations par bloc de DSN récemment ? Sur quel point ? »",
+                "« Quel effectif est concerné par l'allègement Fillon ? »",
+                "« Avez-vous eu des absences ou des départs dans votre équipe paie ces deux dernières années ? »",
+                "« Vous pratiquez la subrogation ? Pour tous vos salariés ? Quelle est votre assiette d'IJSS ? »",
+                "« Faites-vous le pré-calcul ? Un cadrage régulier ? Connaissez-vous votre taux de recouvrement ? »"]} ] }
+      ]},
+
+      { t:"L'argumentation", fiches:[
+        { t:"SONCAS", s:"Détecter le levier de motivation",
+          b:[ {k:"soncas"},
+              {k:"rule", v:"un interlocuteur n'achète jamais pour les six raisons à la fois. Trouvez la sienne, et appuyez dessus."} ] },
+
+        { t:"Bien utiliser ses cartouches", s:"La différence entre le bon et le mauvais chasseur",
+          b:[ {k:"list", v:[
+                "<b>Pour être convaincant, il faut être convaincu</b> — l'enthousiasme est contagieux.",
+                "<b>Notez les freins, ne les traitez pas tout de suite.</b> Vous pouvez même reposer des questions sur le frein pour l'amplifier, avant de le traiter.",
+                "<b>Évitez les digressions :</b> « c'est intéressant, je comprends que vous aimiez cela. Pour en revenir à la mission… »",
+                "<b>Soignez la transition :</b> « par rapport aux informations que vous m'avez transmises, je vous confirme l'intérêt de… »",
+                "<b>Variez vos arguments</b> — enjeux financiers chiffrés, storytelling, vérification des bonnes pratiques, explication des leviers, statistiques.",
+                "<b>Ne donnez pas tous vos arguments au début :</b> gardez-en sous le pied."]} ] },
+
+        { t:"Motiver et rassurer, concrètement", s:"Bénéfices plutôt que caractéristiques",
+          b:[ {k:"list", v:[
+                "<b>Marquez des blancs entre chaque argument</b> : le prospect assimile, et vous observez sa réaction.",
+                "<b>Parlez des bénéfices, pas des caractéristiques.</b> « La mission n'est pas chronophage pour vous » plutôt que « il faudra nous envoyer une extraction des absences, les bulletins… »",
+                "<b>L'humain est égoïste :</b> expliquez ce que la mission lui apporte, à lui.",
+                "<b>Insistez davantage sur la perte que sur le gain :</b> la peur de perdre 100 € est plus intense que le plaisir d'en gagner 150."]} ] },
+
+        { t:"Identifier et traiter les freins", s:"Attention aux faux freins",
+          b:[ {k:"text", v:"Pour traiter les freins, encore faut-il les repérer : un blanc, une question, une hésitation. Et méfiez-vous des faux freins — « je n'ai pas le temps » signifie le plus souvent « je n'ai pas perçu l'intérêt pour moi »."},
+              {k:"pairs", v:[
+                ["Remise en question de son travail","Dédramatiser : la réglementation est complexe, son métier est large quand nous ne sommes spécialistes que d'un point"],
+                ["Manque de temps","La mission est peu chronophage : quelques documents à envoyer, nous travaillons par échantillonnage, puis nous sommes autonomes"],
+                ["Ok, mais plus tard","D'expérience ces sujets ne sont jamais prioritaires. L'intérêt est de nous les confier et de bloquer la prescription en mois glissants"],
+                ["Le levier n'est pas applicable chez moi","Exemples de clients comparables. Et aucun intérêt à pousser une mission non sécurisée : nous sommes rémunérés au pourcentage"],
+                ["Pas besoin d'économies","Bilan de conformité, valorisation des équipes, ne pas surcotiser pour rien"]]} ] },
+
+        { t:"Le storytelling", s:"Le meilleur argument, parce que ce n'en est pas un",
+          b:[ {k:"list", v:[
+                "Les gens adorent qu'on leur raconte des histoires — c'est un souvenir d'enfance.",
+                "L'histoire fait travailler la <b>partie émotive</b> du cerveau, pas la rationnelle : bien plus puissant pour déclencher l'achat.",
+                "Nous croyons décider rationnellement ; en réalité l'intuition nous guide — souvenirs, idées, émotions qui se renforcent mutuellement.",
+                "Racontez de manière <b>authentique, sans filtre</b>, pour que le prospect y voie de la sincérité."]},
+              {k:"steps", v:[
+                "Le contexte — il était une fois : la scène, les personnages.",
+                "Le problème à résoudre — le grand méchant loup.",
+                "La solution — la fin heureuse."]},
+              {k:"rule", v:"le storytelling est le meilleur des arguments, justement parce que ce n'en est pas un : c'est un fait."} ] }
+      ]},
+
+      { t:"Conclure", fiches:[
+        { t:"Présenter la méthodologie", s:"Uniquement si l'intérêt est acquis",
+          b:[ {k:"text", v:"On ne déroule le fonctionnement de la mission que lorsque le client a montré un intérêt pendant l'argumentaire. Avant, c'est du temps perdu — et un aveu que vous n'avez rien vendu."} ] },
+
+        { t:"Le closing", s:"Ne tournez pas autour du pot",
+          b:[ {k:"list", v:[
+                "<b>Transition :</b> « est-ce que c'est clair ? Qu'en pensez-vous ? »",
+                "<b>Créez toujours de l'urgence</b> : prescription, réunion de placement d'audit, calendrier.",
+                "<b>Dédramatisez la signature :</b> « pour le moment il s'agit uniquement de valider l'étude, il n'y a pas d'engagement ».",
+                "<b>Validez le circuit de décision</b> et identifiez le signataire.",
+                "<b>Positionnez le deuxième rendez-vous au plus proche</b> dans l'agenda."]},
+              {k:"rule", v:"vous perdez environ 10 % de chances de signer par semaine qui passe."} ] }
+      ]}
+    ]},
+
+  /* ---------------------------------------------------- 03 */
+  { id:"objections", n:"03", t:"Objections",
+    h:"Cinq objections couvrent l'essentiel des refus.",
+    lede:"Elles reviennent dans tous les pôles. Ce qui change, c'est votre réflexe — pas l'objection.",
+    chapitres:[
+      { fiches:[
+        { t:"Les objections communes", s:"Et la réponse à apporter",
+          b:[ {k:"pairs", v:[
+                ["Pas le temps","La mission est peu chronophage : quelques documents à nous envoyer, nous travaillons par échantillonnage, puis nous sommes autonomes"],
+                ["Ok, mais plus tard","D'expérience, ces sujets ne seront jamais prioritaires. L'intérêt est de nous les confier et de bloquer la prescription en mois glissants"],
+                ["Remise en question de son travail","Dédramatiser les erreurs : la réglementation est complexe et son métier est varié, quand nous ne sommes spécialistes que de ce point"],
+                ["Vos leviers ne sont pas applicables chez moi","Exemples de clients comparables. Nous n'avons aucun intérêt à pousser une mission non sécurisée : nous sommes rémunérés au pourcentage"],
+                ["Pas besoin d'économies","Bilan de conformité, valorisation des équipes, et ne pas surcotiser pour rien"]]},
+              {k:"rule", v:"un faux frein cache presque toujours un intérêt mal perçu. Creusez avant de répondre."} ] },
+
+        { t:"Les objections par pôle", s:"Innovation · Énergie · Efficience",
+          b:[ {k:"text", v:"Le support prévoit une grille d'objections propre à chaque pôle — Innovation, Énergie, Efficience. Elles reprennent aujourd'hui les objections communes et restent à compléter avec les cas spécifiques de chaque expertise."},
+              {k:"list", l:"À alimenter par pôle", v:[
+                "L'objection technique la plus fréquente sur le levier",
+                "La réponse type, avec un ordre de grandeur chiffré",
+                "Un cas client comparable à raconter"]} ] }
+      ]}
+    ]},
+
+  /* ---------------------------------------------------- 04 */
+  { id:"negociation", n:"04", t:"Négociation",
+    h:"La meilleure négociation, c'est quand il n'y en a pas.",
+    lede:"Annoncer son prix fermement, ne jamais se justifier, et n'accorder aucune baisse sans contrepartie.",
+    chapitres:[
+      { fiches:[
+
+        { t:"L'assertivité", s:"S'exprimer sans empiéter sur l'autre",
+          b:[ {k:"text", v:"L'assertivité, c'est la capacité à s'exprimer, à défendre ses droits et son opinion sans empiéter sur ceux des autres. Trois travers à éviter : la manipulation, la passivité, l'agressivité."},
+              {k:"split", v:[
+                {t:"Quelques conseils", l:["Écoute active et acquiescement","Être ferme, savoir dire non en laissant la négociation ouverte","Laisser des blancs pour faire parler le client","Valoriser son service","Obtenir une contrepartie"]},
+                {t:"Posture physique", l:["Garder son calme","Regard soutenu","Pas de signe de stress","Pas d'agitation","Pas de repli sur soi, pas d'agacement"]}]} ] },
+
+        { t:"Annoncer son prix", s:"Ce qu'il faut faire, ce qu'il ne faut pas faire",
+          b:[ {k:"split", v:[
+                {t:"À faire", l:[
+                  "Analyser rapidement l'environnement : missions passées, habitude des cabinets, concurrent en face",
+                  "Si un concurrent est en lice, obtenir une fourchette de prix dès le début du rendez-vous, et le niveau de satisfaction",
+                  "Annoncer son prix fermement : pas de doute, regard dans les yeux, pas de blanc interminable après l'annonce",
+                  "Valoriser plutôt que justifier : « notre taux intègre l'analyse, les frais d'avocats, l'instruction du dossier, la seconde régularisation, l'aide au paramétrage, la veille juridique… »"]},
+                {t:"À éviter", l:[
+                  "Annoncer une fourchette : « entre 30 et 35 % », « environ 30 % »",
+                  "Reporter la proposition commerciale à plus tard : cela ouvre le débat sur le prix",
+                  "Se mettre un frein sur un prix jugé élevé face à une ancienne mission ou à un concurrent",
+                  "Mettre le prix au centre au détriment de l'assiette d'économie"]}]} ] },
+
+        { t:"Résister à la première attaque", s:"« Vous êtes trop cher »",
+          b:[ {k:"list", v:[
+                "Face à une tentative sans conviction — « c'est négociable ? » — répondez simplement <b>non, malheureusement</b>.",
+                "« Vous êtes trop cher » → <b>prenez l'air étonné</b> : « cher ? Non, par rapport aux coûts de la mission, ce n'est pas cher. »",
+                "<b>Rappelez les coûts</b> de la mission : avocats, consultants séniors, accompagnement en cas de contrôle.",
+                "<b>Rappelez que c'est nous qui absorbons le risque :</b> pas de rémunération si aucune piste n'est identifiée, si les préconisations sont refusées, si l'administration refuse. Cela se paie dans le prix.",
+                "<b>Baisser nos conditions reviendrait à baisser la qualité</b> de la prestation, notamment sur les économies futures. Ce n'est pas ce que nous souhaitons.",
+                "<b>Racontez un cas concret</b> plutôt que d'argumenter dans l'abstrait.",
+                "Nous appliquons des <b>marges classiques du conseil</b>, et l'inflation s'applique à nous aussi."]} ] },
+
+        { t:"Face à un concurrent", s:"Dévaloriser sans dénigrer",
+          b:[ {k:"list", v:[
+                "<b>Commencez par reconnaître un point fort</b> du concurrent : la critique frontale décrédibilise.",
+                "Puis mettez en avant vos avantages : <b>audit plus exhaustif</b>, <b>plus de leviers</b> grâce à la veille juridique, <b>étude plus sécurisée</b> avec analyse des risques de redressement, <b>prise en charge intégrale des frais d'avocats</b> sans avance du client, expérience et références.",
+                "<b>Assumez d'être plus cher</b> : c'est le prix de la qualité.",
+                "<b>L'assiette d'économie compte plus que le taux.</b>"]},
+              {k:"said", v:"Il vaut mieux régulariser 200 000 € avec un taux à 35 % que régulariser 100 000 € avec un taux à 25 %."} ] },
+
+        { t:"Quand la négociation est inévitable", s:"Trois étapes, dans cet ordre",
+          b:[ {k:"steps", v:[
+                "<b>Validez que tout le reste est acquis.</b> « Nous sommes d'accord que si nous trouvons un accord sur le prix, vous validez le reste et nous démarrons l'analyse rapidement ? » Si ce n'est pas le cas, faites d'abord valider le principe de la mission : sans cela vous n'obtiendrez rien de votre direction.",
+                "<b>Descendez petit à petit.</b> Justifiez chaque baisse — « compte tenu du fait que nous avons déjà travaillé ensemble », « dans la mesure où vous lancez deux études ». Descendre d'un coup vous décrédibilise et prive votre interlocuteur de la satisfaction d'avoir négocié.",
+                "<b>Demandez toujours une contrepartie</b> : retour de la convention dans la semaine, lancement de deux missions, mise en relation avec une autre structure."]},
+              {k:"rule", v:"présentez une baisse en pourcentage du prix, jamais en points : « une baisse de 10 % de nos conditions », soit 31,5 % au lieu de 35 %."} ] },
+
+        { t:"Les blancs et le prix psychologique", s:"Savoir parler en dernier",
+          b:[ {k:"list", v:[
+                "<b>La gestion des blancs est une arme</b> : savoir parler en dernier.",
+                "Sur un enjeu financier important, <b>demander le prix psychologique</b> peut avoir un intérêt : la plupart n'oseront pas demander un geste trop important.",
+                "<b>Privilégiez la baisse de taux à l'allongement de la durée</b> : l'impact financier est moindre."]},
+              {k:"said", v:"« Sans vous dire que nous puissions le valider, avez-vous un taux en tête ? » — « Écoutez, 30 % me va. » — « 30 % ne sera pas possible, mais je veux bien demander à ma direction de passer à 32 %. Ok pour vous ? »"},
+              {k:"rule", v:"« On se souvient de la qualité bien plus longtemps que du prix. »"} ] }
+      ]}
+    ]},
+
+  /* ---------------------------------------------------- 05 */
+  { id:"reseau", n:"05", t:"Réseau",
+    h:"La recommandation se demande. Toujours.",
+    lede:"Elle ne coûte rien, elle raccourcit tout : le cycle, la confiance, la négociation.",
+    chapitres:[
+      { fiches:[
+        { t:"Quand la demander", s:"Les moments où elle passe le mieux",
+          b:[ {k:"list", v:[
+                "À la remise du rapport",
+                "Au bilan de fin de mission",
+                "À la fin d'un rendez-vous commercial avec un client",
+                "À la fin d'un rendez-vous avec un prospect où il n'y a rien à vendre",
+                "Pendant un déjeuner d'affaires",
+                "Pendant la négociation du taux, avant la signature — en contrepartie",
+                "Après la signature, contre une remise sur facture",
+                "Dans votre réseau personnel"]} ] },
+
+        { t:"Comment la demander", s:"Les phrases qui marchent",
+          b:[ {k:"list", v:[
+                "Faites ces rendez-vous <b>en physique</b>.",
+                "« Avez-vous dans votre réseau, professionnel ou personnel, des personnes que nos missions pourraient intéresser ? »",
+                "« Vous connaissez des DRH dans le secteur ? »",
+                "« Connaissez-vous des réseaux de directeurs dans le coin ? »",
+                "« Seriez-vous prêt à nous recommander ? »"]},
+              {k:"rule", v:"l'apport d'affaires, lié à une structure ou à une personne, peut aller jusqu'à 10 % de l'encaissé."} ] }
+      ]}
+    ]}
   ];
 
-  var MODULES = [
-    { t:"Posture & création de valeur", d:"Levier · Cibler",
-      p:["Expliquer votre valeur sans citer votre offre","Distinguer preneur d'ordres, vendeur de solution, partenaire d'affaires","Repérer les 5 moments de vérité d'un cycle de vente conseil"],
-      a:"« 60 secondes pour exister » : présentez votre rôle et votre valeur en une minute, enregistrez-vous, rejouez.",
-      l:"Votre phrase d'accroche personnelle, testée devant le groupe." },
-    { t:"Cibler son territoire", d:"Levier · Cibler",
-      p:["Décrire votre client idéal en 6 critères objectifs","Noter et trier 100 comptes en moins d'une heure","Construire un plan de compte sur vos 10 comptes clés"],
-      a:"Tri sous contrainte : sortir 30 % de son portefeuille réel, justification à l'appui.",
-      l:"Votre grille ICP et le plan de votre première cible A." },
-    { t:"Prospecter", d:"Levier · Ouvrir",
-      p:["Construire une séquence de 15 jours, 7 contacts, 3 canaux","Passer un barrage sans mentir ni forcer","Décrocher un rendez-vous en moins de 3 minutes d'appel"],
-      a:"Une session d'appels réels sur votre propre fichier, debrief après chaque appel.",
-      l:"Votre script d'accroche, votre e-mail type, votre séquence prête à lancer." },
-    { t:"Découvrir", d:"Levier · Comprendre",
-      p:["Structurer un premier rendez-vous en 5 séquences","Faire chiffrer au client le coût de son inaction","Obtenir les critères de décision sans les demander frontalement"],
-      a:"Une découverte jouée face à un DAF, enregistrée puis analysée à la grille.",
-      l:"Votre trame de 12 questions, adaptée à vos deux cibles principales." },
-    { t:"Qualifier", d:"Levier · Comprendre",
-      p:["Qualifier une affaire sur les 8 dimensions MEDDPICC","Cartographier les parties prenantes et repérer l'opposant","Décider d'arrêter une affaire — et le dire"],
-      a:"Revue croisée : faites challenger une affaire en cours, case MEDDPICC par case.",
-      l:"La fiche MEDDPICC de vos 3 affaires les plus importantes." },
-    { t:"Convaincre", d:"Levier · Convaincre",
-      p:["Formuler une proposition de valeur chiffrée et différenciante","Écrire une proposition lisible en 5 minutes","Soutenir votre offre devant un comité"],
-      a:"Soutenance devant un comité joué par vos collègues, questions hostiles comprises.",
-      l:"Votre valeur en 3 formats : 90 secondes, une page, une soutenance." },
-    { t:"Négocier & conclure", d:"Levier · Conclure",
-      p:["Préparer objectif, plancher, repli et contreparties","Traiter les 12 objections les plus fréquentes","Demander l'engagement au bon moment"],
-      a:"Négociation en trinôme : vendeur, acheteur, observateur. Trois rounds, rotation des rôles.",
-      l:"Votre fiche de préparation et vos 12 réponses, écrites avec vos mots." },
-    { t:"Développer & piloter", d:"Levier · Développer",
-      p:["Transformer une mission réussie en deuxième mission","Obtenir une recommandation au bon moment","Tenir une revue de pipeline en 30 minutes"],
-      a:"Revue de pipe chronométrée : 10 affaires, une décision par affaire.",
-      l:"Votre tableau de bord et votre plan sur 3 comptes clés." }
-  ];
-
-  var METHODES = [
-    { c:"Grille ICP", t:"Mon client idéal",
-      b:[ {k:"text", v:"Un compte se note sur 20. En dessous de 12, il ne mérite pas votre temps de prospection."},
-          {k:"pairs", v:[["Potentiel · 5","Volume d'affaires réaliste sur 24 mois"],["Enjeu · 4","Le problème que nous traitons est-il vif, maintenant ?"],["Accessibilité · 4","Chemin vers le décideur : direct, réseau, recommandation"],["Signal · 3","Événement récent qui crée une fenêtre de tir"],["Concurrence · 2","Prestataire en place, contrat, échéance"],["Références · 2","Nous avons un cas comparable à montrer"]]},
-          {k:"rule", v:"Un compte A qui ne bouge pas depuis 6 mois redevient un compte C."} ] },
-
-    { c:"Séquence 15 jours", t:"La cadence de prospection",
-      b:[ {k:"text", v:"Sept contacts, trois canaux. La plupart des rendez-vous se décrochent après le quatrième — la plupart des commerciaux s'arrêtent au deuxième."},
-          {k:"pairs", v:[["J1 · LinkedIn","Visite du profil, connexion sans message"],["J2 · Téléphone","Premier appel, tôt le matin ou en fin de journée"],["J3 · E-mail","Un enjeu, une preuve, une question"],["J6 · Téléphone","Deuxième appel, autre créneau"],["J8 · LinkedIn","Réaction utile à une publication"],["J11 · E-mail","Un cas client comparable"],["J15 · Appel + e-mail","« Je referme le sujet, sauf si… »"]]} ] },
-
-    { c:"Accroche", t:"L'appel en 5 temps",
-      b:[ {k:"steps", v:["Identification — nom, société. Posé, articulé, sans excuse.","Permission — « Vous avez deux minutes ou je vous rappelle ? »","Raison d'appeler — un fait qui le concerne, lui.","Preuve — une entreprise comparable, un résultat, une phrase.","Demande — 30 minutes, deux créneaux proposés."]},
-          {k:"said", v:"Bonjour, Camille Rivière, [votre société]. Vous avez deux minutes ou je vous rappelle ? … Je vous appelle parce que vous avez recruté six ingénieurs cette année. Sur des structures comme la vôtre, nous récupérons l'équivalent d'un poste et demi de financement non réclamé. 30 minutes pour vérifier : jeudi 9h ou vendredi 14h ?"},
-          {k:"rule", v:"L'objectif de l'appel n'est pas de vendre, c'est d'obtenir le rendez-vous."} ] },
-
-    { c:"Découverte", t:"Les 12 questions",
-      b:[ {k:"list", l:"Situation", v:["Comment ce sujet est-il organisé chez vous ?","Qui s'en occupe, avec quels moyens ?","Qu'est-ce qui a changé ces 12 derniers mois ?"]},
-          {k:"list", l:"Problème", v:["Qu'est-ce qui vous satisfait le moins aujourd'hui ?","Qu'aimeriez-vous faire que vous ne faites pas ?","Sur quoi votre direction vous attend-elle cette année ?"]},
-          {k:"list", l:"Implication", v:["Si rien ne change, où en serez-vous dans 12 mois ?","Combien cela vous coûte-t-il, en temps ou en euros ?","Qui d'autre subit cette situation ?"]},
-          {k:"list", l:"Bénéfice", v:["Qu'est-ce que ça changerait pour vous ?","À quoi verriez-vous que le sujet est réglé ?","Qui devrait être associé à cette réflexion ?"]},
-          {k:"rule", v:"vous parlez 30 % du temps, le client 70 %. C'est le rapport 30/70."} ] },
-
-    { c:"MEDDPICC", t:"La checklist de qualification",
-      b:[ {k:"pairs", v:[["Metrics","Quel gain chiffré, avec ses chiffres à lui ?"],["Economic buyer","Qui signe ? L'ai-je rencontré ?"],["Decision criteria","Sur quoi va-t-il comparer ? Ai-je influencé ces critères ?"],["Decision process","Quelles étapes, quelles instances, quelles dates ?"],["Paper process","Juridique, achats : qui valide, en combien de temps ?"],["Identify pain","La douleur est-elle reconnue, ou supposée par moi ?"],["Champion","Qui vend en interne quand je ne suis pas là ?"],["Competition","Contre qui — y compris contre le statu quo ?"]]},
-          {k:"rule", v:"Moins de 5 cases sur 8 après le deuxième rendez-vous : l'affaire ne rentre pas au forecast."} ] },
-
-    { c:"Carte du pouvoir", t:"Qui décide vraiment",
-      b:[ {k:"text", v:"Une affaire perdue sur deux se perd sur une personne qu'on n'a jamais rencontrée."},
-          {k:"pairs", v:[["Décideur économique","Le rencontrer avant la proposition, pas après"],["Champion","L'armer d'une page qu'il présente sans vous"],["Prescripteur technique","Lui donner de la méthode et du détail"],["Acheteur","Garder des contreparties en réserve pour lui"],["Opposant","L'identifier tôt, l'écouter, le neutraliser par le décideur"]]} ] },
-
-    { c:"Proposition de valeur", t:"La formule",
-      b:[ {k:"said", v:"Pour [cible précise] qui [enjeu vif], nous [promesse mesurable], contrairement à [alternative], parce que [preuve]."},
-          {k:"text", v:"« Pour les PME industrielles de 50 à 250 salariés qui investissent en R&D sans équipe dédiée, nous sécurisons le financement public auquel elles ont droit en moins de trois heures de leurs équipes, contrairement à une gestion interne qui laisse 30 % des dépenses éligibles de côté. »"},
-          {k:"list", l:"Trois tests", v:["Dite à voix haute en moins de 30 secondes","Au moins un chiffre vérifiable","Si un concurrent peut la dire mot pour mot, elle ne sert à rien"]} ] },
-
-    { c:"Objections", t:"La méthode ACRAC",
-      b:[ {k:"steps", v:["Accueillir — « Je comprends, c'est une vraie question. » Jamais de « oui mais ».","Creuser — « Qu'est-ce qui vous fait dire ça ? » La vraie objection est rarement la première.","Reformuler — « Si je comprends bien, votre point c'est… »","Argumenter — une seule réponse, courte, appuyée sur un fait.","Contrôler — « Est-ce que ça répond à votre point ? » Puis on avance."]},
-          {k:"rule", v:"Une objection est un signe d'intérêt. Le désintérêt, lui, ne s'exprime pas : il raccroche."} ] },
-
-    { c:"Honoraires", t:"Défendre son prix",
-      b:[ {k:"list", v:["Préparer trois chiffres : objectif, plancher, et le repli si vous ne l'obtenez pas","Ancrer haut et tôt : le premier chiffre énoncé structure toute la discussion","Justifier par la valeur, jamais par votre coût ni par le temps passé","Échanger toute remise contre un volume, une durée, une référence ou un délai","Savoir dire non : une affaire signée trop bas coûte deux fois"]},
-          {k:"said", v:"Je peux ajuster de 8 % si nous passons sur un engagement de deux ans, et si vous acceptez d'être cité en référence. C'est envisageable de votre côté ?"} ] },
-
-    { c:"Closing", t:"Signaux et formulations",
-      b:[ {k:"list", l:"Les signaux qui disent « allez-y »", v:["Il parle au futur et au « nous »","Il pose des questions de mise en œuvre","Il veut faire intervenir un tiers","Il négocie un détail : il a accepté le principal"]},
-          {k:"list", l:"Quatre façons de demander", v:["Alternative — « On démarre en septembre ou en octobre ? »","Bilan — « Nous avons validé A, B et C. On y va ? »","Projection — « Si nous démarrons lundi, vous avez les résultats avant la clôture. »","Progressive — « Commençons par le diagnostic, nous déciderons ensemble de la suite. »"]},
-          {k:"rule", v:"Aucun rendez-vous ne se termine sans prochaine étape datée. « Je vous rappelle » n'en est pas une."} ] }
+  var SONCAS = [
+    { l:"S", t:"Sympathie", d:"Bon feeling avec vous, il connaît certains de nos clients." },
+    { l:"O", t:"Orgueil", d:"Des économies qu'il présentera à sa direction, la validation de ses bonnes pratiques." },
+    { l:"N", t:"Nouveauté", d:"Un sujet neuf, une action rapide." },
+    { l:"C", t:"Confort", d:"Une mission peu chronophage, une équipe autonome." },
+    { l:"A", t:"Argent", d:"Un besoin d'économies, tout simplement." },
+    { l:"S", t:"Sécurité", d:"Appui juridique, processus de sécurisation, certifications." }
   ];
 
   var OBJECTIONS = [
-    { m:"Dirigeant", q:"Je n'ai pas le temps.",
-      b:"Ce n'est pas un refus, c'est un tri. Vous n'avez pas encore donné de raison d'accorder ce temps.",
-      h:"Acceptez le cadre, réduisez la demande, donnez une raison concrète en une phrase.",
-      s:"C'est exactement pour ça que je vous propose 20 minutes et pas une heure. Trois entreprises comme la vôtre y ont trouvé un financement qu'elles ne réclamaient pas. Si ce n'est pas votre cas, je ne vous rappellerai pas." },
-    { m:"Directeur financier", q:"On a déjà un cabinet qui s'en occupe.",
-      b:"Une satisfaction rarement mesurée, et la crainte que changer coûte du temps.",
-      h:"Ne critiquez jamais le confrère. Creusez le résultat obtenu, proposez un second regard sans engagement.",
-      s:"C'est plutôt rassurant que le sujet soit suivi. Par curiosité, sur les trois dernières années, vous savez ce qu'il vous a fait récupérer ? … Je vous propose un second regard sur un seul exercice. Si nous ne trouvons rien, vous serez fixé." },
-    { m:"Dirigeant", q:"On le fait en interne, ça se passe très bien.",
-      b:"De la fierté, et souvent une méconnaissance de ce qui est laissé de côté.",
-      h:"Valorisez l'interne, déplacez la discussion sur l'exhaustivité et le risque, jamais sur la compétence.",
-      s:"Beaucoup de nos clients le faisaient aussi en interne. La question n'est pas de savoir si c'est bien fait, mais si c'est complet et sécurisé en cas de contrôle. Sur quels postes vous êtes-vous arrêtés l'an dernier ?" },
-    { m:"Directeur", q:"Envoyez-moi une documentation, je regarderai.",
-      b:"Une façon polie de raccrocher. Une plaquette envoyée sans échange n'est presque jamais lue.",
-      h:"Acceptez d'envoyer, mais échangez l'envoi contre une information et une date.",
-      s:"Je vous l'envoie avec plaisir — mais pour que ce soit utile, dites-moi en deux mots où vous en êtes, je n'enverrai que la partie qui vous concerne. Et on en reparle jeudi, 10 minutes." },
-    { m:"Directeur des achats", q:"Vos honoraires sont trop élevés.",
-      b:"Le plus souvent, la valeur n'a pas été rendue tangible. Parfois, un simple test.",
-      h:"Ne vous justifiez pas. Faites préciser le point de comparaison, puis ramenez au résultat attendu.",
-      s:"Élevés par rapport à quoi ? … Nous parlons d'un dispositif qui doit vous rapporter environ 180 000 €. Notre rémunération représente moins de 15 % de ce montant, et elle n'est due que si nous l'obtenons. Où voyez-vous le risque ?" },
-    { m:"Dirigeant", q:"Un pourcentage pour de la paperasse, c'est cher payé.",
-      b:"La valeur est perçue comme administrative parce que le risque n'a pas été expliqué.",
-      h:"Requalifiez : ce n'est pas du remplissage, c'est de la sécurisation. Illustrez par un cas de contrôle.",
-      s:"Si c'était de la paperasse, vous auriez raison. Ce que vous achetez, c'est un dossier qui tient en cas de contrôle. L'an dernier, un client a vu 40 % de sa demande remise en cause faute de justification technique. C'est ce risque que nous portons avec vous." },
-    { m:"Directeur technique", q:"On ne fait pas de R&D, ça ne nous concerne pas.",
-      b:"Une définition trop étroite du périmètre éligible, et la peur de la complexité.",
-      h:"Ne contredisez pas. Posez deux questions factuelles qui font apparaître le périmètre réel.",
-      s:"C'est ce que me disent souvent les dirigeants — et neuf fois sur dix, une partie des travaux est éligible. Avez-vous développé un produit ou un procédé qui n'existait pas ces deux dernières années ? Vos équipes ont-elles rencontré des blocages techniques à résoudre ?" },
-    { m:"Dirigeant", q:"Ce n'est pas le moment, rappelez-moi dans six mois.",
-      b:"Une priorité plus urgente ailleurs — ou une absence d'enjeu perçu ici.",
-      h:"Acceptez le report, mais datez-le et gardez une porte ouverte à valeur immédiate.",
-      s:"Je comprends, on cale ça : je note le 15 mars. Deux choses avant — y a-t-il une échéance que je devrais anticiper ? Et si je tombe sur un cas comparable au vôtre d'ici là, je vous l'envoie, ça vous va ?" },
-    { m:"Directeur financier", q:"On a eu un contrôle, je ne veux plus y toucher.",
-      b:"Une mauvaise expérience, un vrai traumatisme administratif. Le sujet, c'est la confiance.",
-      h:"Reconnaissez pleinement, ne minimisez pas, repositionnez-vous comme celui qui sécurise.",
-      s:"Je comprends, et je préfère que vous me le disiez. Ce que vous avez vécu vient presque toujours d'un dossier mal documenté. C'est précisément notre travail : un dossier défendable, et vous accompagner si le contrôle revient. Je peux regarder ce qui a été contesté ?" },
-    { m:"Dirigeant", q:"Il faut que j'en parle à mon associé.",
-      b:"Soit un circuit de décision non identifié, soit une échappatoire polie.",
-      h:"Ne laissez jamais votre interlocuteur vendre seul. Soyez présent, ou armez-le.",
-      s:"Bien sûr. Deux options pour que ce soit efficace : soit nous refaisons 20 minutes tous les trois, soit je vous prépare une page avec l'essentiel et le chiffrage. Qu'est-ce qui est le plus simple pour vous ?" },
-    { m:"Directeur des achats", q:"Votre concurrent est 20 % moins cher.",
-      b:"Souvent vrai, souvent sur un périmètre différent. Presque toujours un levier de négociation.",
-      h:"Comparez les périmètres avant les prix. N'alignez jamais sans contrepartie.",
-      s:"C'est possible. Sa proposition inclut-elle l'accompagnement en cas de contrôle et la sécurisation du dossier technique ? … Alors nous ne comparons pas la même chose. Je peux ajuster de 6 % si nous partons sur deux exercices." },
-    { m:"Dirigeant", q:"Je ne signe rien aujourd'hui.",
-      b:"Un réflexe de protection. Rien n'indique un refus sur le fond.",
-      h:"Rassurez, retirez la pression, transformez la rencontre en engagement plus petit mais daté.",
-      s:"Personne ne vous demande de signer aujourd'hui. Ce que je vous propose, c'est de valider le principe et le périmètre. Je vous envoie le document demain, vous le lisez au calme, et nous nous parlons vendredi pour la décision." }
+    { m:"Barrage — l'assistante", q:"C'est à quel sujet ?",
+      b:"Elle est payée pour filtrer les commerciaux. Toute justification longue vous trahit.",
+      h:"Restez direct, restez flou, montrez qu'elle ne maîtrise pas le sujet, et concluez par une demande.",
+      s:"Ça concerne les cotisations que vous acquittez à l'URSSAF, j'ai besoin d'échanger rapidement avec lui. Vous pouvez me le passer ?" },
+    { m:"Prospection — le dirigeant", q:"Je n'ai pas le temps.",
+      b:"Un faux frein neuf fois sur dix : il n'a pas perçu l'intérêt pour lui.",
+      h:"Ne négociez pas le temps, donnez l'intérêt. Puis revenez au rendez-vous avec une date précise.",
+      s:"C'est justement pour ça que je vous propose 30 minutes et pas une heure. Nous avons un levier applicable chez vous, mis en place avec plusieurs sociétés de votre secteur. Jeudi 18 à 11h, ça vous irait ?" },
+    { m:"Rendez-vous — le DAF", q:"Ok, mais plus tard.",
+      b:"Le sujet n'est pas prioritaire — et il ne le sera jamais.",
+      h:"Assumez-le, et transformez l'attente en urgence : la prescription court.",
+      s:"D'expérience, ces sujets ne seront jamais prioritaires. Tout l'intérêt est de nous les confier maintenant : nous bloquons la prescription en mois glissants, et vous n'avez presque rien à faire." },
+    { m:"Rendez-vous — le responsable paie", q:"On fait déjà ça très bien en interne.",
+      b:"Une remise en question de son travail. L'ego est en jeu, pas la technique.",
+      h:"Dédramatisez immédiatement : ce n'est pas une faute, c'est un métier différent du sien.",
+      s:"La réglementation est complexe et votre métier est très large, quand nous ne sommes spécialistes que de ce point précis. Personne ne peut tout suivre : c'est exactement pour ça que nos audits trouvent presque toujours quelque chose." },
+    { m:"Rendez-vous — le DAF", q:"Vos leviers ne sont pas applicables chez moi.",
+      b:"Une conviction, rarement vérifiée. Et une crainte de perdre du temps.",
+      h:"Répondez par des cas comparables, et rappelez que le risque est de votre côté.",
+      s:"Nous avons le même retour chez des structures très proches de la vôtre, et nous y avons trouvé des pistes. Nous n'avons aucun intérêt à pousser une mission qui ne serait pas sécurisée : nous sommes rémunérés au pourcentage de ce que vous récupérez." },
+    { m:"Rendez-vous — le dirigeant", q:"On n'a pas besoin d'économies.",
+      b:"Le sujet est vu comme un sujet de trésorerie. Il ne l'est pas seulement.",
+      h:"Déplacez la conversation sur la conformité et la valorisation des équipes.",
+      s:"C'est une bonne nouvelle. Voyez alors la mission comme un bilan de conformité : vous sécurisez vos pratiques, vous valorisez le travail de vos équipes, et vous arrêtez de surcotiser pour rien." },
+    { m:"Négociation — l'acheteur", q:"C'est négociable ?",
+      b:"Une tentative sans conviction. Elle teste votre fermeté, pas votre prix.",
+      h:"Répondez simplement non, sans blanc et sans justification.",
+      s:"Non, malheureusement. Nos conditions intègrent l'analyse, les frais d'avocats, l'instruction du dossier et l'accompagnement en cas de contrôle." },
+    { m:"Négociation — le DAF", q:"Vous êtes trop cher.",
+      b:"Souvent un réflexe. Le prix n'a pas encore été rapproché de l'assiette d'économie.",
+      h:"Prenez l'air étonné, rappelez les coûts et le risque que vous absorbez.",
+      s:"Cher ? Non, par rapport aux coûts de la mission ce n'est pas cher : avocats, consultants séniors, accompagnement en cas de contrôle. Et si nous ne trouvons rien, vous ne payez rien : c'est nous qui portons le risque." },
+    { m:"Négociation — l'acheteur", q:"Votre concurrent est moins cher.",
+      b:"Souvent vrai, et sur un périmètre différent.",
+      h:"Reconnaissez un point fort chez lui, puis déplacez le débat du taux vers l'assiette.",
+      s:"Ils sont bons sur ce sujet, c'est vrai. Notre audit est plus exhaustif, plus sécurisé, et les frais d'avocats sont intégralement pris en charge. Il vaut mieux régulariser 200 000 € à 35 % que 100 000 € à 25 %." },
+    { m:"Closing — le dirigeant", q:"Je dois en parler à ma direction.",
+      b:"Soit un circuit de décision que vous n'avez pas identifié, soit une échappatoire polie.",
+      h:"Validez le circuit, dédramatisez la signature et posez le prochain rendez-vous tout de suite.",
+      s:"Bien sûr. À ce stade il s'agit uniquement de valider l'étude, il n'y a pas d'engagement. Qui valide avec vous, et qui signe ? Je vous propose qu'on se reparle jeudi prochain pour caler le démarrage." }
   ];
 
   var QUIZ = [
-    { q:"En découverte, quel est le bon ratio de parole ?",
-      o:["Le client parle environ 70 % du temps","Le vendeur parle 70 % du temps pour démontrer son expertise","Chacun parle la moitié du temps","Peu importe, seuls comptent les arguments"], a:0,
-      w:"Une découverte se mesure à ce que le client a dit. Si vous parlez plus que lui, vous présentez." },
-    { q:"« C'est trop cher. » Quelle est la première chose à faire ?",
-      o:["Proposer 5 % de remise","Justifier par la qualité de vos équipes","Demander : « trop cher par rapport à quoi ? »","Rappeler que vos concurrents sont plus chers"], a:2,
-      w:"On creuse avant d'argumenter. Sans connaître le point de comparaison, toute réponse est un coup dans le vide." },
-    { q:"Dans MEDDPICC, que désigne le « E » ?",
-      o:["Les attentes du client","Le décideur économique","L'évaluation du projet","L'efficacité de la solution"], a:1,
-      w:"Economic buyer : celui qui débloque le budget. Ne pas l'avoir rencontré avant la proposition est la première cause d'affaires qui s'enlisent." },
-    { q:"Quelle question fait le mieux émerger le coût de l'inaction ?",
-      o:["« Si rien ne change, où en serez-vous dans 12 mois ? »","« Quel est votre budget ? »","« Qui décide chez vous ? »","« Connaissez-vous notre méthodologie ? »"], a:0,
-      w:"Les questions d'implication projettent le client dans le statu quo et le font chiffrer lui-même ce qu'il perd." },
-    { q:"Vous devez accorder une remise pour signer.",
-      o:["L'accorder vite pour ne pas perdre l'affaire","N'accorder aucune concession sans contrepartie","Couper la poire en deux","Refuser toute négociation par principe"], a:1,
-      w:"Volume, durée, référence, délai de paiement : une concession s'échange. Donnée gratuitement, elle enseigne au client qu'il suffit de demander." },
-    { q:"Combien de contacts faut-il en moyenne pour décrocher un rendez-vous à froid ?",
-      o:["1 à 2","3 à 4","5 à 8","Plus de 15"], a:2,
-      w:"La majorité se décrochent entre le 4e et le 8e contact, alors que la plupart des commerciaux s'arrêtent au 2e. La cadence bat le talent." },
-    { q:"Qu'est-ce qu'un champion ?",
-      o:["Le contact le plus sympathique","Celui qui vend en interne quand vous n'êtes pas là","Le directeur général","Le premier interlocuteur rencontré"], a:1,
-      w:"Un champion se teste : s'il ne peut pas vous obtenir un rendez-vous avec le décideur, ce n'est pas un champion." },
-    { q:"Quel est le seul indicateur fiable qu'une affaire est vivante ?",
-      o:["Le client a demandé une proposition","Le contact répond à vos e-mails","Une prochaine étape datée et acceptée","Le montant estimé de l'affaire"], a:2,
-      w:"Sans date posée devant le client, une affaire n'avance pas : elle attend. Elle ne devrait pas figurer au forecast." },
-    { q:"Quelle couverture de pipeline viser sur l'objectif restant ?",
-      o:["×1","×1,5","×3","Peu importe si les affaires sont bien qualifiées"], a:2,
-      w:"Avec un taux de transformation d'environ un tiers, il faut trois fois l'objectif en pipeline pondéré." },
-    { q:"« On a déjà un prestataire. » Quelle attitude ?",
-      o:["Expliquer en quoi il est moins bon","Interroger le résultat obtenu et proposer un second regard","Laisser tomber et rappeler dans un an","Proposer un prix inférieur"], a:1,
-      w:"Critiquer le confrère revient à critiquer le choix du client. On ouvre un doute factuel, on propose une démarche sans risque." },
-    { q:"Quand présenter votre solution ?",
-      o:["Dès les premières minutes","À la fin, quoi qu'il arrive","Uniquement par écrit après le rendez-vous","Après avoir fait valider votre synthèse de ses enjeux"], a:3,
-      w:"La reformulation validée est le pivot : elle prouve que vous avez compris et vous autorise à proposer." },
-    { q:"Quel signal doit vous faire renoncer à une affaire ?",
-      o:["Le client demande un délai de réflexion","Le client compare avec un concurrent","Le client trouve la proposition dense","Le décideur reste inaccessible et le besoin n'est pas reconnu"], a:3,
-      w:"Renoncer, c'est du temps rendu aux affaires qui peuvent se gagner. Sans accès au décideur et sans douleur reconnue, il n'y a pas d'affaire." }
+    { q:"Combien d'appels faut-il passer, en moyenne, pour obtenir 5 rendez-vous ?",
+      o:["20","50","100","300"], a:2,
+      w:"100 appels = 20 conversations = 5 rendez-vous. C'est le volume qui fait la performance, pas le talent isolé." },
+    { q:"Quel est l'objectif d'un appel de prospection ?",
+      o:["Vendre la mission","Vendre le rendez-vous","Qualifier le budget","Envoyer une documentation"], a:1,
+      w:"Ne vendez pas un produit, vendez un rendez-vous. Si vous en dites trop, le prospect n'a plus besoin de vous rencontrer : « c'est justement l'intérêt du rendez-vous »." },
+    { q:"Pourquoi ne faut-il jamais demander « vous avez une minute ? »",
+      o:["C'est trop familier","Cela permet de répondre non","C'est trop long","Cela sonne trop technique"], a:1,
+      w:"Ne posez jamais de question qui permette de répondre non. Partez du principe qu'il est d'accord et proposez directement un créneau." },
+    { q:"Face au barrage secrétaire, quelle est la bonne attitude ?",
+      o:["Expliquer précisément l'objet de votre appel","Être direct, rester flou et ne pas se justifier","Demander quand rappeler","Laisser un message détaillé"], a:1,
+      w:"Une formulation longue est une justification, et une justification trahit le commercial. Restez direct, jouez sur le flou, et concluez par « vous pouvez me le passer ? »." },
+    { q:"Dans l'introduction du rendez-vous, à qui parlez-vous en premier ?",
+      o:["Au cerveau reptilien, pour passer le filtre","À Einstein, pour argumenter","Au limbique, pour émouvoir","Peu importe, l'ordre n'a pas d'effet"], a:0,
+      w:"Le reptilien filtre pour préserver l'énergie. Il faut capter son intérêt — par l'appât ou la provocation — avant de pouvoir parler à Einstein." },
+    { q:"Que signifie SONCAS ?",
+      o:["Six étapes de la vente conseil","Six leviers de motivation d'achat","Six objections types","Six phases de négociation"], a:1,
+      w:"Sympathie, Orgueil, Nouveauté, Confort, Argent, Sécurité. Un interlocuteur n'achète jamais pour les six raisons : trouvez la sienne." },
+    { q:"Le prospect exprime un frein pendant votre argumentaire. Que faites-vous ?",
+      o:["Vous le traitez immédiatement","Vous le notez et le traitez plus tard","Vous l'ignorez","Vous changez de sujet"], a:1,
+      w:"Notez les freins sans chercher à les traiter tout de suite. Vous pouvez même reposer des questions dessus pour l'amplifier, avant de le traiter." },
+    { q:"Sur quoi faut-il insister le plus dans l'argumentation ?",
+      o:["Sur le gain potentiel","Sur la perte évitée","Sur les caractéristiques techniques","Sur la notoriété du cabinet"], a:1,
+      w:"La peur de perdre 100 € est plus intense que le plaisir d'en gagner 150. Et parlez toujours bénéfices plutôt que caractéristiques." },
+    { q:"Comment annonce-t-on son prix ?",
+      o:["Sous forme de fourchette","Fermement, sans justification","En le comparant au concurrent","Par écrit, après le rendez-vous"], a:1,
+      w:"Pas de fourchette, pas de blanc interminable après l'annonce, pas de justification — mais de la valorisation : ce que le taux comprend." },
+    { q:"Vous accordez une baisse de taux. Que devez-vous obtenir ?",
+      o:["Rien, c'est un geste commercial","Une contrepartie","Un engagement oral","Une recommandation LinkedIn"], a:1,
+      w:"Toujours une contrepartie : retour de la convention dans la semaine, lancement de deux missions, mise en relation avec une autre structure." },
+    { q:"Comment présenter une baisse de prix ?",
+      o:["En points de taux","En pourcentage du prix","En euros","Peu importe"], a:1,
+      w:"« Une baisse de 10 % de nos conditions », soit 31,5 % au lieu de 35 %. C'est la même chose, mais cela s'entend beaucoup mieux." },
+    { q:"Pourquoi positionner le second rendez-vous au plus tôt ?",
+      o:["Pour occuper l'agenda","On perd environ 10 % de chances de signer par semaine","Pour devancer le concurrent","Pour boucler le mois"], a:1,
+      w:"Chaque semaine qui passe coûte environ 10 % de chances de signature. Créez de l'urgence et posez la date devant lui." }
   ];
-
-  var KPIS = [
-    ["Contacts utiles","Échanges réels avec un décideur ou un prescripteur","Hebdo"],
-    ["Rendez-vous obtenus","Premiers rendez-vous qualifiés tenus","Hebdo"],
-    ["Couverture de pipeline","Pipeline pondéré ÷ objectif restant — cible ×3","Hebdo"],
-    ["Taux de transformation","Affaires signées ÷ propositions remises","Mensuel"],
-    ["Panier moyen","Chiffre d'affaires signé ÷ nombre d'affaires","Mensuel"],
-    ["Durée de cycle","Jours entre premier rendez-vous et signature","Trimestriel"]
-  ];
-
-  var FUNNEL = [["Contacts utiles",100],["Rendez-vous",34],["Découvertes qualifiées",21],["Propositions",12],["Signatures",8]];
-
-  var CONSEILS = {
-    "Cibler":"Triez votre portefeuille en A / B / C et sortez-en 30 %. Un plan de compte sur vos cinq premières cibles.",
-    "Ouvrir":"Bloquez 90 minutes de prospection par jour et tenez une séquence de 15 jours sur 20 comptes.",
-    "Comprendre":"Sur vos trois prochains rendez-vous : deux questions d'implication, et notez le chiffre sorti de la bouche du client.",
-    "Convaincre":"Réécrivez votre proposition de valeur avec la formule, testez-la à voix haute, préparez la page de votre champion.",
-    "Conclure & développer":"Préparez vos trois chiffres avant chaque négociation et listez cinq contreparties possibles."
-  };
 
   /* =========================================================
      RENDU
      ========================================================= */
 
   var $ = function (s) { return document.querySelector(s); };
-  var esc = function (t) { return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); };
-  var nb = function (t) { return esc(t).replace(/ ([?!:»])/g," $1").replace(/« /g,"« "); };
-
-  function row(n, title, sub, inner) {
-    return '<article class="row"><button class="row-head" type="button" aria-expanded="false">' +
-      '<span class="row-n">' + n + '</span>' +
-      '<span><span class="row-title">' + nb(title) + '</span>' +
-      (sub ? '<span class="row-sub">' + nb(sub) + '</span>' : '') + '</span>' +
-      '<span class="row-plus" aria-hidden="true"></span></button>' +
-      '<div class="row-body"><div class="row-inner"><div class="row-content">' + inner + '</div></div></div></article>';
+  function typo(t) {
+    return String(t).replace(/ ([?!:;»])/g, " $1").replace(/« /g, "« ");
   }
-  function ul(items) { return '<ul class="clean">' + items.map(function (i) { return '<li>' + nb(i) + '</li>'; }).join("") + '</ul>'; }
-
-  $("#leviersList").innerHTML = LEVIERS.map(function (l, i) {
-    return row("0" + (i + 1), l.t, l.sub, ul(l.p));
-  }).join("");
-
-  $("#modulesList").innerHTML = MODULES.map(function (m, i) {
-    return row("0" + (i + 1), m.t, m.d, ul(m.p) +
-      '<div><span class="mini-label">Atelier</span><p>' + nb(m.a) + '</p></div>' +
-      '<div><span class="mini-label">Livrable</span><p>' + nb(m.l) + '</p></div>');
-  }).join("");
-
-  $("#kpis").innerHTML = KPIS.map(function (k) {
-    return '<div class="kpi"><b>' + nb(k[0]) + '</b><span>' + nb(k[1]) + '</span><u>' + k[2] + '</u></div>';
-  }).join("");
-
-  $("#funnel").innerHTML = FUNNEL.map(function (f, i) {
-    return '<div class="fun"><span>' + f[0] + '</span><div class="fun-track">' +
-      '<div class="fun-fill' + (i === FUNNEL.length - 1 ? " is-end" : "") + '" data-w="' + f[1] + '"></div>' +
-      '</div><b>' + f[1] + '</b></div>';
-  }).join("");
-
-  /* ---- Méthodes ---- */
+  function ul(items, label) {
+    return (label ? '<span class="mini-label">' + typo(label) + '</span>' : "") +
+      '<ul class="clean">' + items.map(function (i) { return '<li>' + typo(i) + '</li>'; }).join("") + '</ul>';
+  }
+  function soncasBlock() {
+    return '<div class="soncas">' + SONCAS.map(function (s) {
+      return '<div class="sc tilt"><i>' + s.l + '</i><b>' + s.t + '</b><span>' + typo(s.d) + '</span></div>';
+    }).join("") + '</div>';
+  }
   function block(b) {
-    if (b.k === "text") return '<p>' + nb(b.v) + '</p>';
-    if (b.k === "said") return '<p class="said">' + nb(b.v) + '</p>';
-    if (b.k === "rule") return '<p class="rule-line"><b>Règle —</b> ' + nb(b.v) + '</p>';
-    if (b.k === "steps") return '<ol class="steps">' + b.v.map(function (s) { return '<li>' + nb(s) + '</li>'; }).join("") + '</ol>';
-    if (b.k === "list") return '<div>' + (b.l ? '<span class="mini-label">' + nb(b.l) + '</span>' : "") + ul(b.v) + '</div>';
-    if (b.k === "pairs") return '<div class="pairs">' + b.v.map(function (p) {
-      return '<div class="pair"><b>' + nb(p[0]) + '</b><span>' + nb(p[1]) + '</span></div>'; }).join("") + '</div>';
-    return "";
+    switch (b.k) {
+      case "text":  return '<p>' + typo(b.v) + '</p>';
+      case "said":  return '<p class="said">' + typo(b.v) + '</p>';
+      case "rule":  return '<p class="rule-line"><b>Règle —</b> ' + typo(b.v) + '</p>';
+      case "list":  return '<div>' + ul(b.v, b.l) + '</div>';
+      case "steps": return '<ol class="steps">' + b.v.map(function (s) { return '<li>' + typo(s) + '</li>'; }).join("") + '</ol>';
+      case "pairs": return '<div class="pairs">' + b.v.map(function (p) {
+                      return '<div class="pair"><b>' + typo(p[0]) + '</b><span>' + typo(p[1]) + '</span></div>'; }).join("") + '</div>';
+      case "split": return '<div class="split">' + b.v.map(function (c, i) {
+                      return '<div class="' + (i === 0 ? "yes" : "no") + '"><h5>' + typo(c.t) + '</h5>' + ul(c.l) + '</div>'; }).join("") + '</div>';
+      case "soncas": return soncasBlock();
+      default: return "";
+    }
   }
-  $("#chips").innerHTML = METHODES.map(function (m, i) {
-    return '<button class="chip' + (i === 0 ? " is-on" : "") + '" type="button" data-m="' + i + '">' + nb(m.c) + '</button>';
-  }).join("");
-  function showMethod(i) {
-    var m = METHODES[i];
-    $("#method").innerHTML = '<h3>' + nb(m.t) + '</h3><div class="method-grid">' + m.b.map(block).join("") + '</div>';
-    document.querySelectorAll(".chip").forEach(function (c) { c.classList.toggle("is-on", +c.dataset.m === i); });
+  function fiche(f) {
+    return '<article class="row"><button class="row-head" type="button" aria-expanded="false">' +
+      '<span><span class="row-title">' + typo(f.t) + '</span>' +
+      (f.s ? '<span class="row-sub">' + typo(f.s) + '</span>' : "") + '</span>' +
+      '<span class="row-plus" aria-hidden="true"></span></button>' +
+      '<div class="row-body"><div class="row-inner"><div class="row-content">' +
+      f.b.map(block).join("") +
+      '</div></div></div></article>';
   }
-  showMethod(0);
-  $("#chips").addEventListener("click", function (e) {
-    var c = e.target.closest(".chip"); if (c) { showMethod(+c.dataset.m); }
-  });
 
-  /* ---- Dépliage des lignes ---- */
+  var TRAIN = { id: "entrainement", n: "06", t: "S'entraîner" };
+
+  $("#sections").innerHTML = SECTIONS.map(function (s) {
+    var chap = s.chapitres.map(function (c) {
+      return '<div class="chap up">' + (c.t ? '<p class="chap-t">' + typo(c.t) + '</p>' : "") +
+        '<div class="rows">' + c.fiches.map(fiche).join("") + '</div></div>';
+    }).join("");
+    return '<section id="' + s.id + '">' +
+      '<span class="wm" aria-hidden="true" data-wm>' + s.n + '</span>' +
+      '<div class="shell">' +
+      '<span class="tag up"><b>' + s.n + '</b> &nbsp;' + s.t + '</span>' +
+      '<h2 class="up">' + typo(s.h) + '</h2>' +
+      '<p class="lede up">' + typo(s.lede) + '</p>' +
+      chap + '</div></section>';
+  }).join("") +
+
+  /* --------- S'entraîner --------- */
+  '<section id="' + TRAIN.id + '">' +
+    '<span class="wm" aria-hidden="true" data-wm>' + TRAIN.n + '</span>' +
+    '<div class="shell">' +
+      '<span class="tag up"><b>' + TRAIN.n + '</b> &nbsp;' + TRAIN.t + '</span>' +
+      '<h2 class="up">Répondez à voix haute. Puis comparez.</h2>' +
+      '<p class="lede up">Dix objections tirées du support. Répondez d\'abord, lisez ensuite — c\'est le réflexe qui compte, pas la récitation.</p>' +
+      '<div class="obj up">' +
+        '<div class="obj-card" id="objCard">' +
+          '<p class="obj-meta" id="objMeta"></p>' +
+          '<p class="obj-q" id="objQ"></p>' +
+        '</div>' +
+        '<div class="obj-more" id="objMore"><div><div class="obj-more-inner">' +
+          '<div><span class="mini-label">Ce que ça cache</span><p id="objBehind"></p></div>' +
+          '<div><span class="mini-label">La réponse</span><p id="objHow"></p></div>' +
+          '<p class="said" id="objModel"></p>' +
+        '</div></div></div>' +
+        '<div class="actions">' +
+          '<button class="btn btn-fill magnet" type="button" id="objNext">Objection suivante</button>' +
+          '<button class="btn btn-line" type="button" id="objShow">Voir la réponse</button>' +
+          '<span class="count" id="objCount"></span>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="quiz up">' +
+        '<div class="quiz-top"><span>Quiz — 12 questions</span><span id="quizCount"></span></div>' +
+        '<div class="quiz-track"><div class="quiz-progress" id="quizProgress"></div></div>' +
+        '<div id="quizCard">' +
+          '<h3 id="quizQ"></h3>' +
+          '<div class="answers" id="quizAnswers"></div>' +
+          '<p class="why" id="quizWhy"></p>' +
+          '<div class="actions"><button class="btn btn-fill magnet" type="button" id="quizNext">Question suivante</button></div>' +
+        '</div>' +
+        '<div class="quiz-end" id="quizEnd">' +
+          '<p class="score"><span id="scoreVal">0</span><i>&nbsp;/ 12</i></p>' +
+          '<p class="lede" style="margin-top:20px" id="scoreMsg"></p>' +
+          '<div class="actions"><button class="btn btn-line" type="button" id="quizAgain">Recommencer</button></div>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+  '</section>';
+
+  /* --------- Sommaire --------- */
+  var NAV = SECTIONS.map(function (s) { return { id: s.id, n: s.n, t: s.t }; }).concat([TRAIN]);
+  var navHTML = NAV.map(function (s) { return '<a href="#' + s.id + '"><i>' + s.n + '</i>' + s.t + '</a>'; }).join("");
+  $("#toc").innerHTML = navHTML;
+  $("#tocMobile").innerHTML = navHTML;
+
+  /* =========================================================
+     INTERACTIONS
+     ========================================================= */
+
+  /* --- Dépliage des fiches --- */
   document.addEventListener("click", function (e) {
-    var h = e.target.closest(".row-head"); if (!h) return;
-    var r = h.parentNode, open = r.classList.toggle("is-open");
+    var h = e.target.closest && e.target.closest(".row-head");
+    if (!h) return;
+    var r = h.parentNode, open = r.classList.toggle("open");
     h.setAttribute("aria-expanded", open ? "true" : "false");
   });
 
-  /* ---- Objections ---- */
-  var oi = 0, more = $("#objMore");
+  /* --- Simulateur d'objections --- */
+  var oi = 0, more = $("#objMore"), card = $("#objCard");
   function showObj(i) {
     var o = OBJECTIONS[i];
     $("#objMeta").textContent = o.m;
@@ -845,67 +1093,50 @@ footer{padding:96px 0 72px;border-top:1px solid var(--hairline)}
     $("#objHow").textContent = o.h;
     $("#objModel").textContent = "« " + o.s + " »";
     $("#objCount").textContent = (i + 1) + " / " + OBJECTIONS.length;
-    more.classList.remove("is-open");
+    more.classList.remove("open");
     $("#objShow").textContent = "Voir la réponse";
   }
-  $("#objNext").addEventListener("click", function () { oi = (oi + 1) % OBJECTIONS.length; showObj(oi); });
+  $("#objNext").addEventListener("click", function () {
+    card.classList.add("flip");
+    window.setTimeout(function () {
+      oi = (oi + 1) % OBJECTIONS.length;
+      showObj(oi);
+      card.classList.remove("flip");
+    }, 260);
+  });
   $("#objShow").addEventListener("click", function () {
-    var open = more.classList.toggle("is-open");
-    this.textContent = open ? "Masquer la réponse" : "Voir la réponse";
+    this.textContent = more.classList.toggle("open") ? "Masquer la réponse" : "Voir la réponse";
   });
   showObj(0);
 
-  /* ---- Diagnostic ---- */
-  $("#slides").innerHTML = LEVIERS.map(function (l, i) {
-    return '<div class="slide"><div class="slide-top"><label for="r' + i + '">' + nb(l.t) + '</label><b id="v' + i + '">3</b></div>' +
-      '<input type="range" id="r' + i + '" min="1" max="5" step="1" value="3"></div>';
-  }).join("");
-  function drawDiag() {
-    var vals = LEVIERS.map(function (l, i) { return { n: l.t, v: +document.getElementById("r" + i).value }; });
-    var min = Math.min.apply(null, vals.map(function (x) { return x.v; }));
-    var low = vals.filter(function (x) { return x.v === min; })[0];
-    $("#bars").innerHTML = vals.map(function (x) {
-      return '<div><div class="bar-top"><b>' + nb(x.n) + '</b><span>' + x.v + ' / 5</span></div>' +
-        '<div class="bar-track"><div class="bar-fill' + (x.v === min ? " is-low" : "") + '" style="width:' + (x.v / 5 * 100) + '%"></div></div></div>';
-    }).join("");
-    var total = vals.reduce(function (a, x) { return a + x.v; }, 0);
-    $("#advice").innerHTML = '<b>Priorité : ' + nb(low.n) + ' — ' + total + '/25 au global.</b> ' + nb(CONSEILS[low.n] || "");
-  }
-  LEVIERS.forEach(function (l, i) {
-    document.getElementById("r" + i).addEventListener("input", function () {
-      document.getElementById("v" + i).textContent = this.value;
-      drawDiag();
-    });
-  });
-  drawDiag();
-
-  /* ---- Quiz ---- */
+  /* --- Quiz --- */
   var qi = 0, score = 0, locked = false;
   function drawQuiz() {
     var q = QUIZ[qi];
     locked = false;
     $("#quizCount").textContent = (qi + 1) + " / " + QUIZ.length;
     $("#quizProgress").style.width = (qi / QUIZ.length * 100) + "%";
-    $("#quizQ").innerHTML = nb(q.q);
+    $("#quizQ").innerHTML = typo(q.q);
     $("#quizAnswers").innerHTML = q.o.map(function (o, i) {
-      return '<button class="answer" type="button" data-a="' + i + '"><u>' + "ABCD"[i] + '</u><span>' + nb(o) + '</span></button>';
+      return '<button class="answer" type="button" data-a="' + i + '"><u>' + "ABCD"[i] + '</u><span>' + typo(o) + '</span></button>';
     }).join("");
-    $("#quizWhy").classList.remove("is-on");
+    $("#quizWhy").classList.remove("on");
     $("#quizNext").style.display = "none";
     $("#quizNext").textContent = qi === QUIZ.length - 1 ? "Voir mon résultat" : "Question suivante";
   }
   $("#quizAnswers").addEventListener("click", function (e) {
-    var b = e.target.closest(".answer"); if (!b || locked) return;
+    var b = e.target.closest(".answer");
+    if (!b || locked) return;
     locked = true;
     var q = QUIZ[qi], picked = +b.dataset.a;
     if (picked === q.a) { score++; }
-    document.querySelectorAll(".answer").forEach(function (el) {
+    Array.prototype.forEach.call(document.querySelectorAll(".answer"), function (el) {
       el.disabled = true;
       if (+el.dataset.a === q.a) { el.classList.add("right"); }
       else if (+el.dataset.a === picked) { el.classList.add("wrong"); }
     });
-    $("#quizWhy").innerHTML = '<b>' + (picked === q.a ? "Exact." : "Réponse : " + nb(q.o[q.a]) + ".") + '</b> ' + nb(q.w);
-    $("#quizWhy").classList.add("is-on");
+    $("#quizWhy").innerHTML = "<b>" + (picked === q.a ? "Exact." : "Réponse : " + typo(q.o[q.a]) + ".") + "</b> " + typo(q.w);
+    $("#quizWhy").classList.add("on");
     $("#quizNext").style.display = "";
   });
   $("#quizNext").addEventListener("click", function () {
@@ -915,21 +1146,21 @@ footer{padding:96px 0 72px;border-top:1px solid var(--hairline)}
     $("#quizCount").textContent = "Terminé";
     $("#scoreVal").textContent = score;
     $("#scoreMsg").textContent =
-      score >= 11 ? "Les fondamentaux sont acquis. Votre marge de progression est dans l'entraînement, plus dans la théorie."
-      : score >= 8 ? "Bon niveau. Reprenez les questions manquées et les méthodes correspondantes."
-      : score >= 5 ? "Les bases sont fragiles. Priorité aux modules Découvrir et Qualifier : c'est là que se gagnent les affaires."
-      : "Reprenez le parcours depuis le début. Les explications du quiz condensent l'essentiel.";
-    $("#quizEnd").classList.add("is-on");
+      score >= 11 ? "Le support est acquis. Ce qui vous fera progresser maintenant, c'est le volume d'appels et de rendez-vous."
+      : score >= 8 ? "Bon niveau. Reprenez les questions manquées et la partie correspondante du support."
+      : score >= 5 ? "Les bases sont là mais fragiles. Priorité à la prospection et au plan de rendez-vous."
+      : "Reprenez le support depuis la prospection : les explications du quiz en condensent l'essentiel.";
+    $("#quizEnd").classList.add("on");
   });
   $("#quizAgain").addEventListener("click", function () {
     qi = 0; score = 0;
-    $("#quizEnd").classList.remove("is-on");
+    $("#quizEnd").classList.remove("on");
     $("#quizCard").style.display = "";
     drawQuiz();
   });
   drawQuiz();
 
-  /* ---- Thème ---- */
+  /* --- Thème --- */
   function darkNow() {
     var t = document.documentElement.getAttribute("data-theme");
     if (t) return t === "dark";
@@ -949,48 +1180,153 @@ footer{padding:96px 0 72px;border-top:1px solid var(--hairline)}
     document.documentElement.setAttribute("data-theme", next);
     try { window.localStorage.setItem("theme-academie", next); } catch (e) {}
     labelTheme();
+    readAuroraColors();
   }
   $("#themeBtn").addEventListener("click", toggleTheme);
   $("#themeBtn2").addEventListener("click", toggleTheme);
 
-  /* ---- Sommaire mobile ---- */
+  /* --- Sommaire mobile --- */
   var sheet = $("#sheet");
-  $("#menuBtn").addEventListener("click", function () { sheet.classList.add("is-open"); });
-  $("#sheetClose").addEventListener("click", function () { sheet.classList.remove("is-open"); });
-  sheet.addEventListener("click", function (e) { if (e.target.tagName === "A") { sheet.classList.remove("is-open"); } });
+  $("#menuBtn").addEventListener("click", function () { sheet.classList.add("open"); });
+  $("#sheetClose").addEventListener("click", function () { sheet.classList.remove("open"); });
+  sheet.addEventListener("click", function (e) { if (e.target.tagName === "A") { sheet.classList.remove("open"); } });
 
-  /* ---- Jauge + sommaire actif ---- */
+  /* --- Jauge, sommaire actif, filigranes --- */
   var links = Array.prototype.slice.call(document.querySelectorAll("#toc a"));
-  var sections = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
-  var bar = $("#scrollbar");
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+  var wms = Array.prototype.slice.call(document.querySelectorAll("[data-wm]"));
+  var bar = $("#scrollbar"), ticking = false;
+
   function onScroll() {
     var h = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.width = (h > 0 ? window.scrollY / h * 100 : 0) + "%";
-    var y = window.scrollY + window.innerHeight * 0.32, cur = -1;
-    sections.forEach(function (s, i) { if (s && s.offsetTop <= y) { cur = i; } });
-    links.forEach(function (a, i) { a.classList.toggle("is-current", i === cur); });
+    var y = window.scrollY + window.innerHeight * 0.3, cur = -1;
+    secs.forEach(function (s, i) { if (s && s.offsetTop <= y) { cur = i; } });
+    links.forEach(function (a, i) { a.classList.toggle("on", i === cur); });
+    wms.forEach(function (w) {
+      var r = w.parentNode.getBoundingClientRect();
+      if (r.bottom > -200 && r.top < window.innerHeight + 200) {
+        w.style.transform = "translateY(" + (-r.top * 0.06) + "px)";
+      }
+    });
+    ticking = false;
   }
-  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(onScroll); }
+  }, { passive: true });
   onScroll();
 
-  /* ---- Apparition ---- */
+  /* --- Titre : apparition mot à mot --- */
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  (function splitTitle() {
+    var h = $("#heroTitle");
+    if (!h || reduce) return;
+    var i = 0;
+    h.innerHTML = h.innerHTML.replace(/(<em>)?([^<\s]+)(<\/em>)?/g, function (m, a, w, b) {
+      if (!w) return m;
+      var d = (i++ * 0.055 + 0.15).toFixed(3);
+      return (a || "") + '<span class="w" style="animation-delay:' + d + 's">' + w + "</span>" + (b || "");
+    });
+  })();
+
+  /* --- Compteurs --- */
+  function countUp(el) {
+    var target = +el.dataset.count, t0 = null, dur = 1100;
+    if (reduce) { el.textContent = target; return; }
+    function step(t) {
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * e);
+      if (p < 1) { window.requestAnimationFrame(step); }
+    }
+    window.requestAnimationFrame(step);
+  }
+  window.setTimeout(function () {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-count]"), countUp);
+  }, 900);
+
+  /* --- Apparition au défilement --- */
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         if (!e.isIntersecting) return;
         e.target.classList.add("in");
-        e.target.querySelectorAll(".fun-fill").forEach(function (f) { f.style.width = f.dataset.w + "%"; });
         io.unobserve(e.target);
       });
-    }, { threshold: 0.15 });
-    document.querySelectorAll(".up").forEach(function (el, i) {
-      el.style.transitionDelay = (i % 4) * 60 + "ms";
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+    Array.prototype.forEach.call(document.querySelectorAll(".up"), function (el, i) {
+      el.style.transitionDelay = (i % 3) * 80 + "ms";
       io.observe(el);
     });
   } else {
-    document.querySelectorAll(".up").forEach(function (el) { el.classList.add("in"); });
-    document.querySelectorAll(".fun-fill").forEach(function (f) { f.style.width = f.dataset.w + "%"; });
+    Array.prototype.forEach.call(document.querySelectorAll(".up"), function (el) { el.classList.add("in"); });
   }
+
+  /* --- Cartes SONCAS : inclinaison 3D --- */
+  if (!reduce && window.matchMedia("(hover:hover)").matches) {
+    document.addEventListener("mousemove", function (e) {
+      var c = e.target.closest && e.target.closest(".tilt");
+      if (!c) return;
+      var r = c.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+      c.style.setProperty("--mx", (px * 100) + "%");
+      c.style.setProperty("--my", (py * 100) + "%");
+      c.style.transform = "rotateY(" + ((px - .5) * 9).toFixed(2) + "deg) rotateX(" + ((.5 - py) * 9).toFixed(2) + "deg) translateY(-4px)";
+    }, { passive: true });
+    document.addEventListener("mouseout", function (e) {
+      var c = e.target.closest && e.target.closest(".tilt");
+      if (c) { c.style.transform = ""; }
+    }, { passive: true });
+
+    /* --- Boutons magnétiques --- */
+    Array.prototype.forEach.call(document.querySelectorAll(".magnet"), function (b) {
+      b.addEventListener("mousemove", function (e) {
+        var r = b.getBoundingClientRect();
+        b.style.transform = "translate(" + ((e.clientX - r.left - r.width / 2) * .18).toFixed(1) + "px," +
+                            ((e.clientY - r.top - r.height / 2) * .28).toFixed(1) + "px)";
+      });
+      b.addEventListener("mouseleave", function () { b.style.transform = ""; });
+    });
+  }
+
+  /* --- Aurore animée --- */
+  var cv = document.getElementById("aurora"), ctx = cv.getContext("2d"), cols = [], W = 0, H = 0;
+  function readAuroraColors() {
+    var cs = window.getComputedStyle(document.documentElement);
+    cols = [
+      cs.getPropertyValue("--glow-a").trim(),
+      cs.getPropertyValue("--glow-b").trim(),
+      cs.getPropertyValue("--glow-c").trim()
+    ];
+  }
+  function sizeAurora() {
+    W = cv.width = Math.round(window.innerWidth / 4);
+    H = cv.height = Math.round(window.innerHeight / 4);
+  }
+  var blobs = [
+    { x: .18, y: .22, r: .55, sx: .00007, sy: .00011, c: 0 },
+    { x: .82, y: .30, r: .48, sx: -.00009, sy: .00006, c: 1 },
+    { x: .55, y: .80, r: .60, sx: .00006, sy: -.00008, c: 2 },
+    { x: .30, y: .70, r: .40, sx: -.00005, sy: -.00005, c: 1 }
+  ];
+  function drawAurora(t) {
+    ctx.clearRect(0, 0, W, H);
+    blobs.forEach(function (b) {
+      var x = (b.x + Math.sin(t * b.sx) * .16) * W;
+      var y = (b.y + Math.cos(t * b.sy) * .16) * H;
+      var r = b.r * Math.max(W, H) * .55;
+      var g = ctx.createRadialGradient(x, y, 0, x, y, r);
+      g.addColorStop(0, cols[b.c] || "rgba(0,44,73,.2)");
+      g.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
+    });
+    if (!reduce) { window.requestAnimationFrame(drawAurora); }
+  }
+  readAuroraColors();
+  sizeAurora();
+  window.addEventListener("resize", sizeAurora);
+  if (reduce) { cv.style.display = "none"; } else { window.requestAnimationFrame(drawAurora); }
 })();
 </script>
 </body>
