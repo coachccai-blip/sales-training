@@ -290,7 +290,7 @@ section + section{border-top-color:transparent}
 .row:hover::after,.row.open::after{transform:scaleX(1)}
 .row:not(.open):hover{background:color-mix(in srgb,var(--tint) 40%,transparent)}
 .row.open{background:color-mix(in srgb,var(--tint) 55%,transparent)}
-.row-head{width:100%;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;padding:24px 16px 24px 4px;text-align:left;transition:padding-left .3s}
+.row-head{width:100%;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;padding:26px 20px 26px 10px;text-align:left;transition:padding-left .3s}
 .row-ic{
   width:40px;height:40px;flex:none;display:flex;align-items:center;justify-content:center;
   border:1px solid var(--hairline);border-radius:11px;color:var(--muted);
@@ -309,7 +309,7 @@ section + section{border-top-color:transparent}
   background:color-mix(in srgb,var(--raised) 70%,transparent);
 }
 .tag-ic svg{width:16px;height:16px}
-.row.open .row-head,.row-head:hover{padding-left:14px}
+.row.open .row-head,.row-head:hover{padding-left:20px}
 .row-title{display:block;font-family:var(--title);font-weight:800;font-size:clamp(18px,2.2vw,23px);letter-spacing:-.02em;line-height:1.25;transition:color .25s}
 .row-head:hover .row-title{color:var(--orange)}
 .row-sub{display:block;font-size:13.5px;color:var(--muted);margin-top:5px;font-weight:500}
@@ -322,7 +322,7 @@ section + section{border-top-color:transparent}
 .row-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.3,.85,.3,1)}
 .row.open .row-body{grid-template-rows:1fr}
 .row-inner{overflow:hidden}
-.row-content{padding:2px 16px 34px 4px;max-width:var(--measure);display:flex;flex-direction:column;gap:20px}
+.row-content{padding:6px 24px 40px 10px;max-width:var(--measure);display:flex;flex-direction:column;gap:20px}
 .row-content p{color:var(--ink-2);font-size:16px}
 
 .mini-label{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:9px}
@@ -341,7 +341,7 @@ ul.clean li b{color:var(--ink);font-weight:600}
 .rule-line{font-size:15.5px;color:var(--ink-2)}
 .rule-line b{color:var(--accent-text);font-weight:600}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-.split > div{padding:18px 20px;border:1px solid var(--hairline);border-radius:4px;background:color-mix(in srgb,var(--raised) 60%,transparent)}
+.split > div{padding:26px 28px;border:1px solid var(--hairline);border-radius:6px;background:color-mix(in srgb,var(--raised) 60%,transparent)}
 .split h5{font-family:var(--title);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
 .yes h5{color:#2E7D5B}
 .no h5{color:var(--accent-text)}
@@ -349,7 +349,7 @@ ul.clean li b{color:var(--ink);font-weight:600}
 /* ---------- SONCAS (cartes 3D) ---------- */
 .soncas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;perspective:1100px}
 .sc{
-  padding:24px 20px 20px;border:1px solid var(--hairline);border-radius:10px;
+  padding:30px 26px 26px;border:1px solid var(--hairline);border-radius:10px;
   background:linear-gradient(160deg,var(--raised),color-mix(in srgb,var(--raised) 86%,var(--blue)));
   transform-style:preserve-3d;position:relative;overflow:hidden;min-height:172px;
   transition:transform .3s cubic-bezier(.3,.8,.3,1),box-shadow .35s,border-color .35s;
@@ -418,7 +418,7 @@ ul.clean li b{color:var(--ink);font-weight:600}
 .obj-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.3,.85,.3,1)}
 .obj-more.open{grid-template-rows:1fr}
 .obj-more > div{overflow:hidden}
-.obj-more-inner{padding:34px 4px 4px;display:flex;flex-direction:column;gap:24px;max-width:var(--measure)}
+.obj-more-inner{padding:36px 12px 8px;display:flex;flex-direction:column;gap:24px;max-width:var(--measure)}
 .actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:38px}
 .btn{
   display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 26px;border-radius:999px;
@@ -455,7 +455,7 @@ ul.clean li b{color:var(--ink);font-weight:600}
 .answers{display:flex;flex-direction:column}
 .answer{
   display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;
-  padding:17px 16px 17px 4px;text-align:left;font-size:16px;color:var(--ink-2);
+  padding:19px 20px 19px 12px;text-align:left;font-size:16px;color:var(--ink-2);
   border-bottom:1px solid var(--hairline);transition:color .2s,background .3s,padding-left .25s;
 }
 .answer:first-child{border-top:1px solid var(--hairline)}
@@ -552,6 +552,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
   </a>
   <nav class="toc" id="toc" aria-label="Sommaire"></nav>
   <div class="rail-foot">
+    <button class="mini" id="musicBtn" type="button" aria-pressed="false">Musique · off</button>
     <button class="mini" id="themeBtn" type="button">Thème sombre</button>
     <button class="mini" type="button" onclick="window.print()">Imprimer</button>
     <span>Excellence commerciale</span>
@@ -569,7 +570,8 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
 <div class="sheet" id="sheet">
   <button class="sheet-close" id="sheetClose" type="button">Fermer</button>
   <nav id="tocMobile"></nav>
-  <button class="mini" id="themeBtn2" type="button" style="margin-top:26px">Thème sombre</button>
+  <button class="mini" id="musicBtn2" type="button" aria-pressed="false" style="margin-top:26px">Musique · off</button>
+  <button class="mini" id="themeBtn2" type="button">Thème sombre</button>
 </div>
 
 <main class="page" id="haut">
@@ -1339,6 +1341,147 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
   }
   $("#themeBtn").addEventListener("click", toggleTheme);
   $("#themeBtn2").addEventListener("click", toggleTheme);
+
+  /* --------- Musique d'ambiance (Web Audio, générée, sans fichier) --------- */
+  var music = (function () {
+    var ctx = null, master = null, timer = null, bar = 0, on = false;
+    var NOTE = function (m) { return 440 * Math.pow(2, (m - 69) / 12); };
+    /* Cmaj9 · Am9 · Fmaj9 · G(add9) — doux, corporate */
+    var CHORDS = [
+      { bass: 36, pad: [48, 52, 55, 59, 62], arp: [72, 76, 79, 83, 86] },
+      { bass: 33, pad: [45, 48, 52, 55, 59], arp: [69, 72, 76, 79, 83] },
+      { bass: 41, pad: [45, 48, 52, 55, 57], arp: [69, 72, 76, 77, 81] },
+      { bass: 43, pad: [47, 50, 55, 59, 62], arp: [71, 74, 79, 83, 86] }
+    ];
+    var BAR = 3.6; /* secondes par accord */
+
+    function build() {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      master.gain.value = 0;
+      var comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -28; comp.ratio.value = 6;
+      master.connect(comp); comp.connect(ctx.destination);
+      /* écho discret partagé */
+      var delay = ctx.createDelay(1); delay.delayTime.value = 0.45;
+      var fb = ctx.createGain(); fb.gain.value = 0.32;
+      var wet = ctx.createGain(); wet.gain.value = 0.22;
+      delay.connect(fb); fb.connect(delay); delay.connect(wet); wet.connect(master);
+      build.delay = delay;
+    }
+    function pad(t, midis) {
+      var filt = ctx.createBiquadFilter(); filt.type = "lowpass"; filt.frequency.value = 900; filt.Q.value = 0.4;
+      var g = ctx.createGain();
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.linearRampToValueAtTime(0.11, t + 1.2);
+      g.gain.setValueAtTime(0.11, t + BAR - 0.6);
+      g.gain.linearRampToValueAtTime(0.0001, t + BAR + 0.8);
+      filt.connect(g); g.connect(master);
+      midis.forEach(function (m, i) {
+        [-4, 3].forEach(function (det) {
+          var o = ctx.createOscillator();
+          o.type = i < 2 ? "sine" : "triangle";
+          o.frequency.value = NOTE(m); o.detune.value = det;
+          var og = ctx.createGain(); og.gain.value = 1 / (midis.length * 2);
+          o.connect(og); og.connect(filt);
+          o.start(t); o.stop(t + BAR + 1);
+        });
+      });
+    }
+    function bass(t, midi) {
+      var o = ctx.createOscillator(); o.type = "sine"; o.frequency.value = NOTE(midi);
+      var g = ctx.createGain();
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.linearRampToValueAtTime(0.10, t + 0.4);
+      g.gain.setValueAtTime(0.10, t + BAR - 0.8);
+      g.gain.linearRampToValueAtTime(0.0001, t + BAR + 0.3);
+      o.connect(g); g.connect(master);
+      o.start(t); o.stop(t + BAR + 0.5);
+    }
+    function pluck(t, midi, panPos) {
+      var o = ctx.createOscillator(); o.type = "triangle"; o.frequency.value = NOTE(midi);
+      var filt = ctx.createBiquadFilter(); filt.type = "lowpass"; filt.frequency.value = 2600;
+      var g = ctx.createGain();
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.linearRampToValueAtTime(0.055, t + 0.015);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + 0.9);
+      var pan = ctx.createStereoPanner ? ctx.createStereoPanner() : null;
+      o.connect(filt); filt.connect(g);
+      if (pan) { pan.pan.value = panPos; g.connect(pan); pan.connect(master); pan.connect(build.delay); }
+      else { g.connect(master); g.connect(build.delay); }
+      o.start(t); o.stop(t + 1);
+    }
+    function scheduleBar(t) {
+      var c = CHORDS[bar % CHORDS.length];
+      pad(t, c.pad); bass(t, c.bass);
+      /* motif de 6 notes par mesure, varie doucement d'une mesure à l'autre */
+      for (var i = 0; i < 6; i++) {
+        if ((bar + i) % 4 === 3 && i % 2 === 1) continue; /* respirations */
+        var n = c.arp[(i * 2 + bar) % c.arp.length] + (i === 4 ? 12 : 0);
+        pluck(t + i * (BAR / 6) + 0.02, n, (i % 2 ? 0.35 : -0.35));
+      }
+      bar++;
+    }
+    function loop() {
+      if (!on) return;
+      var ahead = ctx.currentTime + 0.15;
+      scheduleBar(loop.next || ahead);
+      loop.next = (loop.next || ahead) + BAR;
+      timer = window.setTimeout(loop, Math.max(200, (loop.next - ctx.currentTime - 0.5) * 1000));
+    }
+    function start() {
+      try {
+        if (!ctx) { build(); }
+        if (ctx.state === "suspended") { ctx.resume(); }
+        on = true; bar = 0; loop.next = null;
+        master.gain.cancelScheduledValues(ctx.currentTime);
+        master.gain.setValueAtTime(master.gain.value, ctx.currentTime);
+        master.gain.linearRampToValueAtTime(0.9, ctx.currentTime + 1.5);
+        loop();
+        return true;
+      } catch (e) { return false; }
+    }
+    function stop() {
+      on = false;
+      if (timer) { window.clearTimeout(timer); timer = null; }
+      if (ctx && master) {
+        master.gain.cancelScheduledValues(ctx.currentTime);
+        master.gain.setValueAtTime(master.gain.value, ctx.currentTime);
+        master.gain.linearRampToValueAtTime(0.0001, ctx.currentTime + 0.8);
+        window.setTimeout(function () { if (!on && ctx && ctx.state === "running") { ctx.suspend(); } }, 1000);
+      }
+    }
+    return { start: start, stop: stop, playing: function () { return on; } };
+  })();
+
+  var musicBtns = [document.getElementById("musicBtn"), document.getElementById("musicBtn2")];
+  function musicLabel() {
+    var onAir = music.playing();
+    musicBtns.forEach(function (b) {
+      if (!b) return;
+      b.textContent = onAir ? "Musique · on" : "Musique · off";
+      b.setAttribute("aria-pressed", onAir ? "true" : "false");
+    });
+  }
+  function toggleMusic() {
+    if (music.playing()) { music.stop(); try { window.localStorage.setItem("music-academie", "off"); } catch (e) {} }
+    else if (music.start()) { try { window.localStorage.setItem("music-academie", "on"); } catch (e) {} }
+    musicLabel();
+  }
+  musicBtns.forEach(function (b) { if (b) { b.addEventListener("click", toggleMusic); } });
+  /* préférence mémorisée : reprise au premier geste (les navigateurs bloquent l'autoplay) */
+  try {
+    if (window.localStorage.getItem("music-academie") === "on") {
+      var resume = function () {
+        document.removeEventListener("pointerdown", resume);
+        document.removeEventListener("keydown", resume);
+        if (!music.playing() && music.start()) { musicLabel(); }
+      };
+      document.addEventListener("pointerdown", resume);
+      document.addEventListener("keydown", resume);
+    }
+  } catch (e) {}
+
 
   /* --- Sommaire mobile --- */
   var sheet = $("#sheet");
