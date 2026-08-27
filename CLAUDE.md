@@ -17,6 +17,14 @@ Le déploiement ne fonctionne que depuis `main` (restriction de l'environnement
 `github-pages`) ; en cas de run bloqué en file, relancer via
 `workflow_dispatch` plutôt que par un commit vide.
 
+## PDF téléchargeable
+
+Le bouton « Télécharger le PDF » du site pointe vers `sales-academy.pdf`,
+généré depuis le site lui-même en mode `index.html?print` (rendu complet,
+fiches dépliées, quiz corrigé). **Après toute modification du contenu,
+régénérer le PDF avant de fusionner** : `node tools/build-pdf.mjs`
+(Chromium de Playwright requis), puis commiter le PDF avec le reste.
+
 ## Architecture
 
 - `index.html` : tout le site (page unique autonome, sans dépendance).
