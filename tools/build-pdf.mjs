@@ -20,15 +20,14 @@ const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbo
 const page = await (await browser.newContext({ viewport: { width: 900, height: 1200 } })).newPage();
 page.on('pageerror', (e) => { console.error('Erreur JS dans la page :', e.message); process.exitCode = 1; });
 await page.goto('file://' + path.join(root, 'index.html') + '?print');
+await page.emulateMedia({ media: 'screen' }); /* le PDF garde le thème du site, pas les styles d'impression */
 await page.waitForTimeout(2500); /* polices Google + rendu */
 await page.pdf({
   path: path.join(root, 'sales-academy.pdf'),
   format: 'A4',
   printBackground: true,
-  margin: { top: '14mm', bottom: '16mm', left: '13mm', right: '13mm' },
-  displayHeaderFooter: true,
-  headerTemplate: '<span></span>',
-  footerTemplate: '<div style="width:100%;text-align:center;font-size:8px;color:#7791A3;font-family:Arial">Sales Academy · <span class="pageNumber"></span> / <span class="totalPages"></span></div>',
+  /* plein fond : le PDF reprend le thème sombre du site, sans marges blanches */
+  margin: { top: '0mm', bottom: '0mm', left: '0mm', right: '0mm' },
 });
 await browser.close();
 console.log('sales-academy.pdf régénéré (' + fs.statSync(path.join(root, 'sales-academy.pdf')).size + ' octets)');

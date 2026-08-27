@@ -171,8 +171,11 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .print-mode .hero{min-height:auto;padding:60px 0 40px}
 .print-mode .row-body{grid-template-rows:1fr !important}
 .print-mode .row{break-inside:avoid}
+.print-mode .tag,.print-mode h2{break-after:avoid}
+.print-mode h2,.print-mode .lede{break-inside:avoid}
+.print-mode .pm-obj,.print-mode .pm-quiz{break-inside:avoid}
 .print-mode .up,.print-mode .hero .lede,.print-mode .facts,.print-mode .hero h1 .w{opacity:1 !important;transform:none !important;animation:none !important;filter:none !important}
-.print-mode .wm{position:absolute;background:none !important;-webkit-background-clip:initial;background-clip:initial;-webkit-text-fill-color:#E4EBF1;color:#E4EBF1;transform:none !important}
+.print-mode .wm{position:absolute;background:none !important;-webkit-background-clip:initial;background-clip:initial;-webkit-text-fill-color:#16324A;color:#16324A;transform:none !important}
 .pm-method{break-inside:avoid;padding:26px 0;border-bottom:1px solid var(--hairline);display:flex;flex-direction:column;gap:18px;max-width:var(--measure)}
 .pm-method h3{font-size:22px}
 .pm-obj{break-inside:avoid;padding:24px 0;border-bottom:1px solid var(--hairline);display:flex;flex-direction:column;gap:12px;max-width:var(--measure)}
@@ -616,7 +619,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
   <div class="rail-foot">
     <button class="mini" id="musicBtn" type="button" aria-pressed="false">Musique · off</button>
     <button class="mini" id="themeBtn" type="button">Thème sombre</button>
-    <a class="mini" href="https://coachccai-blip.github.io/sales-training/sales-academy.pdf" target="_blank" rel="noopener">Télécharger le PDF</a>
+    <a class="mini" href="https://coachccai-blip.github.io/sales-training/sales-academy.pdf" download="Sales-Academy.pdf">Télécharger le PDF</a>
     <span>Excellence commerciale</span>
   </div>
 </aside>
@@ -634,7 +637,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
   <nav id="tocMobile"></nav>
   <button class="mini" id="musicBtn2" type="button" aria-pressed="false" style="margin-top:26px">Musique · off</button>
   <button class="mini" id="themeBtn2" type="button">Thème sombre</button>
-  <a class="mini" href="https://coachccai-blip.github.io/sales-training/sales-academy.pdf" target="_blank" rel="noopener" style="margin-top:4px">Télécharger le PDF</a>
+  <a class="mini" href="https://coachccai-blip.github.io/sales-training/sales-academy.pdf" download="Sales-Academy.pdf" style="margin-top:4px">Télécharger le PDF</a>
 </div>
 
 <main class="page" id="haut">
@@ -1298,7 +1301,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
      ========================================================= */
   var PRINT = /[?&]print\b/.test(window.location.search);
   if (PRINT) {
-    document.documentElement.setAttribute("data-theme", "light");
+    document.documentElement.setAttribute("data-theme", "dark");
     document.documentElement.classList.add("print-mode");
     /* toutes les fiches ouvertes */
     Array.prototype.forEach.call(document.querySelectorAll(".row"), function (r) { r.classList.add("open"); });
@@ -1576,8 +1579,10 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
   }
   try {
     var saved = window.localStorage.getItem("theme-academie");
-    if (saved) { document.documentElement.setAttribute("data-theme", saved); }
-  } catch (e) {}
+    document.documentElement.setAttribute("data-theme", saved === "light" ? "light" : "dark");
+  } catch (e) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  }
   labelTheme();
   function toggleTheme() {
     var next = darkNow() ? "light" : "dark";
