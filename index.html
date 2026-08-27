@@ -19,60 +19,6 @@
   --blue-deep:#002235;
   --orange:#FF6633;
 
-  --ground:#FAFCFD;
-  --raised:#FFFFFF;
-  --hairline:#E0E8EE;
-  --ink:#002235;
-  --ink-2:#33586F;
-  --muted:#7791A3;
-  --tint:#EFF4F8;
-  --accent-text:#C34024;
-  --glow-a:rgba(0,44,73,.20);
-  --glow-b:rgba(255,102,51,.16);
-  --glow-c:rgba(43,124,168,.20);
-
-  --stage:#002C49;
-  --stage-2:#00203A;
-  --stage-ink:#F4F8FB;
-  --stage-muted:#9DB6C6;
-  --stage-line:rgba(255,255,255,.14);
-  --wm-a:rgba(0,44,73,.16);
-  --wm-b:rgba(0,44,73,.02);
-  --ring:rgba(0,44,73,.14);
-  --grain:.05;
-
-  --title:"Avenir Next","Avenir",Montserrat,"Helvetica Neue",Arial,sans-serif;
-  --body:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-
-  --rail:252px;
-  --measure:62ch;
-}
-
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ground:#00131C;
-    --raised:#002133;
-    --hairline:rgba(255,255,255,.12);
-    --ink:#EDF3F7;
-    --ink-2:#B4CAD8;
-    --muted:#87A2B4;
-    --tint:#012B41;
-    --accent-text:#FF9068;
-    --glow-a:rgba(30,110,160,.34);
-    --glow-b:rgba(255,102,51,.24);
-    --glow-c:rgba(0,80,130,.40);
-    --stage:#012B44;
-    --stage-2:#001A2B;
-    --stage-ink:#F4F8FB;
-    --stage-muted:#8FAEC1;
-    --stage-line:rgba(255,255,255,.14);
-    --wm-a:rgba(140,190,225,.20);
-    --wm-b:rgba(140,190,225,.02);
-    --ring:rgba(150,200,235,.17);
-    --grain:.09;
-  }
-}
-:root[data-theme="dark"]{
   --ground:#00131C;
   --raised:#002133;
   --hairline:rgba(255,255,255,.12);
@@ -84,6 +30,7 @@
   --glow-a:rgba(30,110,160,.34);
   --glow-b:rgba(255,102,51,.24);
   --glow-c:rgba(0,80,130,.40);
+
   --stage:#012B44;
   --stage-2:#001A2B;
   --stage-ink:#F4F8FB;
@@ -93,7 +40,14 @@
   --wm-b:rgba(140,190,225,.02);
   --ring:rgba(150,200,235,.17);
   --grain:.09;
+
+  --title:"Avenir Next","Avenir",Montserrat,"Helvetica Neue",Arial,sans-serif;
+  --body:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+  --rail:252px;
+  --measure:62ch;
 }
+
 
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -148,7 +102,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   font-style:normal;text-decoration:none;font-size:10.5px;font-weight:600;color:var(--muted);
   font-variant-numeric:tabular-nums;justify-self:end;transition:color .3s;
 }
-.toc a{grid-template-columns:26px 1fr auto}
 .toc a .toc-frac.full{color:var(--orange)}
 .row-done{
   width:26px;height:26px;flex:none;border:1.5px solid var(--hairline);border-radius:50%;
@@ -217,7 +170,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .mark span{font-family:var(--title);font-weight:800;letter-spacing:.22em;font-size:13px}
 .toc{display:flex;flex-direction:column;gap:1px;margin-top:2px;position:relative}
 .toc a{
-  display:grid;grid-template-columns:26px 1fr;align-items:baseline;gap:10px;
+  display:grid;grid-template-columns:26px 1fr auto;align-items:baseline;gap:10px;
   padding:9px 0 9px 12px;font-size:14px;color:var(--muted);font-weight:500;
   transition:color .25s, transform .25s;position:relative;
 }
@@ -243,7 +196,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 }
 .sheet{position:fixed;inset:0;z-index:95;background:var(--ground);padding:74px 24px 32px;display:none;flex-direction:column;gap:2px;overflow:auto}
 .sheet.open{display:flex;animation:fade .28s ease both}
-.sheet a{display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:baseline;padding:15px 0;border-bottom:1px solid var(--hairline);font-size:20px;font-family:var(--title);font-weight:800;letter-spacing:-.02em}
+.sheet a{display:grid;grid-template-columns:32px 1fr auto;gap:12px;align-items:baseline;padding:15px 0;border-bottom:1px solid var(--hairline);font-size:20px;font-family:var(--title);font-weight:800;letter-spacing:-.02em}
 .sheet a i{font-style:normal;font-size:12px;font-weight:600;color:var(--orange);font-family:var(--body)}
 .sheet-close{position:absolute;top:16px;right:20px;font-size:14px;font-weight:600;color:var(--muted)}
 @keyframes fade{from{opacity:0}to{opacity:1}}
@@ -617,9 +570,9 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     <div class="prog-track"><div class="prog-fill" id="progFill"></div></div>
   </div>
   <div class="rail-foot">
+    <button class="mini" id="langBtn" type="button">English version</button>
     <button class="mini" id="musicBtn" type="button" aria-pressed="false">Musique · off</button>
-    <button class="mini" id="themeBtn" type="button">Thème sombre</button>
-    <a class="mini" href="https://coachccai-blip.github.io/sales-training/sales-academy.pdf" download="Sales-Academy.pdf">Télécharger le PDF</a>
+    <a class="mini" href="https://coachccai-blip.github.io/sales-training/sales-academy-fr.pdf" download="Sales-Academy.pdf">Télécharger le PDF</a>
     <span>Excellence commerciale</span>
   </div>
 </aside>
@@ -635,9 +588,9 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
 <div class="sheet" id="sheet">
   <button class="sheet-close" id="sheetClose" type="button">Fermer</button>
   <nav id="tocMobile"></nav>
-  <button class="mini" id="musicBtn2" type="button" aria-pressed="false" style="margin-top:26px">Musique · off</button>
-  <button class="mini" id="themeBtn2" type="button">Thème sombre</button>
-  <a class="mini" href="https://coachccai-blip.github.io/sales-training/sales-academy.pdf" download="Sales-Academy.pdf" style="margin-top:4px">Télécharger le PDF</a>
+  <button class="mini" id="langBtn2" type="button" style="margin-top:26px">English version</button>
+  <button class="mini" id="musicBtn2" type="button" aria-pressed="false">Musique · off</button>
+  <a class="mini" href="https://coachccai-blip.github.io/sales-training/sales-academy-fr.pdf" download="Sales-Academy.pdf" style="margin-top:4px">Télécharger le PDF</a>
 </div>
 
 <main class="page" id="haut">
@@ -687,7 +640,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
      Blocs disponibles : text · list · steps · pairs · said · rule · split · soncas
      ========================================================= */
 
-  var SECTIONS = [
+  var SECTIONS_FR = [
 
   /* ---------------------------------------------------- 01 */
   { ic:"phone", id:"prospection", n:"01", t:"Prospection",
@@ -1056,7 +1009,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     ]}
   ];
 
-  var SONCAS = [
+  var SONCAS_FR = [
     { l:"S", t:"Sympathie", d:"Bon feeling avec vous, il connaît certains de nos clients." },
     { l:"O", t:"Orgueil", d:"Des économies qu'il présentera à sa direction, la validation de ses bonnes pratiques." },
     { l:"N", t:"Nouveauté", d:"Un sujet neuf, une action rapide." },
@@ -1065,7 +1018,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     { l:"S", t:"Sécurité", d:"Appui juridique, processus de sécurisation, certifications." }
   ];
 
-  var OBJECTIONS = [
+  var OBJECTIONS_FR = [
     { m:"Barrage — l'assistante", q:"C'est à quel sujet ?",
       b:"Elle est payée pour filtrer les commerciaux. Toute justification longue vous trahit.",
       h:"Restez direct, restez flou, montrez qu'elle ne maîtrise pas le sujet, et concluez par une demande.",
@@ -1108,7 +1061,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
       s:"Bien sûr. À ce stade il s'agit uniquement de valider l'étude, il n'y a pas d'engagement. Qui valide avec vous, et qui signe ? Je vous propose qu'on se reparle jeudi prochain pour caler le démarrage." }
   ];
 
-  var QUIZ = [
+  var QUIZ_FR = [
     { q:"Combien d'appels faut-il passer, en moyenne, pour obtenir 5 rendez-vous ?",
       o:["20","50","100","300"], a:2,
       w:"100 appels = 20 conversations = 5 rendez-vous. C'est le volume qui fait la performance, pas le talent isolé." },
@@ -1146,6 +1099,536 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
       o:["Pour occuper l'agenda","On perd environ 10 % de chances de signer par semaine","Pour devancer le concurrent","Pour boucler le mois"], a:1,
       w:"Chaque semaine qui passe coûte environ 10 % de chances de signature. Créez de l'urgence et posez la date devant lui." }
   ];
+
+
+  /* =========================================================
+     ENGLISH EDITION — full native translation of the playbook
+     ========================================================= */
+
+  var SECTIONS_EN = [
+
+  { ic:"phone", id:"prospection", n:"01", t:"Prospecting",
+    h:"Sell the meeting, not the product.",
+    lede:"100 calls, 20 conversations, 5 meetings. Everything else in this job starts here.",
+    chapitres:[
+      { fiches:[
+
+        { i:"zap", t:"The right mindset", s:"Volume drives performance",
+          b:[ {k:"list", v:[
+                "<b>Yes, it's hard</b> — that's exactly why so few people succeed at it, and why salespeople are well paid.",
+                "<b>Don't fear rejection.</b> It's the rejections that make the wins taste so good.",
+                "<b>You have to lose a few to win:</b> 100 calls = 20 conversations = 5 meetings.",
+                "<b>Be sure of your value</b> and your products: if the prospect says no, it's their loss.",
+                "<b>Question yourself</b> — but not after every rejection.",
+                "<b>Be persistent:</b> don't give up at the first pushback.",
+                "<b>Call early in the morning and late in the day,</b> when your prospects are actually reachable."]},
+              {k:"rule", v:"call volume is not an execution detail — it's the engine of your results."} ] },
+
+        { i:"clock", t:"The first ten seconds", s:"They decide everything that follows",
+          b:[ {k:"list", v:[
+                "Always <b>enthusiastic</b> from the very first second.",
+                "<b>Smile</b> — people can hear it.",
+                "<b>Speak up.</b>",
+                "<b>Take control from the start:</b> no hesitation, no dead air.",
+                "<b>Be sharp:</b> say quickly why you're calling them, and why today.",
+                "The prospect must <b>see what's in it for them immediately</b>: money saved, time saved.",
+                "<b>Short sentences, present tense</b> — energy, action."]} ] },
+
+        { i:"mask", t:"Don't sound like a salesperson", s:"A trusted expert, not a telemarketer",
+          b:[ {k:"list", v:[
+                "<b>Stand out</b> from every other cold caller.",
+                "Don't sound like a salesperson — no <i>“touching base”</i>, no <i>“our new offer”</i> — sound like <b>a friend who happens to be an expert</b>. The prospect must quickly see what they stand to gain.",
+                "<b>Don't read a script.</b> An over-rehearsed pitch is easy to spot — stay authentic.",
+                "Keep the tone <b>fairly casual</b>, respectful but not formal."]} ] },
+
+        { i:"speech", t:"Assertiveness & adaptability", s:"Words that put you on equal footing",
+          b:[ {k:"pairs", v:[
+                ["No conditionals","“I need to reach…” rather than “I was hoping to speak with…”"],
+                ["No belittling words","Ban “just a quick…” and “a tiny minute…”"],
+                ["Equal to equal","No apologetic openers — never “sorry to bother you”"],
+                ["No negatives","Always frame things positively"],
+                ["No hedging","Avoid “I think it might be worth our meeting…”"],
+                ["Adaptability","Adjust to every situation and every objection, in real time"]]} ] },
+
+        { i:"alert", t:"Mistakes to avoid", s:"Never give them the chance to say no",
+          b:[ {k:"list", v:[
+                "<b>Never ask a question that can be answered with no</b> — “do you have a minute?”, “would you be interested in a meeting?”. Assume they're on board.",
+                "<b>Phrase questions to invite a yes:</b> “what day works for you next week?” rather than “would you be available?”",
+                "<b>No dead air:</b> close after every statement. To an assistant: “can you put me through?”. To a decision-maker: “are you free on the…?”",
+                "<b>No negative words</b> — problem, difficulty, risk, small, maybe."]},
+              {k:"said", v:"There won't be any issue · you can rest easy · you're taking no risk at all · you'll be in safe hands · are we agreed? · you won't regret it · you'll be glad you did"},
+              {k:"rule", v:"swap every negative word for its positive twin: success, win, benefit, efficiency, reliability, savings."} ] },
+
+        { i:"key", t:"Getting past the gatekeeper", s:"They're paid to filter out salespeople",
+          b:[ {k:"list", v:[
+                "<b>Be assertive and direct.</b> Don't come across as a salesperson — come across as a professional contact who needs a quick word.",
+                "<b>Don't justify yourself:</b> a long explanation is a justification, and a justification gives you away.",
+                "<b>Make it clear the subject is technical</b> — one specialist term is usually enough.",
+                "<b>Keep it vague.</b>",
+                "<b>Don't be too formal:</b> formality signals a sales call."]},
+              {k:"said", v:"“I need to reach Mr. X.” — “May I ask what it's regarding?” — “It's about the URSSAF contributions you're paying — I need a quick word with him. Can you put me through?”"} ] },
+
+        { i:"calendar", t:"Booking the meeting", s:"The only goal of the call",
+          b:[ {k:"list", v:[
+                "<b>Introduce yourself quickly.</b>",
+                "<b>Tie your call to something prior</b> or topical: “we met with your predecessor a while back…”",
+                "<b>Get to the point fast</b> — what you can do for them.",
+                "<b>Match your arguments to the person:</b> for a CFO, figures, a few technical points, references; for an HR director, added value, time savings, references.",
+                "<b>Don't sell the product — sell the meeting.</b> Say too much and the prospect no longer needs to meet you: “that's exactly what the meeting is for.”",
+                "<b>Looping:</b> handle the objection, then come straight back to the meeting, without a pause."]},
+              {k:"said", v:"“We work with 1,000 companies in France on tax optimization. I'm calling because we have a new VAT lever that applies to your business — we've rolled it out with several companies in your sector. The financial stakes are significant, so I'd suggest a 30-minute meeting. Would Thursday the 18th at 11 work for you?”"},
+              {k:"rule", v:"after every objection you handle, offer a specific date again. Never dead air, never “I'll call you back.”"} ] }
+      ]}
+    ]},
+
+  { ic:"hand", id:"rendez-vous", n:"02", t:"The meeting",
+    h:"Motivate and reassure, start to finish.",
+    lede:"Seven steps, one hour. Every minute has a job: hook, understand, convince, close.",
+    chapitres:[
+
+      { t:"The framework", fiches:[
+        { i:"compass", t:"Motivate and reassure", s:"The heart of the job",
+          b:[ {k:"text", v:"In this business you spend your time doing two things: motivating, and reassuring."},
+              {k:"pairs", v:[
+                ["Motivate","Financial upside · minimal time required on their side · references who have done it · securing their practices"],
+                ["Reassure","Local references · legal backing · storytelling · secured levers · support in case of an audit · the group's credentials"]]} ] },
+
+        { i:"listNum", t:"The meeting plan", s:"Seven steps from hello to signature",
+          b:[ {k:"steps", v:[
+                "Introduction — 1 minute",
+                "Questions about the person and their organization — 5 to 10 minutes",
+                "Presenting the firm — 3 minutes",
+                "Technical discovery — 5 to 10 minutes",
+                "Making the case — 5 to 10 minutes",
+                "Walking through how the engagement works — 5 minutes",
+                "Closing — 5 minutes"]},
+              {k:"rule", v:"the firm's presentation gets three minutes. The rest of the time, they do the talking."} ] }
+      ]},
+
+      { t:"The opening", fiches:[
+        { i:"hand", t:"First impressions", s:"You only get one shot",
+          b:[ {k:"list", v:[
+                "<b>A firm handshake</b> — slightly firmer than theirs — and a <b>smile</b>.",
+                "<b>No weak icebreakers</b> like “lovely weather today”.",
+                "<b>Get settled first:</b> don't start the meeting until you're properly seated.",
+                "<b>Look them in the eye</b> from the start — it reads as confidence.",
+                "<b>Introduce yourself</b>, full name, business card.",
+                "<b>Restate why you're here</b>, confirm the timing, restate the goal: identify savings opportunities and explain how you can help capture them."]} ] },
+
+        { i:"brain", t:"Speak to the lizard brain", s:"Get past the filter before you persuade",
+          b:[ {k:"text", v:"Our brain is a house-share: the reptilian brain (200 million years old) filters incoming messages, the limbic system handles emotion, and Einstein (4 million years old) does the abstract thinking. The reptilian brain filters to save energy and time — you have to catch its interest and spark desire, not scare it off."},
+              {k:"list", l:"Two techniques", v:[
+                "<b>The lure</b> — open with a recent experience at another company, ideally one of the prospect's competitors. Storytelling, right away.",
+                "<b>The challenge</b> — put the no on the table."]},
+              {k:"said", v:"“I'm going to show you an offer that some of your peers have taken up with real interest — others passed. Feel free to tell me if you'd rather not go further.”"},
+              {k:"rule", v:"avoid boilerplate like “I'd love to present a solution aligned with your strategy”. The lizard brain treats that patter as a threat."} ] },
+
+        { i:"bulb", t:"Speak to Einstein", s:"Keep him awake",
+          b:[ {k:"list", v:[
+                "<b>Ask “why”</b> to understand what really matters, before the “what” and the “how”.",
+                "<b>Don't assume — ask and listen.</b> Optimistic in attitude, obsessive about detail.",
+                "<b>Skip the lazy questions</b> — the obvious ones, the aggressive or clumsy ones. Silly questions cost you credibility; smart ones build it.",
+                "<b>Do your homework:</b> the person (role, mutual connections, hobbies, views on the topic) and the company (news, sector-specific challenges).",
+                "<b>Ask strategic questions</b> that force them to think: “how do you plan to measure results?”",
+                "<b>Probe their pain points:</b> the difficulties, the costs, the numbers.",
+                "<b>Dare the personal question:</b> “beyond the spec sheet, what really matters to you here?”",
+                "<b>Offer alternatives.</b>"]} ] }
+      ]},
+
+      { t:"Discovery", fiches:[
+        { i:"user", t:"Show interest in the person and the organization", s:"Talk and you sometimes please; listen and you always do",
+          b:[ {k:"list", v:[
+                "“You're the HR director, correct? How long have you been in the role?”",
+                "“Have you worked in other sectors before?”",
+                "“Looking at your organization, I saw you run these facilities — is that right?”",
+                "“What are your sources of funding?”",
+                "“Any financial pressure at the moment? Are you at break-even? Looking for savings?”",
+                "“Have you worked with a consulting firm? Which one, on what? If not, why not?”",
+                "“Have you run any optimization work internally?”"]} ] },
+
+        { i:"building", t:"Presenting the firm", s:"Short and sharp — three minutes",
+          b:[ {k:"steps", v:[
+                "Who we are: a consulting firm specializing in budget optimization for organizations.",
+                "A few key figures: headcount, countries, client base, savings delivered each year.",
+                "Legal backing: secured levers, correspondence with the authorities, regulatory watch.",
+                "The group's commitments.",
+                "Labels and certifications.",
+                "References — take your time here: linger, ask whether they know any of our clients, and tell a story or two.",
+                "Areas of expertise and the fee model."]} ] },
+
+        { i:"ask", t:"Open questions", s:"Get them talking",
+          b:[ {k:"list", v:[
+                "“What are you hoping to get out of our meeting?”",
+                "“Are there topics you've been wondering about on your side?”",
+                "“When was your payroll last audited?”",
+                "“What optimization work have you done internally in recent years?”",
+                "“How do you keep up with the constant regulatory and case-law changes?”",
+                "“How is the recovery of sickness benefits (IJSS) organized here?”",
+                "“What's the hardest part of managing those files for your team?”",
+                "“If you could remove one step from your absence-management chain, which one?”",
+                "“What would stop us from working together on this?”"]} ] },
+
+        { i:"search", t:"Rhetorical questions", s:"Surface the gap",
+          b:[ {k:"list", v:[
+                "“So your payroll hasn't been checked by an outside firm in more than three years?”",
+                "“No property-tax audit recently? Even since the reform?”",
+                "“Do you have time to track the regulatory changes every single month?”",
+                "“Are you one hundred percent sure every scheme is being applied in your setup?”",
+                "“Since you don't pre-calculate, there's no accounting alert telling you what money is left outside?”",
+                "“I imagine your payroll team doesn't have time to chase the CPAM right now?”",
+                "“Are you, like most CFOs and HR directors I meet, being challenged on savings and compliance?”"]} ] },
+
+        { i:"repeat", t:"Reframe and confirm", s:"Lock in what was just said",
+          b:[ {k:"list", v:[
+                "“So if I sum up, there's been no audit for at least five years?”",
+                "“We agree nothing has been done since the last property-value reform?”",
+                "“If I understand correctly, you're not entirely sure your setup is compliant — is that right?”",
+                "“If you had the bandwidth, you'd do this — is that right?”",
+                "“What I'm hearing is: no interest on this topic, but a confirmed interest on that one. Correct?”",
+                "“From where I sit there's nothing to gain on X — but Y is genuinely worth a look. Would you agree?”"]} ] },
+
+        { i:"award", t:"Come across as an expert", s:"Quality questions, in the right order",
+          b:[ {k:"text", v:"A good discovery makes you look like an expert and puts your prospect at ease. Don't hop between topics: quality questions, in the right order, flowing naturally."},
+              {k:"list", v:[
+                "“Have you used a firm for social-contribution work in recent years?”",
+                "“Have you had an URSSAF inspection? How did it go?”",
+                "“Which payroll software do you run? How happy are you with it? Any major updates recently?”",
+                "“Have you filed any DSN block corrections recently? On what?”",
+                "“How much of your headcount is covered by the Fillon relief?”",
+                "“Any absences or departures in your payroll team over the past two years?”",
+                "“Do you advance sick pay for all employees? What's your IJSS base?”",
+                "“Do you pre-calculate? Reconcile regularly? Do you know your recovery rate?”"]} ] }
+      ]},
+
+      { t:"Making the case", fiches:[
+        { i:"puzzle", t:"SONCAS", s:"Spot the buying motive",
+          b:[ {k:"soncas"},
+              {k:"rule", v:"nobody buys for all six reasons at once. Find theirs, and press on it."} ] },
+
+        { i:"target", t:"Use your ammunition wisely", s:"What separates the good hunter from the bad one",
+          b:[ {k:"list", v:[
+                "<b>To be convincing, be convinced</b> — enthusiasm is contagious.",
+                "<b>Note the blockers, don't tackle them straight away.</b> You can even ask further questions about a blocker to amplify it — then deal with it.",
+                "<b>Avoid tangents:</b> “that's interesting, I can see why you enjoy it. Coming back to the engagement…”",
+                "<b>Use a clean transition:</b> “based on what you've told me, I can confirm this is worth pursuing because…”",
+                "<b>Vary your arguments</b> — quantified financial stakes, storytelling, validating good practices, explaining the levers, statistics.",
+                "<b>Don't fire every argument at once:</b> keep some in reserve."]} ] },
+
+        { i:"gift", t:"Motivate and reassure, in practice", s:"Benefits over features",
+          b:[ {k:"list", v:[
+                "<b>Pause between arguments</b> — the prospect absorbs, and you read their reaction.",
+                "<b>Talk benefits, not features.</b> “The engagement takes almost none of your time” rather than “you'll need to send us an absence extract, the payslips…”",
+                "<b>People are fundamentally self-interested:</b> explain what the engagement brings them, personally.",
+                "<b>Lean harder on the loss than on the gain:</b> the fear of losing €100 is stronger than the pleasure of gaining €150."]} ] },
+
+        { i:"brake", t:"Spot and handle the blockers", s:"Beware of false objections",
+          b:[ {k:"text", v:"To handle blockers you first have to spot them: a silence, a question, a hesitation. And watch out for false ones — “I don't have time” usually means “I haven't seen what's in it for me.”"},
+              {k:"pairs", v:[
+                ["Their work being questioned","Defuse it: the rules are complex and their job is broad, while we specialize in this one narrow point"],
+                ["No time","The engagement takes little of theirs: a few documents to send, we work by sampling, then we run autonomously"],
+                ["Fine, but later","In our experience these topics never make it to the top of the list. Hand them over now and we stop the clock on the statute of limitations"],
+                ["Your levers don't apply here","Examples of comparable clients. And we have no interest in pushing an unsecured engagement: we're paid a percentage"],
+                ["No need for savings","A compliance check, recognition for the team, and no more over-contributing for nothing"]]} ] },
+
+        { i:"book", t:"Storytelling", s:"The best argument, precisely because it isn't one",
+          b:[ {k:"list", v:[
+                "People love being told stories — it's a childhood thing.",
+                "A story engages the <b>emotional</b> brain, not the rational one: far more powerful at triggering a decision.",
+                "We believe we decide rationally; in truth intuition drives us — memories, ideas and emotions working as a network, reinforcing one another.",
+                "Tell the story <b>authentically, unpolished</b>, so the prospect can feel it's genuine."]},
+              {k:"steps", v:[
+                "The setting — once upon a time: the scene, the characters.",
+                "The problem — the big bad wolf.",
+                "The resolution — the happy ending."]},
+              {k:"rule", v:"storytelling is the best argument precisely because it isn't one: it's a fact."} ] }
+      ]},
+
+      { t:"Closing", fiches:[
+        { i:"steps", t:"Present the methodology", s:"Only once interest is established",
+          b:[ {k:"text", v:"Walk through how the engagement works only once the client has shown interest during your pitch. Any earlier is wasted breath — and an admission that you haven't sold anything yet."} ] },
+
+        { i:"flag", t:"The close", s:"Don't dance around it",
+          b:[ {k:"list", v:[
+                "<b>Transition:</b> “is that clear? What do you think?”",
+                "<b>Always create urgency:</b> the statute of limitations, the audit scheduling meeting, the calendar.",
+                "<b>Take the drama out of signing:</b> “at this stage you're only approving the study — there's no commitment.”",
+                "<b>Confirm the decision path</b> and identify the signatory.",
+                "<b>Book the second meeting as close as possible</b> in the calendar."]},
+              {k:"rule", v:"you lose roughly 10% of your chances of signing with every week that passes."} ] }
+      ]}
+    ]},
+
+  { ic:"shield", id:"objections", n:"03", t:"Objections",
+    h:"Five objections cover most refusals.",
+    lede:"They come up across every practice. What changes is your reflex — not the objection.",
+    chapitres:[
+      { fiches:[
+        { i:"shield", t:"The common objections", s:"And how to answer them",
+          b:[ {k:"pairs", v:[
+                ["No time","The engagement takes little of yours: a few documents to send, we work by sampling, then we run autonomously"],
+                ["Fine, but later","In our experience these topics never become a priority. Hand them over now and we stop the clock on the statute of limitations"],
+                ["Their work being questioned","Defuse it: the rules are complex and their job is broad, while we specialize in this one point"],
+                ["Your levers don't apply here","Examples of comparable clients. We have no interest in pushing an unsecured engagement: we're paid a percentage"],
+                ["No need for savings","A compliance check, recognition for the team, and no more over-contributing for nothing"]]},
+              {k:"rule", v:"a false objection almost always hides a benefit that wasn't landed. Dig before you answer."} ] },
+
+        { i:"layers", t:"Objections by practice", s:"Innovation · Energy · Efficiency",
+          b:[ {k:"text", v:"The playbook includes an objection grid per practice — Innovation, Energy, Efficiency. Today they mirror the common objections and are waiting to be enriched with each specialty's specific cases."},
+              {k:"list", l:"To fill in per practice", v:[
+                "The most frequent technical objection on the lever",
+                "The standard answer, with an order of magnitude",
+                "A comparable client story to tell"]} ] }
+      ]}
+    ]},
+
+  { ic:"scales", id:"negociation", n:"04", t:"Negotiation",
+    h:"The best negotiation is the one that never happens.",
+    lede:"State your price firmly, never justify it, and never give ground without getting something back.",
+    chapitres:[
+      { fiches:[
+
+        { i:"scales", t:"Assertiveness", s:"Stand your ground without stepping on theirs",
+          b:[ {k:"text", v:"Assertiveness is the ability to express yourself and defend your position without encroaching on the other side's. Three traps to avoid: manipulation, passivity, aggression."},
+              {k:"split", v:[
+                {t:"A few pointers", l:["Active listening and acknowledgment","Be firm — know how to say no while keeping the negotiation open","Leave silences and let the client talk","Talk up the value of your service","Always get something in return"]},
+                {t:"Body language", l:["Stay calm","Hold eye contact","No visible stress","No fidgeting","No closing up, no irritation"]}]} ] },
+
+        { i:"tag", t:"Stating your price", s:"What to do, what to avoid",
+          b:[ {k:"split", v:[
+                {t:"Do", l:[
+                  "Read the landscape fast: past engagements, used to working with firms, a competitor in the running",
+                  "If a competitor is in play, get a price range early in the meeting — and their satisfaction level",
+                  "State your price firmly: no doubt, eye contact, no endless silence after the number",
+                  "Add value rather than justify: “our rate includes the analysis, legal fees, the case filing, the second correction run, setup support, regulatory watch…”"]},
+                {t:"Avoid", l:[
+                  "Quoting a range: “between 30 and 35%”, “around 30%”",
+                  "Pushing the proposal to later: it reopens the price debate",
+                  "Holding yourself back on a price that feels high versus an old engagement or a competitor",
+                  "Making price the whole conversation at the expense of the savings base"]}]} ] },
+
+        { i:"shield", t:"Withstanding the first push", s:"“You're too expensive”",
+          b:[ {k:"list", v:[
+                "Against a half-hearted probe — “is that negotiable?” — answer simply: <b>no, unfortunately</b>.",
+                "“You're too expensive” → <b>look surprised</b>: “expensive? No — set against the cost of the engagement, it isn't.”",
+                "<b>Recall the real costs</b>: lawyers, senior consultants, support through any audit.",
+                "<b>Recall that we carry the risk:</b> no fee if nothing is found, if you decline our recommendations, if the authorities refuse. That has to be priced in — it's the economics of the deal.",
+                "<b>Cutting our terms would mean cutting quality</b> — especially on future savings — and that's not something we're willing to do.",
+                "<b>Tell a concrete story</b> rather than argue in the abstract.",
+                "We apply the <b>standard margins of the consulting business</b> — and inflation applies to us too."]} ] },
+
+        { i:"versus", t:"Up against a competitor", s:"Undermine without trashing",
+          b:[ {k:"list", v:[
+                "<b>Start by conceding a strength</b> of theirs — frontal criticism costs you credibility.",
+                "Then land your advantages: a <b>more exhaustive audit</b>, <b>more levers</b> thanks to our regulatory watch, a <b>more secure study</b> with reassessment-risk analysis, <b>legal fees fully covered</b> with nothing advanced by the client, track record and references.",
+                "<b>Own being more expensive:</b> that's what quality costs.",
+                "<b>The savings base matters more than the rate.</b>"]},
+              {k:"said", v:"Better to recover €200,000 at a 35% rate than €100,000 at 25%."} ] },
+
+        { i:"steps", t:"When negotiation is unavoidable", s:"Three steps, in order",
+          b:[ {k:"steps", v:[
+                "<b>Confirm that everything else is settled.</b> “Are we agreed that if we find common ground on price, the rest is approved and we can start the analysis right away?” If not, get the principle of the engagement approved first — without it you'll obtain nothing from your management.",
+                "<b>Come down in small steps.</b> Justify every concession — “given that we've worked together before”, “since you're launching two studies”. Dropping fast undermines your opening offer, and denies the other side the satisfaction of having negotiated.",
+                "<b>Always ask for something in return:</b> the signed agreement back within the week, two engagements launched, an introduction to another organization."]},
+              {k:"rule", v:"present a reduction as a percentage of the price, never in points: “a 10% reduction in our terms”, i.e. 31.5% instead of 35%."} ] },
+
+        { i:"pause", t:"Silence and the psychological price", s:"Learn to speak last",
+          b:[ {k:"list", v:[
+                "<b>Managing silence is a weapon</b> — learn to speak last.",
+                "When the stakes are high, <b>asking for their psychological price</b> can pay off: most people won't dare ask for too much.",
+                "<b>Prefer a rate cut to a longer term</b> — the financial impact is smaller."]},
+              {k:"said", v:"“Without promising we can approve it — do you have a rate in mind?” — “Look, 30% works for me.” — “30% won't be possible, but I'm willing to ask my management for 32%. Deal?”"},
+              {k:"rule", v:"“Quality is remembered long after the price is forgotten.”"} ] }
+      ]}
+    ]},
+
+  { ic:"network", id:"reseau", n:"05", t:"Referrals",
+    h:"Referrals are asked for. Always.",
+    lede:"They cost nothing and shorten everything: the cycle, the trust-building, the negotiation.",
+    chapitres:[
+      { fiches:[
+        { i:"clock", t:"When to ask", s:"The moments it lands best",
+          b:[ {k:"list", v:[
+                "When delivering the report",
+                "At the end-of-engagement review",
+                "At the end of a business meeting with a client",
+                "At the end of a meeting with a prospect where there's nothing to sell",
+                "Over a business lunch",
+                "During the rate negotiation, before signing — as the counterpart",
+                "After signing, against a discount on invoices",
+                "In your personal network"]} ] },
+
+        { i:"speech", t:"How to ask", s:"Lines that work",
+          b:[ {k:"list", v:[
+                "Hold these meetings <b>in person</b>.",
+                "“Is there anyone in your professional or personal network who might be interested in what we do?”",
+                "“Do you know any HR directors in the sector?”",
+                "“Are you part of any local directors' networks?”",
+                "“Would you be willing to recommend us?”"]},
+              {k:"rule", v:"a referral fee — tied to a company or an individual — can reach 10% of the amount collected."} ] }
+      ]}
+    ]}
+  ];
+
+  var SONCAS_EN = [
+    { l:"S", t:"Sympathy", d:"Good rapport with you; knows some of our clients." },
+    { l:"O", t:"Pride", d:"Savings they'll present to their board; validation of their good practices." },
+    { l:"N", t:"Novelty", d:"A fresh topic, quick action." },
+    { l:"C", t:"Comfort", d:"Little time required, a team that runs on its own." },
+    { l:"A", t:"Money", d:"A plain and simple need for savings." },
+    { l:"S", t:"Security", d:"Legal backing, secured processes, certifications." }
+  ];
+
+  var OBJECTIONS_EN = [
+    { m:"Gatekeeper — the assistant", q:"May I ask what it's regarding?",
+      b:"They're paid to filter out salespeople. Any long justification gives you away.",
+      h:"Stay direct, stay vague, make it clear the subject is technical, and end with a request.",
+      s:"It's about the URSSAF contributions you're paying — I need a quick word with him. Can you put me through?" },
+    { m:"Prospecting — the CEO", q:"I don't have time.",
+      b:"A false objection nine times out of ten: they haven't seen what's in it for them.",
+      h:"Don't negotiate the time — deliver the benefit. Then come back to the meeting with a specific date.",
+      s:"That's exactly why I'm suggesting 30 minutes and not an hour. We have a lever that applies to your business, already rolled out with several companies in your sector. Would Thursday the 18th at 11 work?" },
+    { m:"Meeting — the CFO", q:"Fine, but later.",
+      b:"The topic isn't a priority — and it never will be.",
+      h:"Own that, and turn the delay into urgency: the statute of limitations is running.",
+      s:"In our experience, these topics never make it to the top of the list. That's the whole point of handing them over now: we stop the clock on the statute of limitations, and there's almost nothing for you to do." },
+    { m:"Meeting — the payroll manager", q:"We already handle this very well in-house.",
+      b:"Their work is being questioned. It's about ego, not technique.",
+      h:"Defuse it immediately: this isn't a fault of theirs — it's a different job from theirs.",
+      s:"The rules are complex and your role is very broad, while we specialize in this one narrow point. Nobody can track everything — which is exactly why our audits almost always find something." },
+    { m:"Meeting — the CFO", q:"Your levers don't apply to us.",
+      b:"A conviction, rarely verified. And a fear of wasting time.",
+      h:"Answer with comparable cases, and point out that the risk sits on your side.",
+      s:"We hear the same thing from organizations very much like yours — and we found opportunities there. We have no interest in pushing an engagement that isn't solid: we're paid a percentage of what you recover." },
+    { m:"Meeting — the CEO", q:"We don't need savings.",
+      b:"The topic is seen as a cash matter. It isn't only that.",
+      h:"Move the conversation to compliance and recognition for the team.",
+      s:"That's good news. Then think of the engagement as a compliance check: you secure your practices, you validate your team's work, and you stop over-contributing for nothing." },
+    { m:"Negotiation — the buyer", q:"Is that negotiable?",
+      b:"A half-hearted probe. It's testing your firmness, not your price.",
+      h:"Answer simply no — no pause, no justification.",
+      s:"No, unfortunately. Our terms include the analysis, legal fees, the case filing and support through any audit." },
+    { m:"Negotiation — the CFO", q:"You're too expensive.",
+      b:"Often a reflex. The price hasn't yet been set against the savings base.",
+      h:"Look surprised, recall the costs and the risk you carry.",
+      s:"Expensive? No — set against the cost of the engagement it isn't: lawyers, senior consultants, support through any audit. And if we find nothing, you pay nothing: we carry the risk." },
+    { m:"Negotiation — the buyer", q:"Your competitor is cheaper.",
+      b:"Often true — and often on a different scope.",
+      h:"Concede one of their strengths, then move the debate from the rate to the base.",
+      s:"They're good on that topic, it's true. Our audit is more exhaustive, more secure, and legal fees are fully covered. Better to recover €200,000 at 35% than €100,000 at 25%." },
+    { m:"Closing — the CEO", q:"I need to run it past my board.",
+      b:"Either a decision path you haven't mapped, or a polite exit.",
+      h:"Confirm the path, take the drama out of signing, and book the next meeting on the spot.",
+      s:"Of course. At this stage it's only about approving the study — there's no commitment. Who approves this with you, and who signs? Let's speak again next Thursday to set the start date." }
+  ];
+
+  var QUIZ_EN = [
+    { q:"On average, how many calls does it take to book five meetings?",
+      o:["20","50","100","300"], a:2,
+      w:"100 calls = 20 conversations = 5 meetings. Volume drives performance — not isolated talent." },
+    { q:"What is the goal of a prospecting call?",
+      o:["Sell the engagement","Sell the meeting","Qualify the budget","Send a brochure"], a:1,
+      w:"Don't sell the product — sell the meeting. Say too much and the prospect no longer needs to meet you: “that's exactly what the meeting is for.”" },
+    { q:"Why should you never ask “do you have a minute?”",
+      o:["It's too casual","It invites a no","It takes too long","It sounds too technical"], a:1,
+      w:"Never ask a question that can be answered with no. Assume they're on board and offer a slot directly." },
+    { q:"Facing the gatekeeper, what's the right stance?",
+      o:["Explain precisely why you're calling","Be direct, stay vague, don't justify yourself","Ask when to call back","Leave a detailed message"], a:1,
+      w:"A long explanation is a justification, and a justification gives you away. Stay direct, keep it vague, and close with “can you put me through?”" },
+    { q:"In the meeting's opening, who do you speak to first?",
+      o:["The lizard brain, to get past the filter","Einstein, to argue the case","The limbic system, to stir emotion","It doesn't matter"], a:0,
+      w:"The lizard brain filters to save energy. Catch its interest — with the lure or the challenge — before you can talk to Einstein." },
+    { q:"What does SONCAS stand for?",
+      o:["Six steps of consultative selling","Six buying motives","Six standard objections","Six phases of negotiation"], a:1,
+      w:"Sympathy, Pride, Novelty, Comfort, Money, Security. Nobody buys for all six reasons: find theirs." },
+    { q:"The prospect raises a blocker during your pitch. What do you do?",
+      o:["Deal with it immediately","Note it and deal with it later","Ignore it","Change the subject"], a:1,
+      w:"Note the blockers without tackling them straight away. You can even ask more about one to amplify it — then deal with it." },
+    { q:"What should you lean on hardest when making the case?",
+      o:["The potential gain","The loss avoided","The technical features","The firm's reputation"], a:1,
+      w:"The fear of losing €100 is stronger than the pleasure of gaining €150. And always talk benefits over features." },
+    { q:"How do you state your price?",
+      o:["As a range","Firmly, without justification","By comparing it to the competitor","In writing, after the meeting"], a:1,
+      w:"No range, no endless silence after the number, no justification — add value instead: what the rate includes." },
+    { q:"You grant a rate reduction. What must you get?",
+      o:["Nothing — it's a goodwill gesture","Something in return","A verbal commitment","A LinkedIn recommendation"], a:1,
+      w:"Always something in return: the signed agreement back within the week, two engagements launched, an introduction to another organization." },
+    { q:"How do you present a price reduction?",
+      o:["In rate points","As a percentage of the price","In euros","It doesn't matter"], a:1,
+      w:"“A 10% reduction in our terms”, i.e. 31.5% instead of 35%. Same thing — but it sounds far better." },
+    { q:"Why book the second meeting as early as possible?",
+      o:["To fill the calendar","You lose roughly 10% of your chances of signing per week","To beat the competitor","To close the month"], a:1,
+      w:"Every week that passes costs about 10% of your chances of signing. Create urgency and set the date in front of them." }
+  ];
+
+  /* --------- Choix de langue --------- */
+  var LANG = (function () {
+    var m = /[?&]lang=(en|fr)\b/.exec(window.location.search);
+    if (m) return m[1];
+    try { var v = window.localStorage.getItem("lang-academie"); if (v === "en" || v === "fr") return v; } catch (e) {}
+    return "fr";
+  })();
+  var EN = LANG === "en";
+  var SECTIONS = EN ? SECTIONS_EN : SECTIONS_FR;
+  var SONCAS = EN ? SONCAS_EN : SONCAS_FR;
+  var OBJECTIONS = EN ? OBJECTIONS_EN : OBJECTIONS_FR;
+  var QUIZ = EN ? QUIZ_EN : QUIZ_FR;
+
+  /* --------- Textes d'interface --------- */
+  function T(k) { var e = STR[k]; return EN ? e[1] : e[0]; }
+  var STR = {
+    train: ["S'entraîner", "Practice"],
+    trainH: ["Répondez à voix haute. Puis comparez.", "Answer out loud. Then compare."],
+    trainLede: ["Dix objections tirées du support. Répondez d'abord, lisez ensuite — c'est le réflexe qui compte, pas la récitation.",
+                "Ten objections straight from the playbook. Answer first, read after — it's the reflex that counts, not the recitation."],
+    behind: ["Ce que ça cache", "What's really behind it"],
+    answer: ["La réponse", "How to answer"],
+    objNext: ["Objection suivante", "Next objection"],
+    objShow: ["Voir la réponse", "Show the answer"],
+    objHide: ["Masquer la réponse", "Hide the answer"],
+    quizTitle: ["Quiz — 12 questions", "Quiz — 12 questions"],
+    quizNext: ["Question suivante", "Next question"],
+    quizResult: ["Voir mon résultat", "See my score"],
+    quizAgain: ["Recommencer", "Try again"],
+    quizDone: ["Terminé", "Done"],
+    exact: ["Exact.", "Correct."],
+    reponse: ["Réponse : ", "Answer: "],
+    rule: ["Règle —", "Rule —"],
+    markDone: ["Marquer la fiche comme terminée", "Mark this card as done"],
+    markTitle: ["Marquer comme terminé", "Mark as done"],
+    chapterDone: ["Chapitre", "Chapter"],
+    ofCourse: ["% du parcours.", "% of the course."],
+    allDone: ["🏆 <b>Formation terminée !</b> &nbsp;Les {n} étapes sont validées. Bravo.",
+              "🏆 <b>Course complete!</b> &nbsp;All {n} steps checked off. Well done."],
+    doneWord: ["terminé", "complete"],
+    progress: ["Ma progression", "My progress"],
+    scroll: ["Faites défiler", "Scroll"],
+    contents: ["Sommaire", "Contents"],
+    close: ["Fermer", "Close"],
+    music: ["Musique", "Music"],
+    pdf: ["Télécharger le PDF", "Download the PDF"],
+    langBtn: ["English version", "Version française"],
+    heroTitle: ["L'excellence commerciale pour les <em>Ingénieurs d'affaires</em>",
+                "Sales excellence for <em>Business Developers</em>"],
+    heroLede: ["Le support de formation, en une page. Prospecter, mener le rendez-vous, traiter les objections, négocier, développer son réseau.",
+               "The training playbook, on one page. Prospect, run the meeting, handle objections, negotiate, grow your referrals."],
+    fact1: ["parties", "parts"],
+    fact2: ["étapes de rendez-vous", "meeting steps"],
+    fact3: ["leviers SONCAS", "SONCAS motives"],
+    fact4: ["appels = 5 rendez-vous", "calls = 5 meetings"],
+    footer: ["L'excellence commerciale pour les Ingénieurs d'affaires", "Sales excellence for Business Developers"],
+    railSub: ["Excellence commerciale", "Sales excellence"],
+    quizKey: ["Quiz — corrigé", "Quiz — answer key"],
+    docTitle: ["Sales Academy — L'excellence commerciale pour les Ingénieurs d'affaires",
+               "Sales Academy — Sales excellence for Business Developers"],
+    score11: ["Le support est acquis. Ce qui vous fera progresser maintenant, c'est le volume d'appels et de rendez-vous.",
+              "The playbook is yours. What moves the needle now is volume — calls and meetings, not more theory."],
+    score8: ["Bon niveau. Reprenez les questions manquées et la partie correspondante du support.",
+             "Solid. Revisit the questions you missed and the matching part of the playbook."],
+    score5: ["Les bases sont là mais fragiles. Priorité à la prospection et au plan de rendez-vous.",
+             "The basics are there but shaky. Start with Prospecting and the meeting plan."],
+    score0: ["Reprenez le support depuis la prospection : les explications du quiz en condensent l'essentiel.",
+             "Go back through the playbook from the top — the quiz explanations condense the essentials."]
+  };
 
   /* =========================================================
      RENDU
@@ -1192,6 +1675,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
 
   var $ = function (s) { return document.querySelector(s); };
   function typo(t) {
+    if (EN) return String(t);
     return String(t).replace(/ ([?!:;»])/g, " $1").replace(/« /g, "« ");
   }
   function ul(items, label) {
@@ -1207,7 +1691,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     switch (b.k) {
       case "text":  return '<p>' + typo(b.v) + '</p>';
       case "said":  return '<p class="said">' + typo(b.v) + '</p>';
-      case "rule":  return '<p class="rule-line"><b>Règle —</b> ' + typo(b.v) + '</p>';
+      case "rule":  return '<p class="rule-line"><b>' + T("rule") + '</b> ' + typo(b.v) + '</p>';
       case "list":  return '<div>' + ul(b.v, b.l) + '</div>';
       case "steps": return '<ol class="steps">' + b.v.map(function (s) { return '<li>' + typo(s) + '</li>'; }).join("") + '</ol>';
       case "pairs": return '<div class="pairs">' + b.v.map(function (p) {
@@ -1223,7 +1707,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
       (f.i && ICONS[f.i] ? '<span class="row-ic">' + ICONS[f.i] + '</span>' : '<span class="row-ic"></span>') +
       '<span><span class="row-title">' + typo(f.t) + '</span>' +
       (f.s ? '<span class="row-sub">' + typo(f.s) + '</span>' : "") + '</span>' +
-      '<span class="row-done" role="button" tabindex="0" aria-label="Marquer la fiche comme terminée" title="Marquer comme terminé">' +
+      '<span class="row-done" role="button" tabindex="0" aria-label="' + T("markDone") + '" title="' + T("markTitle") + '">' +
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg></span>' +
       '<span class="row-plus" aria-hidden="true"></span></button>' +
       '<div class="row-body"><div class="row-inner"><div class="row-content">' +
@@ -1231,7 +1715,43 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
       '</div></div></div></article>';
   }
 
-  var TRAIN = { ic: "target", id: "entrainement", n: "06", t: "S'entraîner" };
+  var TRAIN = { ic: "target", id: "entrainement", n: "06", t: T("train") };
+
+  /* --------- Langue : textes statiques, boutons, PDF --------- */
+  (function applyLang() {
+    document.documentElement.lang = LANG;
+    var set = function (sel, val, html) {
+      var el = document.querySelector(sel);
+      if (el) { if (html) { el.innerHTML = val; } else { el.textContent = val; } }
+    };
+    set("#heroTitle", T("heroTitle"), true);
+    set(".hero .lede", T("heroLede"));
+    var factLabels = [T("fact1"), T("fact2"), T("fact3"), T("fact4")];
+    Array.prototype.forEach.call(document.querySelectorAll(".facts .fact span"), function (el, i) {
+      if (factLabels[i]) { el.textContent = factLabels[i]; }
+    });
+    set(".cue", T("scroll"));
+    set("#menuBtn", T("contents"));
+    set("#sheetClose", T("close"));
+    set(".prog-top span", T("progress"));
+    set(".foot span", T("footer"));
+    set(".rail-foot > span", T("railSub"));
+    var pdfName = "sales-academy-" + LANG + ".pdf";
+    Array.prototype.forEach.call(document.querySelectorAll('a[href*="sales-academy-"]'), function (a) {
+      a.href = "https://coachccai-blip.github.io/sales-training/" + pdfName;
+      a.setAttribute("download", EN ? "Sales-Academy-EN.pdf" : "Sales-Academy-FR.pdf");
+      a.textContent = T("pdf");
+    });
+    [document.getElementById("langBtn"), document.getElementById("langBtn2")].forEach(function (b) {
+      if (!b) return;
+      b.textContent = T("langBtn");
+      b.addEventListener("click", function () {
+        try { window.localStorage.setItem("lang-academie", EN ? "fr" : "en"); } catch (e) {}
+        window.location.href = window.location.pathname;
+      });
+    });
+  })();
+
 
   $("#sections").innerHTML = SECTIONS.map(function (s) {
     var fi = 0;
@@ -1253,38 +1773,38 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     '<span class="wm" aria-hidden="true" data-wm>' + TRAIN.n + '</span>' +
     '<div class="shell">' +
       '<span class="tag up"><i class="tag-ic">' + (ICONS[TRAIN.ic] || '') + '</i><b>' + TRAIN.n + '</b> &nbsp;' + TRAIN.t + '</span>' +
-      '<h2 class="up">Répondez à voix haute. Puis comparez.</h2>' +
-      '<p class="lede up">Dix objections tirées du support. Répondez d\'abord, lisez ensuite — c\'est le réflexe qui compte, pas la récitation.</p>' +
+      '<h2 class="up">' + T("trainH") + '</h2>' +
+      '<p class="lede up">' + T("trainLede") + '</p>' +
       '<div class="obj up">' +
         '<div class="obj-card" id="objCard">' +
           '<p class="obj-meta" id="objMeta"></p>' +
           '<p class="obj-q" id="objQ"></p>' +
         '</div>' +
         '<div class="obj-more" id="objMore"><div><div class="obj-more-inner">' +
-          '<div><span class="mini-label">Ce que ça cache</span><p id="objBehind"></p></div>' +
-          '<div><span class="mini-label">La réponse</span><p id="objHow"></p></div>' +
+          '<div><span class="mini-label">' + T("behind") + '</span><p id="objBehind"></p></div>' +
+          '<div><span class="mini-label">' + T("answer") + '</span><p id="objHow"></p></div>' +
           '<p class="said" id="objModel"></p>' +
         '</div></div></div>' +
         '<div class="actions">' +
-          '<button class="btn btn-fill magnet" type="button" id="objNext">Objection suivante</button>' +
-          '<button class="btn btn-line" type="button" id="objShow">Voir la réponse</button>' +
+          '<button class="btn btn-fill magnet" type="button" id="objNext">' + T("objNext") + '</button>' +
+          '<button class="btn btn-line" type="button" id="objShow">' + T("objShow") + '</button>' +
           '<span class="count" id="objCount"></span>' +
         '</div>' +
       '</div>' +
 
       '<div class="quiz up">' +
-        '<div class="quiz-top"><span>Quiz — 12 questions</span><span id="quizCount"></span></div>' +
+        '<div class="quiz-top"><span>' + T("quizTitle") + '</span><span id="quizCount"></span></div>' +
         '<div class="quiz-track"><div class="quiz-progress" id="quizProgress"></div></div>' +
         '<div id="quizCard">' +
           '<h3 id="quizQ"></h3>' +
           '<div class="answers" id="quizAnswers"></div>' +
           '<p class="why" id="quizWhy"></p>' +
-          '<div class="actions"><button class="btn btn-fill magnet" type="button" id="quizNext">Question suivante</button></div>' +
+          '<div class="actions"><button class="btn btn-fill magnet" type="button" id="quizNext">' + T("quizNext") + '</button></div>' +
         '</div>' +
         '<div class="quiz-end" id="quizEnd">' +
           '<p class="score"><span id="scoreVal">0</span><i>&nbsp;/ 12</i></p>' +
           '<p class="lede" style="margin-top:20px" id="scoreMsg"></p>' +
-          '<div class="actions"><button class="btn btn-line" type="button" id="quizAgain">Recommencer</button></div>' +
+          '<div class="actions"><button class="btn btn-line" type="button" id="quizAgain">' + T("quizAgain") + '</button></div>' +
         '</div>' +
       '</div>' +
     '</div>' +
@@ -1301,7 +1821,6 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
      ========================================================= */
   var PRINT = /[?&]print\b/.test(window.location.search);
   if (PRINT) {
-    document.documentElement.setAttribute("data-theme", "dark");
     document.documentElement.classList.add("print-mode");
     /* toutes les fiches ouvertes */
     Array.prototype.forEach.call(document.querySelectorAll(".row"), function (r) { r.classList.add("open"); });
@@ -1319,7 +1838,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     /* tout le quiz, corrigé */
     var quizEl = document.querySelector(".quiz");
     if (quizEl) {
-      quizEl.innerHTML = '<div class="quiz-top"><span>Quiz — corrigé</span></div>' +
+      quizEl.innerHTML = '<div class="quiz-top"><span>' + T("quizKey") + '</span></div>' +
         QUIZ.map(function (q, qi) {
           return '<div class="pm-quiz"><h4>' + (qi + 1) + '. ' + typo(q.q) + '</h4><ul>' +
             q.o.map(function (o, i) {
@@ -1330,7 +1849,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     /* apparitions figées, compteurs remplis */
     Array.prototype.forEach.call(document.querySelectorAll(".up"), function (el) { el.classList.add("in"); });
     Array.prototype.forEach.call(document.querySelectorAll("[data-count]"), function (el) { el.textContent = el.dataset.count; });
-    document.title = "Sales Academy — L'excellence commerciale pour les Ingénieurs d'affaires";
+    document.title = T("docTitle");
   }
 
 
@@ -1358,7 +1877,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     $("#objModel").textContent = "« " + o.s + " »";
     $("#objCount").textContent = (i + 1) + " / " + OBJECTIONS.length;
     more.classList.remove("open");
-    $("#objShow").textContent = "Voir la réponse";
+    $("#objShow").textContent = T("objShow");
   }
   $("#objNext").addEventListener("click", function () {
     card.classList.add("flip");
@@ -1369,7 +1888,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     }, 260);
   });
   $("#objShow").addEventListener("click", function () {
-    this.textContent = more.classList.toggle("open") ? "Masquer la réponse" : "Voir la réponse";
+    this.textContent = more.classList.toggle("open") ? T("objHide") : T("objShow");
   });
   showObj(0);
   }
@@ -1389,7 +1908,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     }).join("");
     $("#quizWhy").classList.remove("on");
     $("#quizNext").style.display = "none";
-    $("#quizNext").textContent = qi === QUIZ.length - 1 ? "Voir mon résultat" : "Question suivante";
+    $("#quizNext").textContent = qi === QUIZ.length - 1 ? T("quizResult") : T("quizNext");
   }
   $("#quizAnswers").addEventListener("click", function (e) {
     var b = e.target.closest(".answer");
@@ -1402,7 +1921,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
       if (+el.dataset.a === q.a) { el.classList.add("right"); }
       else if (+el.dataset.a === picked) { el.classList.add("wrong"); }
     });
-    $("#quizWhy").innerHTML = "<b>" + (picked === q.a ? "Exact." : "Réponse : " + typo(q.o[q.a]) + ".") + "</b> " + typo(q.w);
+    $("#quizWhy").innerHTML = "<b>" + (picked === q.a ? T("exact") : T("reponse") + typo(q.o[q.a]) + ".") + "</b> " + typo(q.w);
     $("#quizWhy").classList.add("on");
     $("#quizNext").style.display = "";
   });
@@ -1410,13 +1929,10 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     if (qi < QUIZ.length - 1) { qi++; drawQuiz(); return; }
     $("#quizProgress").style.width = "100%";
     $("#quizCard").style.display = "none";
-    $("#quizCount").textContent = "Terminé";
+    $("#quizCount").textContent = T("quizDone");
     $("#scoreVal").textContent = score;
     $("#scoreMsg").textContent =
-      score >= 11 ? "Le support est acquis. Ce qui vous fera progresser maintenant, c'est le volume d'appels et de rendez-vous."
-      : score >= 8 ? "Bon niveau. Reprenez les questions manquées et la partie correspondante du support."
-      : score >= 5 ? "Les bases sont là mais fragiles. Priorité à la prospection et au plan de rendez-vous."
-      : "Reprenez le support depuis la prospection : les explications du quiz en condensent l'essentiel.";
+      score >= 11 ? T("score11") : score >= 8 ? T("score8") : score >= 5 ? T("score5") : T("score0");
     $("#quizEnd").classList.add("on");
     if (!doneMap["quiz"]) {
       doneMap["quiz"] = 1; saveDone(); paintRows(); paintProgress(); celebrate("entrainement");
@@ -1535,21 +2051,68 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     return f ? f.t : id;
   }
   function celebrate(id) {
+    sfx.chime();
     var g = totalCounts();
     if (g.d >= g.t) {
       confetti.burst(true);
       window.setTimeout(function () { confetti.burst(true); }, 450);
-      toast("🏆 <b>Formation terminée !</b> &nbsp;Les " + g.t + " étapes sont validées. Bravo.");
+      toast(T("allDone").replace("{n}", g.t));
     } else {
       confetti.burst(false);
-      toast("🎉 Chapitre <b>" + sectionName(id) + "</b> terminé — " + Math.round(g.d / g.t * 100) + " % du parcours.");
+      toast("🎉 " + T("chapterDone") + " <b>" + sectionName(id) + "</b> " + T("doneWord") + " — " + Math.round(g.d / g.t * 100) + " " + T("ofCourse"));
     }
   }
+
+
+  /* --------- Bruitages (validation & célébration) --------- */
+  var sfx = (function () {
+    var ctx = null;
+    function ac() {
+      if (!ctx) { try { ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return null; } }
+      if (ctx.state === "suspended") { ctx.resume(); }
+      return ctx;
+    }
+    function tick() {
+      var c = ac(); if (!c || reduce) return;
+      var t = c.currentTime;
+      var o = c.createOscillator(), g = c.createGain();
+      o.type = "sine";
+      o.frequency.setValueAtTime(620, t);
+      o.frequency.exponentialRampToValueAtTime(1080, t + 0.09);
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(0.22, t + 0.012);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + 0.22);
+      o.connect(g); g.connect(c.destination);
+      o.start(t); o.stop(t + 0.25);
+      var n = c.createOscillator(), ng = c.createGain();
+      n.type = "triangle"; n.frequency.value = 2200;
+      ng.gain.setValueAtTime(0.06, t);
+      ng.gain.exponentialRampToValueAtTime(0.0001, t + 0.05);
+      n.connect(ng); ng.connect(c.destination);
+      n.start(t); n.stop(t + 0.06);
+    }
+    function chime() {
+      var c = ac(); if (!c || reduce) return;
+      var t = c.currentTime;
+      [1046.5, 1318.5, 1568, 2093].forEach(function (f, i) {
+        var o = c.createOscillator(), g = c.createGain();
+        o.type = "triangle"; o.frequency.value = f;
+        var st = t + i * 0.085;
+        g.gain.setValueAtTime(0.0001, st);
+        g.gain.exponentialRampToValueAtTime(0.16, st + 0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001, st + 0.6);
+        o.connect(g); g.connect(c.destination);
+        o.start(st); o.stop(st + 0.65);
+      });
+    }
+    return { tick: tick, chime: chime };
+  })();
 
   function toggleDone(key) {
     var id = key.split(":")[0];
     var wasFull = sectionCounts(id) >= SECTION_TOTALS[id];
-    if (doneMap[key]) { delete doneMap[key]; } else { doneMap[key] = 1; }
+    var marking = !doneMap[key];
+    if (marking) { doneMap[key] = 1; sfx.tick(); } else { delete doneMap[key]; }
     saveDone(); paintRows(); paintProgress();
     var isFull = sectionCounts(id) >= SECTION_TOTALS[id];
     if (isFull && !wasFull) { celebrate(id); }
@@ -1567,46 +2130,18 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
   }, true);
   paintRows(); paintProgress();
 
-  /* --- Thème --- */
-  function darkNow() {
-    var t = document.documentElement.getAttribute("data-theme");
-    if (t) return t === "dark";
-    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  }
-  function labelTheme() {
-    var l = darkNow() ? "Thème clair" : "Thème sombre";
-    $("#themeBtn").textContent = l; $("#themeBtn2").textContent = l;
-  }
-  try {
-    var saved = window.localStorage.getItem("theme-academie");
-    document.documentElement.setAttribute("data-theme", saved === "light" ? "light" : "dark");
-  } catch (e) {
-    document.documentElement.setAttribute("data-theme", "dark");
-  }
-  labelTheme();
-  function toggleTheme() {
-    var next = darkNow() ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", next);
-    try { window.localStorage.setItem("theme-academie", next); } catch (e) {}
-    labelTheme();
-    readAuroraColors();
-  }
-  $("#themeBtn").addEventListener("click", toggleTheme);
-  $("#themeBtn2").addEventListener("click", toggleTheme);
 
   /* --------- Musique d'ambiance (Web Audio, générée, sans fichier) --------- */
   var music = (function () {
     var ctx = null, master = null, timer = null, bar = 0, on = false;
     var NOTE = function (m) { return 440 * Math.pow(2, (m - 69) / 12); };
-    /* Cmaj9 · Am9 · Fmaj9 · G(add9) — doux, corporate */
     var CHORDS = [
       { bass: 36, pad: [48, 52, 55, 59, 62], arp: [72, 76, 79, 83, 86] },
       { bass: 33, pad: [45, 48, 52, 55, 59], arp: [69, 72, 76, 79, 83] },
       { bass: 41, pad: [45, 48, 52, 55, 57], arp: [69, 72, 76, 77, 81] },
       { bass: 43, pad: [47, 50, 55, 59, 62], arp: [71, 74, 79, 83, 86] }
     ];
-    var BAR = 3.6; /* secondes par accord */
-
+    var BAR = 3.6;
     function build() {
       ctx = new (window.AudioContext || window.webkitAudioContext)();
       master = ctx.createGain();
@@ -1614,7 +2149,6 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
       var comp = ctx.createDynamicsCompressor();
       comp.threshold.value = -28; comp.ratio.value = 6;
       master.connect(comp); comp.connect(ctx.destination);
-      /* écho discret partagé */
       var delay = ctx.createDelay(1); delay.delayTime.value = 0.45;
       var fb = ctx.createGain(); fb.gain.value = 0.32;
       var wet = ctx.createGain(); wet.gain.value = 0.22;
@@ -1666,9 +2200,8 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     function scheduleBar(t) {
       var c = CHORDS[bar % CHORDS.length];
       pad(t, c.pad); bass(t, c.bass);
-      /* motif de 6 notes par mesure, varie doucement d'une mesure à l'autre */
       for (var i = 0; i < 6; i++) {
-        if ((bar + i) % 4 === 3 && i % 2 === 1) continue; /* respirations */
+        if ((bar + i) % 4 === 3 && i % 2 === 1) continue;
         var n = c.arp[(i * 2 + bar) % c.arp.length] + (i === 4 ? 12 : 0);
         pluck(t + i * (BAR / 6) + 0.02, n, (i % 2 ? 0.35 : -0.35));
       }
@@ -1711,7 +2244,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     var onAir = music.playing();
     musicBtns.forEach(function (b) {
       if (!b) return;
-      b.textContent = onAir ? "Musique · on" : "Musique · off";
+      b.textContent = T("music") + (onAir ? " · on" : " · off");
       b.setAttribute("aria-pressed", onAir ? "true" : "false");
     });
   }
@@ -1721,19 +2254,18 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     musicLabel();
   }
   musicBtns.forEach(function (b) { if (b) { b.addEventListener("click", toggleMusic); } });
-  /* préférence mémorisée : reprise au premier geste (les navigateurs bloquent l'autoplay) */
+  musicLabel();
   try {
-    if (window.localStorage.getItem("music-academie") === "on") {
-      var resume = function () {
-        document.removeEventListener("pointerdown", resume);
-        document.removeEventListener("keydown", resume);
+    if (window.localStorage.getItem("music-academie") === "on" && !PRINT) {
+      var resumeMusic = function () {
+        document.removeEventListener("pointerdown", resumeMusic);
+        document.removeEventListener("keydown", resumeMusic);
         if (!music.playing() && music.start()) { musicLabel(); }
       };
-      document.addEventListener("pointerdown", resume);
-      document.addEventListener("keydown", resume);
+      document.addEventListener("pointerdown", resumeMusic);
+      document.addEventListener("keydown", resumeMusic);
     }
   } catch (e) {}
-
 
   /* --- Sommaire mobile --- */
   var sheet = $("#sheet");

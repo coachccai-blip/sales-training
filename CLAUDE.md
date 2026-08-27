@@ -17,13 +17,24 @@ Le déploiement ne fonctionne que depuis `main` (restriction de l'environnement
 `github-pages`) ; en cas de run bloqué en file, relancer via
 `workflow_dispatch` plutôt que par un commit vide.
 
-## PDF téléchargeable
+## PDF téléchargeables (FR + EN)
 
-Le bouton « Télécharger le PDF » du site pointe vers `sales-academy.pdf`,
-généré depuis le site lui-même en mode `index.html?print` (rendu complet,
-fiches dépliées, quiz corrigé). **Après toute modification du contenu,
-régénérer le PDF avant de fusionner** : `node tools/build-pdf.mjs`
-(Chromium de Playwright requis), puis commiter le PDF avec le reste.
+Le bouton « Télécharger le PDF » pointe vers `sales-academy-fr.pdf` ou
+`sales-academy-en.pdf` selon la langue active. Ils sont générés depuis le
+site lui-même en mode `index.html?print&lang=xx` (rendu complet, fiches
+dépliées, quiz corrigé). **Après toute modification du contenu, régénérer
+les deux PDF avant de fusionner** : `node tools/build-pdf.mjs` (Chromium de
+Playwright requis), puis commiter les PDF avec le reste. Le workflow Pages
+les copie dans le site publié.
+
+## Bilingue FR / EN
+
+Le contenu vit en double dans `index.html` : tableaux `SECTIONS_FR`/`_EN`,
+`SONCAS_FR`/`_EN`, `OBJECTIONS_FR`/`_EN`, `QUIZ_FR`/`_EN`, et les textes
+d'interface dans `STR` (paires [fr, en]). Toute modification de contenu se
+fait dans les deux langues — l'anglais doit rester naturel et natif, pas
+traduit mot à mot. La langue se choisit par le bouton du sommaire
+(mémorisée) ou `?lang=en`.
 
 ## Architecture
 
