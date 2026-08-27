@@ -1,4 +1,4 @@
-# Académie de l'Ingénieur d'Affaires
+# Sales Academy — L'excellence commerciale pour les Ingénieurs d'affaires
 
 Site de formation **« L'excellence commerciale pour les Ingénieurs d'affaires »**.
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Académie de l'Ingénieur d'Affaires</title>
+<title>Sales Academy</title>
 <meta name="description" content="L'excellence commerciale pour les Ingénieurs d'affaires : prospection, rendez-vous, objections, négociation, réseau. Le support de formation, en une page interactive.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -290,7 +290,25 @@ section + section{border-top-color:transparent}
 .row:hover::after,.row.open::after{transform:scaleX(1)}
 .row:not(.open):hover{background:color-mix(in srgb,var(--tint) 40%,transparent)}
 .row.open{background:color-mix(in srgb,var(--tint) 55%,transparent)}
-.row-head{width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:24px 16px 24px 4px;text-align:left;transition:padding-left .3s}
+.row-head{width:100%;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;padding:24px 16px 24px 4px;text-align:left;transition:padding-left .3s}
+.row-ic{
+  width:40px;height:40px;flex:none;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--hairline);border-radius:11px;color:var(--muted);
+  background:color-mix(in srgb,var(--raised) 70%,transparent);
+  transition:color .3s,border-color .3s,transform .3s,box-shadow .3s;
+}
+.row-ic svg{width:19px;height:19px}
+.row-head:hover .row-ic,.row.open .row-ic{
+  color:var(--orange);border-color:color-mix(in srgb,var(--orange) 45%,var(--hairline));
+  transform:translateY(-1px);box-shadow:0 6px 16px rgba(255,102,51,.14);
+}
+.tag-ic{
+  display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;
+  border:1px solid var(--hairline);border-radius:9px;color:var(--orange);
+  margin-right:12px;vertical-align:middle;
+  background:color-mix(in srgb,var(--raised) 70%,transparent);
+}
+.tag-ic svg{width:16px;height:16px}
 .row.open .row-head,.row-head:hover{padding-left:14px}
 .row-title{display:block;font-family:var(--title);font-weight:800;font-size:clamp(18px,2.2vw,23px);letter-spacing:-.02em;line-height:1.25;transition:color .25s}
 .row-head:hover .row-title{color:var(--orange)}
@@ -530,7 +548,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
 <aside class="rail">
   <a class="mark" href="#haut">
     <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3a17 17 0 1 0 15.5 10" fill="none" stroke="#FF6633" stroke-width="6" stroke-linecap="round"/></svg>
-    <span>ACADÉMIE</span>
+    <span>SALES ACADEMY</span>
   </a>
   <nav class="toc" id="toc" aria-label="Sommaire"></nav>
   <div class="rail-foot">
@@ -543,7 +561,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
 <div class="topbar">
   <a class="mark" href="#haut">
     <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3a17 17 0 1 0 15.5 10" fill="none" stroke="#FF6633" stroke-width="6" stroke-linecap="round"/></svg>
-    <span>ACADÉMIE</span>
+    <span>SALES ACADEMY</span>
   </a>
   <button class="mini" id="menuBtn" type="button">Sommaire</button>
 </div>
@@ -604,13 +622,13 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
   var SECTIONS = [
 
   /* ---------------------------------------------------- 01 */
-  { id:"prospection", n:"01", t:"Prospection",
+  { ic:"phone", id:"prospection", n:"01", t:"Prospection",
     h:"Vendez un rendez-vous, pas un produit.",
     lede:"100 appels, 20 conversations, 5 rendez-vous. Tout le reste du métier commence ici.",
     chapitres:[
       { fiches:[
 
-        { t:"L'état d'esprit", s:"Le volume fait la performance",
+        { i:"zap", t:"L'état d'esprit", s:"Le volume fait la performance",
           b:[ {k:"list", v:[
                 "<b>Oui, c'est difficile</b> — c'est précisément pour ça que peu de monde y arrive, et que les commerciaux sont bien payés.",
                 "<b>N'ayez pas peur du rejet.</b> C'est parce qu'il y a des rejets que la victoire est savoureuse ensuite.",
@@ -621,7 +639,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 "<b>Appelez tôt le matin et tard le soir,</b> quand vos prospects sont disponibles."]},
               {k:"rule", v:"le nombre d'appels n'est pas un détail d'exécution, c'est le moteur du résultat."} ] },
 
-        { t:"Les 10 premières secondes", s:"Elles décident de tout le reste",
+        { i:"clock", t:"Les 10 premières secondes", s:"Elles décident de tout le reste",
           b:[ {k:"list", v:[
                 "Toujours <b>enthousiaste</b> dès le début de l'appel.",
                 "<b>Souriez</b> : cela s'entend.",
@@ -631,14 +649,14 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 "Le prospect doit <b>comprendre son intérêt immédiatement</b> : gain financier, gain de temps.",
                 "<b>Phrases courtes et au présent</b> = dynamique, action."]} ] },
 
-        { t:"Ne pas passer pour un commercial", s:"Un ami expert, pas un téléprospecteur",
+        { i:"mask", t:"Ne pas passer pour un commercial", s:"Un ami expert, pas un téléprospecteur",
           b:[ {k:"list", v:[
                 "<b>Démarquez-vous</b> des autres téléprospecteurs.",
                 "Ne sonnez pas comme un commercial — <i>« faire le point »</i>, <i>« notre nouvelle offre »</i> — mais comme <b>un ami expert de son domaine</b>.",
                 "<b>Ne lisez pas un script.</b> Un discours trop écrit s'entend : gardez votre authenticité.",
                 "Parlez de <b>manière plutôt familière</b>, avec respect, plutôt que formelle."]} ] },
 
-        { t:"Assertivité & adaptabilité", s:"Les mots qui vous placent d'égal à égal",
+        { i:"speech", t:"Assertivité & adaptabilité", s:"Les mots qui vous placent d'égal à égal",
           b:[ {k:"pairs", v:[
                 ["Pas de conditionnel","« Je cherche à joindre, je dois joindre » plutôt que « j'aurais souhaité parler à »"],
                 ["Pas de terme réducteur","Bannir « un petit peu », « une petite minute »"],
@@ -647,7 +665,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 ["Pas de forme durative","Éviter « je pense qu'il serait intéressant de nous rencontrer »"],
                 ["Adaptabilité","S'ajuster à chaque situation, à chaque objection, en direct"]]} ] },
 
-        { t:"Les erreurs à ne pas commettre", s:"Ne donnez jamais l'occasion de dire non",
+        { i:"alert", t:"Les erreurs à ne pas commettre", s:"Ne donnez jamais l'occasion de dire non",
           b:[ {k:"list", v:[
                 "<b>Ne posez pas de question qui permet de répondre non</b> — « vous avez une minute ? », « seriez-vous intéressé ? ». Partez du principe qu'il est d'accord.",
                 "<b>Tournez vos questions pour obtenir un oui :</b> « quel jour êtes-vous disponible la semaine prochaine ? » plutôt que « seriez-vous disponible ? »",
@@ -656,7 +674,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
               {k:"said", v:"Il n'y aura aucun problème · vous pouvez être tranquille · vous ne courez aucun risque · vous serez en sécurité · nous sommes d'accord ? · vous ne le regretterez pas · vous vous en féliciterez"},
               {k:"rule", v:"remplacez chaque mot négatif par son équivalent positif : succès, gagner, bénéfice, efficacité, sérieux, économie."} ] },
 
-        { t:"Passer le barrage secrétaire", s:"Elle est payée pour filtrer les commerciaux",
+        { i:"key", t:"Passer le barrage secrétaire", s:"Elle est payée pour filtrer les commerciaux",
           b:[ {k:"list", v:[
                 "<b>Être assertif et direct.</b> Ne passez pas pour un commercial mais pour une relation professionnelle qui a besoin de lui parler rapidement.",
                 "<b>Ne vous justifiez pas :</b> une formulation longue est une justification, et une justification trahit la prospection.",
@@ -665,7 +683,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 "<b>Ne soyez pas trop formel</b> : le formalisme signale le commercial."]},
               {k:"said", v:"« Je dois joindre M. X. » — « C'est à quel sujet ? » — « Ça concerne les cotisations que vous acquittez à l'URSSAF, j'ai besoin d'échanger rapidement avec lui. Vous pouvez me le passer ? »"} ] },
 
-        { t:"Prendre le rendez-vous", s:"Le seul objectif de l'appel",
+        { i:"calendar", t:"Prendre le rendez-vous", s:"Le seul objectif de l'appel",
           b:[ {k:"list", v:[
                 "<b>Présentez-vous rapidement.</b>",
                 "<b>Liez votre appel à une action antérieure</b> ou à un fait d'actualité : « nous avions rencontré votre prédécesseur il y a quelque temps… »",
@@ -679,19 +697,19 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     ]},
 
   /* ---------------------------------------------------- 02 */
-  { id:"rendez-vous", n:"02", t:"Le rendez-vous",
+  { ic:"hand", id:"rendez-vous", n:"02", t:"Le rendez-vous",
     h:"Motiver et rassurer, du début à la fin.",
     lede:"Sept étapes, une heure. Chaque minute a une fonction : capter, comprendre, convaincre, conclure.",
     chapitres:[
 
       { t:"Le cadre", fiches:[
-        { t:"Motiver et rassurer", s:"L'essentiel du métier",
+        { i:"compass", t:"Motiver et rassurer", s:"L'essentiel du métier",
           b:[ {k:"text", v:"Dans notre métier, vous passez votre temps à faire deux choses : motiver, et rassurer."},
               {k:"pairs", v:[
                 ["Motiver","Enjeux financiers · mission peu chronophage pour eux · références de ceux qui l'ont fait · sécurisation de leurs pratiques"],
                 ["Rassurer","Références locales · appui juridique · storytelling · sécurisation des leviers · accompagnement en cas de contrôle · présentation du groupe"]]} ] },
 
-        { t:"Le plan du rendez-vous", s:"7 étapes, du bonjour à la signature",
+        { i:"listNum", t:"Le plan du rendez-vous", s:"7 étapes, du bonjour à la signature",
           b:[ {k:"steps", v:[
                 "Introduction — 1 minute",
                 "Questions sur l'interlocuteur et sa structure — 5 à 10 minutes",
@@ -704,7 +722,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
       ]},
 
       { t:"Introduction", fiches:[
-        { t:"La première impression", s:"Vous n'aurez qu'une seule occasion",
+        { i:"hand", t:"La première impression", s:"Vous n'aurez qu'une seule occasion",
           b:[ {k:"list", v:[
                 "<b>Poignée de main ferme</b> — une pression légèrement plus ferme que celle de l'interlocuteur — et <b>sourire</b>.",
                 "<b>Pas de mauvais brise-glace</b> du type « il fait beau aujourd'hui ».",
@@ -713,7 +731,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 "<b>Présentez-vous</b>, nom et prénom, carte de visite.",
                 "<b>Rappelez l'objet</b> du rendez-vous, <b>validez le timing</b>, <b>rappelez l'objectif</b> : identifier des pistes d'économies et expliquer comment vous pouvez l'accompagner."]} ] },
 
-        { t:"Parler au reptilien", s:"Passer le filtre avant de convaincre",
+        { i:"brain", t:"Parler au reptilien", s:"Passer le filtre avant de convaincre",
           b:[ {k:"text", v:"Notre cerveau est une colocation : le reptilien (200 millions d'années) trie les messages, le limbique gère les émotions, et Einstein (4 millions d'années) pense l'abstrait. Le reptilien filtre pour nous préserver de la fatigue et de la perte de temps : il faut capter son intérêt et attiser son désir, pas l'effrayer."},
               {k:"list", l:"Deux techniques", v:[
                 "<b>L'appât</b> — présenter une expérience récente avec une société, si possible un concurrent du prospect. Du storytelling, tout de suite.",
@@ -721,7 +739,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
               {k:"said", v:"« Je vais vous présenter une offre que certains de vos confrères ont suivie avec intérêt, d'autres n'ont pas donné suite. N'hésitez pas à me dire si vous ne souhaitez pas aller plus loin. »"},
               {k:"rule", v:"évitez les formulations bateau — « j'aimerais vous présenter une solution en adéquation avec votre stratégie ». Le reptilien les traite comme une menace."} ] },
 
-        { t:"Parler à Einstein", s:"Le maintenir éveillé",
+        { i:"bulb", t:"Parler à Einstein", s:"Le maintenir éveillé",
           b:[ {k:"list", v:[
                 "<b>Posez des « pourquoi »</b> pour comprendre ce qui compte vraiment, avant le « quoi » et le « comment ».",
                 "<b>Ne faites pas d'hypothèse :</b> interrogez, écoutez. Optimiste sur l'attitude, maniaque sur le détail.",
@@ -734,7 +752,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
       ]},
 
       { t:"La découverte", fiches:[
-        { t:"S'intéresser à la personne et à sa structure", s:"Quand on parle on plaît parfois, quand on écoute on plaît toujours",
+        { i:"user", t:"S'intéresser à la personne et à sa structure", s:"Quand on parle on plaît parfois, quand on écoute on plaît toujours",
           b:[ {k:"list", v:[
                 "« Vous êtes bien le DRH… ? Depuis combien de temps ? »",
                 "« Avez-vous travaillé dans d'autres secteurs avant ? »",
@@ -744,7 +762,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 "« Avez-vous travaillé avec un cabinet de conseil ? Lequel, sur quel sujet ? Si non, pourquoi ? »",
                 "« Avez-vous mené des actions d'optimisation en interne ? »"]} ] },
 
-        { t:"Présenter le cabinet", s:"Court et concis — 3 minutes",
+        { i:"building", t:"Présenter le cabinet", s:"Court et concis — 3 minutes",
           b:[ {k:"steps", v:[
                 "Qui nous sommes : un cabinet de conseil spécialisé dans l'optimisation budgétaire des entreprises.",
                 "Quelques chiffres clés : effectifs, pays, nombre de clients, économies générées chaque année.",
@@ -754,7 +772,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 "Les références — prenez votre temps sur ce point : interrogez le prospect pour voir s'il connaît certains de nos clients, et faites du storytelling.",
                 "Les domaines d'expertise et le modèle de rémunération."]} ] },
 
-        { t:"Les questions ouvertes", s:"Faire parler",
+        { i:"ask", t:"Les questions ouvertes", s:"Faire parler",
           b:[ {k:"list", v:[
                 "« Quelles sont vos attentes par rapport à notre rendez-vous ? »",
                 "« Avez-vous des sujets sur lesquels vous vous questionnez ? »",
@@ -766,7 +784,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 "« Que souhaiteriez-vous supprimer dans votre chaîne de gestion de l'absentéisme ? »",
                 "« Qu'est-ce qui ferait que nous ne travaillions pas ensemble sur ce sujet ? »"]} ] },
 
-        { t:"Les questions rhétoriques", s:"Faire apparaître le manque",
+        { i:"search", t:"Les questions rhétoriques", s:"Faire apparaître le manque",
           b:[ {k:"list", v:[
                 "« Vous n'avez pas fait vérifier votre paie par un cabinet depuis plus de 3 ans ? »",
                 "« Vous n'avez pas fait d'audit de taxe foncière récemment ? Même depuis la réforme ? »",
@@ -776,7 +794,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 "« J'imagine qu'en ce moment vos gestionnaires n'ont pas le temps de relancer les CPAM ? »",
                 "« Êtes-vous, comme beaucoup de DAF et DRH que je rencontre, challengé sur les économies et la conformité ? »"]} ] },
 
-        { t:"Reformuler", s:"Verrouiller ce qui vient d'être dit",
+        { i:"repeat", t:"Reformuler", s:"Verrouiller ce qui vient d'être dit",
           b:[ {k:"list", v:[
                 "« Donc si je résume, vous n'avez pas fait d'audit depuis au moins 5 ans ? »",
                 "« On est d'accord que vous n'avez rien fait depuis la dernière réforme des valeurs locatives ? »",
@@ -785,7 +803,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 "« Ce que l'on se dit, c'est que vous ne voyez pas d'intérêt sur ce sujet, mais que sur celui-là vous en validez un. C'est bien ça ? »",
                 "« De mon point de vue il n'y a pas de sujet sur X ; en revanche il est pertinent de regarder Y. Vous partagez ? »"]} ] },
 
-        { t:"Passer pour un expert", s:"Des questions de qualité, dans le bon ordre",
+        { i:"award", t:"Passer pour un expert", s:"Des questions de qualité, dans le bon ordre",
           b:[ {k:"text", v:"Une bonne découverte vous fait passer pour un expert et rassure votre prospect. Ne switchez pas de sujet en permanence : des questions de qualité, dans le bon ordre, de manière fluide."},
               {k:"list", v:[
                 "« Avez-vous fait appel à un cabinet sur les cotisations sociales ces dernières années ? »",
@@ -799,11 +817,11 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
       ]},
 
       { t:"L'argumentation", fiches:[
-        { t:"SONCAS", s:"Détecter le levier de motivation",
+        { i:"puzzle", t:"SONCAS", s:"Détecter le levier de motivation",
           b:[ {k:"soncas"},
               {k:"rule", v:"un interlocuteur n'achète jamais pour les six raisons à la fois. Trouvez la sienne, et appuyez dessus."} ] },
 
-        { t:"Bien utiliser ses cartouches", s:"La différence entre le bon et le mauvais chasseur",
+        { i:"target", t:"Bien utiliser ses cartouches", s:"La différence entre le bon et le mauvais chasseur",
           b:[ {k:"list", v:[
                 "<b>Pour être convaincant, il faut être convaincu</b> — l'enthousiasme est contagieux.",
                 "<b>Notez les freins, ne les traitez pas tout de suite.</b> Vous pouvez même reposer des questions sur le frein pour l'amplifier, avant de le traiter.",
@@ -812,14 +830,14 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 "<b>Variez vos arguments</b> — enjeux financiers chiffrés, storytelling, vérification des bonnes pratiques, explication des leviers, statistiques.",
                 "<b>Ne donnez pas tous vos arguments au début :</b> gardez-en sous le pied."]} ] },
 
-        { t:"Motiver et rassurer, concrètement", s:"Bénéfices plutôt que caractéristiques",
+        { i:"gift", t:"Motiver et rassurer, concrètement", s:"Bénéfices plutôt que caractéristiques",
           b:[ {k:"list", v:[
                 "<b>Marquez des blancs entre chaque argument</b> : le prospect assimile, et vous observez sa réaction.",
                 "<b>Parlez des bénéfices, pas des caractéristiques.</b> « La mission n'est pas chronophage pour vous » plutôt que « il faudra nous envoyer une extraction des absences, les bulletins… »",
                 "<b>L'humain est égoïste :</b> expliquez ce que la mission lui apporte, à lui.",
                 "<b>Insistez davantage sur la perte que sur le gain :</b> la peur de perdre 100 € est plus intense que le plaisir d'en gagner 150."]} ] },
 
-        { t:"Identifier et traiter les freins", s:"Attention aux faux freins",
+        { i:"brake", t:"Identifier et traiter les freins", s:"Attention aux faux freins",
           b:[ {k:"text", v:"Pour traiter les freins, encore faut-il les repérer : un blanc, une question, une hésitation. Et méfiez-vous des faux freins — « je n'ai pas le temps » signifie le plus souvent « je n'ai pas perçu l'intérêt pour moi »."},
               {k:"pairs", v:[
                 ["Remise en question de son travail","Dédramatiser : la réglementation est complexe, son métier est large quand nous ne sommes spécialistes que d'un point"],
@@ -828,7 +846,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 ["Le levier n'est pas applicable chez moi","Exemples de clients comparables. Et aucun intérêt à pousser une mission non sécurisée : nous sommes rémunérés au pourcentage"],
                 ["Pas besoin d'économies","Bilan de conformité, valorisation des équipes, ne pas surcotiser pour rien"]]} ] },
 
-        { t:"Le storytelling", s:"Le meilleur argument, parce que ce n'en est pas un",
+        { i:"book", t:"Le storytelling", s:"Le meilleur argument, parce que ce n'en est pas un",
           b:[ {k:"list", v:[
                 "Les gens adorent qu'on leur raconte des histoires — c'est un souvenir d'enfance.",
                 "L'histoire fait travailler la <b>partie émotive</b> du cerveau, pas la rationnelle : bien plus puissant pour déclencher l'achat.",
@@ -842,10 +860,10 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
       ]},
 
       { t:"Conclure", fiches:[
-        { t:"Présenter la méthodologie", s:"Uniquement si l'intérêt est acquis",
+        { i:"steps", t:"Présenter la méthodologie", s:"Uniquement si l'intérêt est acquis",
           b:[ {k:"text", v:"On ne déroule le fonctionnement de la mission que lorsque le client a montré un intérêt pendant l'argumentaire. Avant, c'est du temps perdu — et un aveu que vous n'avez rien vendu."} ] },
 
-        { t:"Le closing", s:"Ne tournez pas autour du pot",
+        { i:"flag", t:"Le closing", s:"Ne tournez pas autour du pot",
           b:[ {k:"list", v:[
                 "<b>Transition :</b> « est-ce que c'est clair ? Qu'en pensez-vous ? »",
                 "<b>Créez toujours de l'urgence</b> : prescription, réunion de placement d'audit, calendrier.",
@@ -857,12 +875,12 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     ]},
 
   /* ---------------------------------------------------- 03 */
-  { id:"objections", n:"03", t:"Objections",
+  { ic:"shield", id:"objections", n:"03", t:"Objections",
     h:"Cinq objections couvrent l'essentiel des refus.",
     lede:"Elles reviennent dans tous les pôles. Ce qui change, c'est votre réflexe — pas l'objection.",
     chapitres:[
       { fiches:[
-        { t:"Les objections communes", s:"Et la réponse à apporter",
+        { i:"shield", t:"Les objections communes", s:"Et la réponse à apporter",
           b:[ {k:"pairs", v:[
                 ["Pas le temps","La mission est peu chronophage : quelques documents à nous envoyer, nous travaillons par échantillonnage, puis nous sommes autonomes"],
                 ["Ok, mais plus tard","D'expérience, ces sujets ne seront jamais prioritaires. L'intérêt est de nous les confier et de bloquer la prescription en mois glissants"],
@@ -871,7 +889,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 ["Pas besoin d'économies","Bilan de conformité, valorisation des équipes, et ne pas surcotiser pour rien"]]},
               {k:"rule", v:"un faux frein cache presque toujours un intérêt mal perçu. Creusez avant de répondre."} ] },
 
-        { t:"Les objections par pôle", s:"Innovation · Énergie · Efficience",
+        { i:"layers", t:"Les objections par pôle", s:"Innovation · Énergie · Efficience",
           b:[ {k:"text", v:"Le support prévoit une grille d'objections propre à chaque pôle — Innovation, Énergie, Efficience. Elles reprennent aujourd'hui les objections communes et restent à compléter avec les cas spécifiques de chaque expertise."},
               {k:"list", l:"À alimenter par pôle", v:[
                 "L'objection technique la plus fréquente sur le levier",
@@ -881,19 +899,19 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     ]},
 
   /* ---------------------------------------------------- 04 */
-  { id:"negociation", n:"04", t:"Négociation",
+  { ic:"scales", id:"negociation", n:"04", t:"Négociation",
     h:"La meilleure négociation, c'est quand il n'y en a pas.",
     lede:"Annoncer son prix fermement, ne jamais se justifier, et n'accorder aucune baisse sans contrepartie.",
     chapitres:[
       { fiches:[
 
-        { t:"L'assertivité", s:"S'exprimer sans empiéter sur l'autre",
+        { i:"scales", t:"L'assertivité", s:"S'exprimer sans empiéter sur l'autre",
           b:[ {k:"text", v:"L'assertivité, c'est la capacité à s'exprimer, à défendre ses droits et son opinion sans empiéter sur ceux des autres. Trois travers à éviter : la manipulation, la passivité, l'agressivité."},
               {k:"split", v:[
                 {t:"Quelques conseils", l:["Écoute active et acquiescement","Être ferme, savoir dire non en laissant la négociation ouverte","Laisser des blancs pour faire parler le client","Valoriser son service","Obtenir une contrepartie"]},
                 {t:"Posture physique", l:["Garder son calme","Regard soutenu","Pas de signe de stress","Pas d'agitation","Pas de repli sur soi, pas d'agacement"]}]} ] },
 
-        { t:"Annoncer son prix", s:"Ce qu'il faut faire, ce qu'il ne faut pas faire",
+        { i:"tag", t:"Annoncer son prix", s:"Ce qu'il faut faire, ce qu'il ne faut pas faire",
           b:[ {k:"split", v:[
                 {t:"À faire", l:[
                   "Analyser rapidement l'environnement : missions passées, habitude des cabinets, concurrent en face",
@@ -906,7 +924,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                   "Se mettre un frein sur un prix jugé élevé face à une ancienne mission ou à un concurrent",
                   "Mettre le prix au centre au détriment de l'assiette d'économie"]}]} ] },
 
-        { t:"Résister à la première attaque", s:"« Vous êtes trop cher »",
+        { i:"shield", t:"Résister à la première attaque", s:"« Vous êtes trop cher »",
           b:[ {k:"list", v:[
                 "Face à une tentative sans conviction — « c'est négociable ? » — répondez simplement <b>non, malheureusement</b>.",
                 "« Vous êtes trop cher » → <b>prenez l'air étonné</b> : « cher ? Non, par rapport aux coûts de la mission, ce n'est pas cher. »",
@@ -916,7 +934,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 "<b>Racontez un cas concret</b> plutôt que d'argumenter dans l'abstrait.",
                 "Nous appliquons des <b>marges classiques du conseil</b>, et l'inflation s'applique à nous aussi."]} ] },
 
-        { t:"Face à un concurrent", s:"Dévaloriser sans dénigrer",
+        { i:"versus", t:"Face à un concurrent", s:"Dévaloriser sans dénigrer",
           b:[ {k:"list", v:[
                 "<b>Commencez par reconnaître un point fort</b> du concurrent : la critique frontale décrédibilise.",
                 "Puis mettez en avant vos avantages : <b>audit plus exhaustif</b>, <b>plus de leviers</b> grâce à la veille juridique, <b>étude plus sécurisée</b> avec analyse des risques de redressement, <b>prise en charge intégrale des frais d'avocats</b> sans avance du client, expérience et références.",
@@ -924,14 +942,14 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 "<b>L'assiette d'économie compte plus que le taux.</b>"]},
               {k:"said", v:"Il vaut mieux régulariser 200 000 € avec un taux à 35 % que régulariser 100 000 € avec un taux à 25 %."} ] },
 
-        { t:"Quand la négociation est inévitable", s:"Trois étapes, dans cet ordre",
+        { i:"steps", t:"Quand la négociation est inévitable", s:"Trois étapes, dans cet ordre",
           b:[ {k:"steps", v:[
                 "<b>Validez que tout le reste est acquis.</b> « Nous sommes d'accord que si nous trouvons un accord sur le prix, vous validez le reste et nous démarrons l'analyse rapidement ? » Si ce n'est pas le cas, faites d'abord valider le principe de la mission : sans cela vous n'obtiendrez rien de votre direction.",
                 "<b>Descendez petit à petit.</b> Justifiez chaque baisse — « compte tenu du fait que nous avons déjà travaillé ensemble », « dans la mesure où vous lancez deux études ». Descendre d'un coup vous décrédibilise et prive votre interlocuteur de la satisfaction d'avoir négocié.",
                 "<b>Demandez toujours une contrepartie</b> : retour de la convention dans la semaine, lancement de deux missions, mise en relation avec une autre structure."]},
               {k:"rule", v:"présentez une baisse en pourcentage du prix, jamais en points : « une baisse de 10 % de nos conditions », soit 31,5 % au lieu de 35 %."} ] },
 
-        { t:"Les blancs et le prix psychologique", s:"Savoir parler en dernier",
+        { i:"pause", t:"Les blancs et le prix psychologique", s:"Savoir parler en dernier",
           b:[ {k:"list", v:[
                 "<b>La gestion des blancs est une arme</b> : savoir parler en dernier.",
                 "Sur un enjeu financier important, <b>demander le prix psychologique</b> peut avoir un intérêt : la plupart n'oseront pas demander un geste trop important.",
@@ -942,12 +960,12 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     ]},
 
   /* ---------------------------------------------------- 05 */
-  { id:"reseau", n:"05", t:"Réseau",
+  { ic:"network", id:"reseau", n:"05", t:"Réseau",
     h:"La recommandation se demande. Toujours.",
     lede:"Elle ne coûte rien, elle raccourcit tout : le cycle, la confiance, la négociation.",
     chapitres:[
       { fiches:[
-        { t:"Quand la demander", s:"Les moments où elle passe le mieux",
+        { i:"clock", t:"Quand la demander", s:"Les moments où elle passe le mieux",
           b:[ {k:"list", v:[
                 "À la remise du rapport",
                 "Au bilan de fin de mission",
@@ -958,7 +976,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
                 "Après la signature, contre une remise sur facture",
                 "Dans votre réseau personnel"]} ] },
 
-        { t:"Comment la demander", s:"Les phrases qui marchent",
+        { i:"speech", t:"Comment la demander", s:"Les phrases qui marchent",
           b:[ {k:"list", v:[
                 "Faites ces rendez-vous <b>en physique</b>.",
                 "« Avez-vous dans votre réseau, professionnel ou personnel, des personnes que nos missions pourraient intéresser ? »",
@@ -1065,6 +1083,45 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
      RENDU
      ========================================================= */
 
+  /* --------- Icônes vectorielles (trait 1.8, currentColor) --------- */
+  var I = function (p) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + p + '</svg>'; };
+  var ICONS = {
+    phone:   I('<path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>'),
+    zap:     I('<path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/>'),
+    mask:    I('<circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/>'),
+    speech:  I('<path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/><path d="M9 11h6M9 14h3"/>'),
+    alert:   I('<path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17.5v0"/>'),
+    key:     I('<circle cx="8" cy="15" r="4"/><path d="M11 12 20 3M16 7l3 3M14 9l2 2"/>'),
+    calendar:I('<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18M12 14v4M10 16h4"/>'),
+    compass: I('<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2z"/>'),
+    listNum: I('<path d="M9 6h11M9 12h11M9 18h11M4 5v3M3.5 8h1M3.5 11.5h2L3.5 14h2M3.5 16.5h2v3h-2"/>'),
+    hand:    I('<path d="M7 11V6a1.5 1.5 0 0 1 3 0v4M10 10V5a1.5 1.5 0 0 1 3 0v5M13 10V6a1.5 1.5 0 0 1 3 0v6"/><path d="M16 12a1.5 1.5 0 0 1 3 1c0 3-1 5-2.5 6.5-1.4 1.4-3.5 1.7-5.5 1.4-2.4-.3-4-2-6.3-5.9-.6-1-.3-2 .5-2.5s1.8-.3 2.5.6L9 14.5"/>'),
+    brain:   I('<path d="M12 4a3 3 0 0 0-3 3 3 3 0 0 0-2.8 4A3 3 0 0 0 7 17a3 3 0 0 0 5 2.2A3 3 0 0 0 17 17a3 3 0 0 0 .8-6A3 3 0 0 0 15 7a3 3 0 0 0-3-3z"/><path d="M12 4v15"/>'),
+    bulb:    I('<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 1 4 10.5c-.8.7-1 1.5-1 2.5h-6c0-1-.2-1.8-1-2.5A6 6 0 0 1 12 3z"/>'),
+    user:    I('<circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/>'),
+    building:I('<rect x="5" y="3" width="14" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M11 21v-3h2v3"/>'),
+    ask:     I('<path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/><path d="M10.5 10a1.8 1.8 0 1 1 2.4 1.7c-.6.3-.9.7-.9 1.3M12 15.6v0"/>'),
+    search:  I('<circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/>'),
+    repeat:  I('<path d="M4 8a8 8 0 0 1 14-2l2 2M20 16a8 8 0 0 1-14 2l-2-2"/><path d="M20 3v5h-5M4 21v-5h5"/>'),
+    award:   I('<circle cx="12" cy="9" r="5.5"/><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"/>'),
+    puzzle:  I('<path d="M10 4h4v3.2a1.8 1.8 0 1 0 0 3.1V13h-2.7a1.8 1.8 0 1 1-3.1 0H4v-4h3.2a1.8 1.8 0 1 0 3.1 0z"/><path d="M14 13h6v7H10v-4"/>'),
+    target:  I('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/>'),
+    gift:    I('<rect x="4" y="10" width="16" height="10" rx="1"/><path d="M12 10v10M4 13h16M12 10c-2 0-4.5-.6-4.5-3A2 2 0 0 1 11 5.6C12 6.6 12 10 12 10zm0 0c2 0 4.5-.6 4.5-3A2 2 0 0 0 13 5.6C12 6.6 12 10 12 10z"/>'),
+    brake:   I('<circle cx="12" cy="12" r="8"/><path d="M5.5 6.5 18.5 17.5"/>'),
+    book:    I('<path d="M4 5a2 2 0 0 1 2-2h13v17H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 1 2-2h13M9 7h6"/>'),
+    steps:   I('<path d="M4 20h5v-4h5v-4h5V8"/><path d="m16 5 3 3-3 3"/>'),
+    flag:    I('<path d="M5 21V4"/><path d="M5 5c2-1.5 5-1.5 7 0s5 1.5 7 0v8c-2 1.5-5 1.5-7 0s-5-1.5-7 0"/>'),
+    shield:  I('<path d="M12 3 5 6v5c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V6l-7-3z"/><path d="m9.5 12 2 2 3.5-4"/>'),
+    layers:  I('<path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 17 9 5 9-5" opacity=".45"/>'),
+    scales:  I('<path d="M12 4v16M6 20h12M12 6H5m7 0h7"/><path d="M5 6 2.5 12a3 3 0 0 0 5 0L5 6zM19 6l-2.5 6a3 3 0 0 0 5 0L19 6z"/>'),
+    tag:     I('<path d="m3 12 9-9h9v9l-9 9-9-9z"/><circle cx="16.5" cy="7.5" r="1.3"/>'),
+    versus:  I('<path d="M4 7h9M13 7l-2.5-2.5M13 7l-2.5 2.5M20 17h-9M11 17l2.5-2.5M11 17l2.5 2.5"/>'),
+    pause:   I('<circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/>'),
+    clock:   I('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>'),
+    network: I('<circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M10.8 6.8 6.2 16.2M13.2 6.8l4.6 9.4M7.2 18h9.6"/>')
+  };
+
+
   var $ = function (s) { return document.querySelector(s); };
   function typo(t) {
     return String(t).replace(/ ([?!:;»])/g, " $1").replace(/« /g, "« ");
@@ -1095,6 +1152,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
   }
   function fiche(f) {
     return '<article class="row"><button class="row-head" type="button" aria-expanded="false">' +
+      (f.i && ICONS[f.i] ? '<span class="row-ic">' + ICONS[f.i] + '</span>' : '<span class="row-ic"></span>') +
       '<span><span class="row-title">' + typo(f.t) + '</span>' +
       (f.s ? '<span class="row-sub">' + typo(f.s) + '</span>' : "") + '</span>' +
       '<span class="row-plus" aria-hidden="true"></span></button>' +
@@ -1103,7 +1161,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
       '</div></div></div></article>';
   }
 
-  var TRAIN = { id: "entrainement", n: "06", t: "S'entraîner" };
+  var TRAIN = { ic: "target", id: "entrainement", n: "06", t: "S'entraîner" };
 
   $("#sections").innerHTML = SECTIONS.map(function (s) {
     var chap = s.chapitres.map(function (c) {
@@ -1113,7 +1171,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
     return '<section id="' + s.id + '">' +
       '<span class="wm" aria-hidden="true" data-wm>' + s.n + '</span>' +
       '<div class="shell">' +
-      '<span class="tag up"><b>' + s.n + '</b> &nbsp;' + s.t + '</span>' +
+      '<span class="tag up"><i class="tag-ic">' + (ICONS[s.ic] || '') + '</i><b>' + s.n + '</b> &nbsp;' + s.t + '</span>' +
       '<h2 class="up">' + typo(s.h) + '</h2>' +
       '<p class="lede up">' + typo(s.lede) + '</p>' +
       chap + '</div></section>';
@@ -1123,7 +1181,7 @@ footer{padding:88px 0 64px;border-top:1px solid var(--hairline)}
   '<section id="' + TRAIN.id + '">' +
     '<span class="wm" aria-hidden="true" data-wm>' + TRAIN.n + '</span>' +
     '<div class="shell">' +
-      '<span class="tag up"><b>' + TRAIN.n + '</b> &nbsp;' + TRAIN.t + '</span>' +
+      '<span class="tag up"><i class="tag-ic">' + (ICONS[TRAIN.ic] || '') + '</i><b>' + TRAIN.n + '</b> &nbsp;' + TRAIN.t + '</span>' +
       '<h2 class="up">Répondez à voix haute. Puis comparez.</h2>' +
       '<p class="lede up">Dix objections tirées du support. Répondez d\'abord, lisez ensuite — c\'est le réflexe qui compte, pas la récitation.</p>' +
       '<div class="obj up">' +
