@@ -1,0 +1,2591 @@
+{
+  "meta": {
+    "name": "Sales Academy",
+    "title": {
+      "fr": "L'excellence commerciale pour les Ingénieurs d'affaires",
+      "en": "Sales excellence for Business Developers"
+    },
+    "description": "Site de formation en une seule page : prospection, rendez-vous, objections, négociation, réseau, entraînement.",
+    "version": "3.0",
+    "languages": [
+      "fr",
+      "en"
+    ],
+    "defaultLanguage": "fr",
+    "exportedAt": "2026-08-28",
+    "source": {
+      "repository": "https://github.com/coachccai-blip/sales-training",
+      "liveSite": "https://coachccai-blip.github.io/sales-training/",
+      "canonicalFile": "index.html (page unique autonome, sans dépendance)"
+    },
+    "contentOrigin": "PowerPoint interne « L'excellence commerciale pour les IA » (47 diapositives), restructuré en 6 sections"
+  },
+  "designSystem": {
+    "theme": "sombre uniquement (le thème clair a été retiré volontairement)",
+    "colors": {
+      "brandBlue": "#002C49",
+      "brandBlueDeep": "#002235",
+      "accentOrange": "#FF6633",
+      "cssCustomProperties": {
+        "blue": "#002C49",
+        "blue-deep": "#002235",
+        "orange": "#FF6633",
+        "ground": "#00131C",
+        "raised": "#002133",
+        "hairline": "rgba(255,255,255,.12)",
+        "ink": "#EDF3F7",
+        "ink-2": "#B4CAD8",
+        "muted": "#87A2B4",
+        "tint": "#012B41",
+        "accent-text": "#FF9068",
+        "glow-a": "rgba(30,110,160,.34)",
+        "glow-b": "rgba(255,102,51,.24)",
+        "glow-c": "rgba(0,80,130,.40)",
+        "stage": "#012B44",
+        "stage-2": "#001A2B",
+        "stage-ink": "#F4F8FB",
+        "stage-muted": "#8FAEC1",
+        "stage-line": "rgba(255,255,255,.14)",
+        "wm-a": "rgba(140,190,225,.20)",
+        "wm-b": "rgba(140,190,225,.02)",
+        "ring": "rgba(150,200,235,.17)",
+        "grain": ".09",
+        "title": "\"Avenir Next\",\"Avenir\",Montserrat,\"Helvetica Neue\",Arial,sans-serif",
+        "body": "Montserrat,\"Helvetica Neue\",Helvetica,Arial,sans-serif",
+        "rail": "252px",
+        "measure": "62ch"
+      }
+    },
+    "colorRules": [
+      "Le bleu domine ; l'orange est réservé aux accents (numéros, icônes actives, boutons pleins, jauges, célébrations).",
+      "Jamais l'orange en couleur dominante d'une surface."
+    ],
+    "typography": {
+      "headings": {
+        "stack": "\"Avenir Next\",\"Avenir\",Montserrat,\"Helvetica Neue\",Arial,sans-serif",
+        "weight": 800,
+        "letterSpacing": "-0.025em"
+      },
+      "body": {
+        "stack": "Montserrat,\"Helvetica Neue\",Helvetica,Arial,sans-serif",
+        "size": "17px",
+        "lineHeight": 1.7
+      },
+      "webfont": "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,800;1,400&display=swap",
+      "frenchTypography": "espaces fines insécables avant ? ! : ; et après « — appliquées uniquement en français"
+    },
+    "layout": {
+      "sidebarRailWidthPx": 252,
+      "contentMaxWidthPx": 940,
+      "proseMeasure": "62ch",
+      "structure": "page unique à défilement, sommaire fixe à gauche (numéroté, section active surlignée, fraction de progression à droite de chaque nom), jauge de lecture orange en haut",
+      "mobile": "sous 1180px le rail devient une barre haute + panneau « Sommaire » plein écran"
+    },
+    "iconography": {
+      "style": "SVG inline, trait 1.8, stroke=currentColor, viewBox 0 0 24 24, linecap/linejoin round",
+      "usage": "une icône par fiche (pastille 40px, s'allume en orange au survol/ouverture) et par section",
+      "library": {
+        "phone": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z\"/></svg>",
+        "zap": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M13 2 4 14h6l-1 8 9-12h-6l1-8z\"/></svg>",
+        "mask": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21c1.5-4 5-6 8-6s6.5 2 8 6\"/></svg>",
+        "speech": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z\"/><path d=\"M9 11h6M9 14h3\"/></svg>",
+        "alert": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3 2 20h20L12 3z\"/><path d=\"M12 10v4M12 17.5v0\"/></svg>",
+        "key": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"8\" cy=\"15\" r=\"4\"/><path d=\"M11 12 20 3M16 7l3 3M14 9l2 2\"/></svg>",
+        "calendar": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"16\" rx=\"2\"/><path d=\"M8 3v4M16 3v4M3 10h18M12 14v4M10 16h4\"/></svg>",
+        "compass": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m15.5 8.5-2 5-5 2 2-5 5-2z\"/></svg>",
+        "listNum": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 6h11M9 12h11M9 18h11M4 5v3M3.5 8h1M3.5 11.5h2L3.5 14h2M3.5 16.5h2v3h-2\"/></svg>",
+        "hand": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 11V6a1.5 1.5 0 0 1 3 0v4M10 10V5a1.5 1.5 0 0 1 3 0v5M13 10V6a1.5 1.5 0 0 1 3 0v6\"/><path d=\"M16 12a1.5 1.5 0 0 1 3 1c0 3-1 5-2.5 6.5-1.4 1.4-3.5 1.7-5.5 1.4-2.4-.3-4-2-6.3-5.9-.6-1-.3-2 .5-2.5s1.8-.3 2.5.6L9 14.5\"/></svg>",
+        "brain": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 4a3 3 0 0 0-3 3 3 3 0 0 0-2.8 4A3 3 0 0 0 7 17a3 3 0 0 0 5 2.2A3 3 0 0 0 17 17a3 3 0 0 0 .8-6A3 3 0 0 0 15 7a3 3 0 0 0-3-3z\"/><path d=\"M12 4v15\"/></svg>",
+        "bulb": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 18h6M10 21h4\"/><path d=\"M12 3a6 6 0 0 1 4 10.5c-.8.7-1 1.5-1 2.5h-6c0-1-.2-1.8-1-2.5A6 6 0 0 1 12 3z\"/></svg>",
+        "user": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"3.5\"/><path d=\"M5 20a7 7 0 0 1 14 0\"/></svg>",
+        "building": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"5\" y=\"3\" width=\"14\" height=\"18\"/><path d=\"M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M11 21v-3h2v3\"/></svg>",
+        "ask": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z\"/><path d=\"M10.5 10a1.8 1.8 0 1 1 2.4 1.7c-.6.3-.9.7-.9 1.3M12 15.6v0\"/></svg>",
+        "search": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"6.5\"/><path d=\"m16 16 5 5\"/></svg>",
+        "repeat": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 8a8 8 0 0 1 14-2l2 2M20 16a8 8 0 0 1-14 2l-2-2\"/><path d=\"M20 3v5h-5M4 21v-5h5\"/></svg>",
+        "award": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"9\" r=\"5.5\"/><path d=\"m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7\"/></svg>",
+        "puzzle": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M10 4h4v3.2a1.8 1.8 0 1 0 0 3.1V13h-2.7a1.8 1.8 0 1 1-3.1 0H4v-4h3.2a1.8 1.8 0 1 0 3.1 0z\"/><path d=\"M14 13h6v7H10v-4\"/></svg>",
+        "target": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"1.2\"/></svg>",
+        "gift": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"4\" y=\"10\" width=\"16\" height=\"10\" rx=\"1\"/><path d=\"M12 10v10M4 13h16M12 10c-2 0-4.5-.6-4.5-3A2 2 0 0 1 11 5.6C12 6.6 12 10 12 10zm0 0c2 0 4.5-.6 4.5-3A2 2 0 0 0 13 5.6C12 6.6 12 10 12 10z\"/></svg>",
+        "brake": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M5.5 6.5 18.5 17.5\"/></svg>",
+        "book": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 5a2 2 0 0 1 2-2h13v17H6a2 2 0 0 0-2 2z\"/><path d=\"M4 20a2 2 0 0 1 2-2h13M9 7h6\"/></svg>",
+        "steps": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 20h5v-4h5v-4h5V8\"/><path d=\"m16 5 3 3-3 3\"/></svg>",
+        "flag": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 21V4\"/><path d=\"M5 5c2-1.5 5-1.5 7 0s5 1.5 7 0v8c-2 1.5-5 1.5-7 0s-5-1.5-7 0\"/></svg>",
+        "shield": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3 5 6v5c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V6l-7-3z\"/><path d=\"m9.5 12 2 2 3.5-4\"/></svg>",
+        "layers": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m12 3 9 5-9 5-9-5 9-5z\"/><path d=\"m3 13 9 5 9-5\"/><path d=\"m3 17 9 5 9-5\" opacity=\".45\"/></svg>",
+        "scales": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 4v16M6 20h12M12 6H5m7 0h7\"/><path d=\"M5 6 2.5 12a3 3 0 0 0 5 0L5 6zM19 6l-2.5 6a3 3 0 0 0 5 0L19 6z\"/></svg>",
+        "tag": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 12 9-9h9v9l-9 9-9-9z\"/><circle cx=\"16.5\" cy=\"7.5\" r=\"1.3\"/></svg>",
+        "versus": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 7h9M13 7l-2.5-2.5M13 7l-2.5 2.5M20 17h-9M11 17l2.5-2.5M11 17l2.5 2.5\"/></svg>",
+        "pause": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M10 9v6M14 9v6\"/></svg>",
+        "clock": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3.5 2\"/></svg>",
+        "network": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"5\" r=\"2.2\"/><circle cx=\"5\" cy=\"18\" r=\"2.2\"/><circle cx=\"19\" cy=\"18\" r=\"2.2\"/><path d=\"M10.8 6.8 6.2 16.2M13.2 6.8l4.6 9.4M7.2 18h9.6\"/></svg>"
+      }
+    },
+    "signatureEffects": [
+      "aurore animée en fond (canvas flouté, 4 taches dérivantes aux couleurs --glow-*)",
+      "héros : constellation d'anneaux autour de l'emblème « cercle ouvert », arc orange dessiné au chargement, parallaxe souris, titre mot à mot avec défloutage",
+      "filigranes de section : numéro géant (01…06) en dégradé, parallaxe au défilement",
+      "cartes SONCAS 3D : inclinaison suivant la souris, lettre fantôme, spot lumineux",
+      "simulateur d'objections : panneau bleu profond, guillemet monumental, flip 3D entre objections",
+      "grain animé subtil (feTurbulence) et curseur halo orange (desktop uniquement)",
+      "tout est désactivé si prefers-reduced-motion"
+    ]
+  },
+  "features": {
+    "progressTracking": {
+      "unit": "chaque fiche porte une coche « terminé » ; le quiz terminé valide la section S'entraîner",
+      "persistence": "localStorage, clé \"sa-done\", carte {sectionId:index:1} — indépendante de la langue",
+      "display": "fraction n/total à droite de chaque section du sommaire (orange à 100%), jauge globale « Ma progression » avec pourcentage",
+      "celebration": {
+        "chapterComplete": "salve de ~120 confettis (couleurs #FF6633 #FF8A5C #002C49 #5C9FC9 #FFD8C7 #FFF) + toast « 🎉 Chapitre X terminé — N % du parcours »",
+        "courseComplete": "double salve de 220 confettis + toast « 🏆 Formation terminée ! »"
+      }
+    },
+    "sounds": {
+      "engine": "Web Audio API, généré (aucun fichier)",
+      "checkTick": "sinus 620→1080 Hz en 90 ms, enveloppe 12 ms/220 ms, + clic triangle 2200 Hz 50 ms",
+      "chapterChime": "arpège triangle 1046.5 / 1318.5 / 1568 / 2093 Hz, notes espacées de 85 ms, queue 600 ms",
+      "respectsReducedMotion": true
+    },
+    "ambientMusic": {
+      "engine": "Web Audio API, boucle générative sans fichier",
+      "character": "corporate feutré : nappes maj9, basse sinus, arpèges triangle avec écho (delay 450 ms, feedback 0.32, wet 0.22), compresseur",
+      "tempo": "3.6 s par accord",
+      "chordsMidi": [
+        {
+          "bass": 36,
+          "pad": [
+            48,
+            52,
+            55,
+            59,
+            62
+          ],
+          "arp": [
+            72,
+            76,
+            79,
+            83,
+            86
+          ]
+        },
+        {
+          "bass": 33,
+          "pad": [
+            45,
+            48,
+            52,
+            55,
+            59
+          ],
+          "arp": [
+            69,
+            72,
+            76,
+            79,
+            83
+          ]
+        },
+        {
+          "bass": 41,
+          "pad": [
+            45,
+            48,
+            52,
+            55,
+            57
+          ],
+          "arp": [
+            69,
+            72,
+            76,
+            77,
+            81
+          ]
+        },
+        {
+          "bass": 43,
+          "pad": [
+            47,
+            50,
+            55,
+            59,
+            62
+          ],
+          "arp": [
+            71,
+            74,
+            79,
+            83,
+            86
+          ]
+        }
+      ],
+      "control": "bouton « Musique · on/off » (rail + mobile), préférence localStorage \"music-academie\", reprise au premier geste utilisateur, fondus 1.5 s / 0.8 s"
+    },
+    "objectionTrainer": "une objection affichée à la fois (contexte + citation), boutons « Objection suivante » (tirage aléatoire non répétitif, flip 3D) et « Voir la réponse » (dépliage : ce que ça cache, la réponse, phrase modèle), compteur x/12",
+    "quiz": "une question à la fois, 4 choix A-D, correction immédiate (vert/rouge) + explication, barre de progression, score final sur 12 avec message adapté et bouton Recommencer",
+    "languageSwitch": {
+      "control": "bouton « English version / Version française », préférence localStorage \"lang-academie\", paramètre ?lang=en|fr prioritaire",
+      "behavior": "tout le contenu et l'interface basculent ; la progression est conservée (mêmes clés de fiches)"
+    },
+    "pdfDownload": {
+      "files": [
+        "sales-academy-fr.pdf",
+        "sales-academy-en.pdf"
+      ],
+      "linkedByActiveLanguage": true,
+      "generation": "le site en mode index.html?print&lang=xx (tout déplié, objections listées, quiz corrigé, animations figées) imprimé en A4 plein fond via Chromium headless, media screen, marges 0",
+      "rebuildScript": "tools/build-pdf.mjs"
+    },
+    "deployment": "GitHub Pages via GitHub Actions à chaque push sur main ; le workflow copie index.html (aussi en 404.html) et les deux PDF"
+  },
+  "localStorageKeys": {
+    "sa-done": "progression (carte des fiches cochées)",
+    "lang-academie": "langue choisie (fr|en)",
+    "music-academie": "musique (on|off)"
+  },
+  "content": {
+    "fr": {
+      "sections": [
+        {
+          "ic": "phone",
+          "id": "prospection",
+          "n": "01",
+          "t": "Prospection",
+          "h": "Vendez un rendez-vous, pas un produit.",
+          "lede": "100 appels, 20 conversations, 5 rendez-vous. Tout le reste du métier commence ici.",
+          "chapitres": [
+            {
+              "fiches": [
+                {
+                  "i": "zap",
+                  "t": "L'état d'esprit",
+                  "s": "Le volume fait la performance",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Oui, c'est difficile</b> — c'est précisément pour ça que peu de monde y arrive, et que les commerciaux sont bien payés.",
+                        "<b>N'ayez pas peur du rejet.</b> C'est parce qu'il y a des rejets que la victoire est savoureuse ensuite.",
+                        "<b>Il faut échouer plusieurs fois pour gagner :</b> 100 appels = 20 conversations = 5 rendez-vous.",
+                        "<b>Soyez sûr de votre valeur</b> et de vos produits : dommage pour le prospect s'il refuse.",
+                        "<b>Remettez-vous en question</b> — mais pas à chaque rejet.",
+                        "<b>Soyez persévérant :</b> n'abandonnez pas au premier frein.",
+                        "<b>Appelez tôt le matin et tard le soir,</b> quand vos prospects sont disponibles."
+                      ]
+                    },
+                    {
+                      "k": "rule",
+                      "v": "le nombre d'appels n'est pas un détail d'exécution, c'est le moteur du résultat."
+                    }
+                  ]
+                },
+                {
+                  "i": "clock",
+                  "t": "Les 10 premières secondes",
+                  "s": "Elles décident de tout le reste",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "Toujours <b>enthousiaste</b> dès le début de l'appel.",
+                        "<b>Souriez</b> : cela s'entend.",
+                        "<b>Parlez fort.</b>",
+                        "<b>Prenez le contrôle</b> dès le début : pas d'hésitation, pas de blanc.",
+                        "<b>Soyez tranchant</b> : dites vite pourquoi vous l'appelez lui, et pourquoi aujourd'hui.",
+                        "Le prospect doit <b>comprendre son intérêt immédiatement</b> : gain financier, gain de temps.",
+                        "<b>Phrases courtes et au présent</b> = dynamique, action."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "mask",
+                  "t": "Ne pas passer pour un commercial",
+                  "s": "Un ami expert, pas un téléprospecteur",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Démarquez-vous</b> des autres téléprospecteurs.",
+                        "Ne sonnez pas comme un commercial — <i>« faire le point »</i>, <i>« notre nouvelle offre »</i> — mais comme <b>un ami expert de son domaine</b>.",
+                        "<b>Ne lisez pas un script.</b> Un discours trop écrit s'entend : gardez votre authenticité.",
+                        "Parlez de <b>manière plutôt familière</b>, avec respect, plutôt que formelle."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "speech",
+                  "t": "Assertivité & adaptabilité",
+                  "s": "Les mots qui vous placent d'égal à égal",
+                  "b": [
+                    {
+                      "k": "pairs",
+                      "v": [
+                        [
+                          "Pas de conditionnel",
+                          "« Je cherche à joindre, je dois joindre » plutôt que « j'aurais souhaité parler à »"
+                        ],
+                        [
+                          "Pas de terme réducteur",
+                          "Bannir « un petit peu », « une petite minute »"
+                        ],
+                        [
+                          "D'égal à égal",
+                          "Pas de « je me permets », pas de « je vous appelle pour »"
+                        ],
+                        [
+                          "Pas de négation",
+                          "Tournez systématiquement les choses de manière positive"
+                        ],
+                        [
+                          "Pas de forme durative",
+                          "Éviter « je pense qu'il serait intéressant de nous rencontrer »"
+                        ],
+                        [
+                          "Adaptabilité",
+                          "S'ajuster à chaque situation, à chaque objection, en direct"
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "alert",
+                  "t": "Les erreurs à ne pas commettre",
+                  "s": "Ne donnez jamais l'occasion de dire non",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Ne posez pas de question qui permet de répondre non</b> — « vous avez une minute ? », « seriez-vous intéressé ? ». Partez du principe qu'il est d'accord.",
+                        "<b>Tournez vos questions pour obtenir un oui :</b> « quel jour êtes-vous disponible la semaine prochaine ? » plutôt que « seriez-vous disponible ? »",
+                        "<b>Pas de blanc :</b> concluez après chaque prise de parole. À une assistante : « vous pouvez me le passer ? ». À un responsable : « vous êtes disponible le… ? »",
+                        "<b>Pas de terme négatif</b> — problème, difficulté, danger, petit, peut-être."
+                      ]
+                    },
+                    {
+                      "k": "said",
+                      "v": "Il n'y aura aucun problème · vous pouvez être tranquille · vous ne courez aucun risque · vous serez en sécurité · nous sommes d'accord ? · vous ne le regretterez pas · vous vous en féliciterez"
+                    },
+                    {
+                      "k": "rule",
+                      "v": "remplacez chaque mot négatif par son équivalent positif : succès, gagner, bénéfice, efficacité, sérieux, économie."
+                    }
+                  ]
+                },
+                {
+                  "i": "key",
+                  "t": "Passer le barrage secrétaire",
+                  "s": "Elle est payée pour filtrer les commerciaux",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Être assertif et direct.</b> Ne passez pas pour un commercial mais pour une relation professionnelle qui a besoin de lui parler rapidement.",
+                        "<b>Ne vous justifiez pas :</b> une formulation longue est une justification, et une justification trahit la prospection.",
+                        "<b>Faites comprendre qu'elle ne maîtrise pas le sujet</b> — un terme technique suffit.",
+                        "<b>Jouez sur le flou.</b>",
+                        "<b>Ne soyez pas trop formel</b> : le formalisme signale le commercial."
+                      ]
+                    },
+                    {
+                      "k": "said",
+                      "v": "« Je dois joindre M. X. » — « C'est à quel sujet ? » — « Ça concerne les cotisations que vous acquittez à l'URSSAF, j'ai besoin d'échanger rapidement avec lui. Vous pouvez me le passer ? »"
+                    }
+                  ]
+                },
+                {
+                  "i": "calendar",
+                  "t": "Prendre le rendez-vous",
+                  "s": "Le seul objectif de l'appel",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Présentez-vous rapidement.</b>",
+                        "<b>Liez votre appel à une action antérieure</b> ou à un fait d'actualité : « nous avions rencontré votre prédécesseur il y a quelque temps… »",
+                        "<b>Venez vite au fait</b> en expliquant ce que vous pouvez lui apporter.",
+                        "<b>Adaptez vos arguments à l'interlocuteur :</b> au DAF, des montants, quelques éléments techniques, des références ; au DRH, de la valeur ajoutée, du gain de temps, des références.",
+                        "<b>Ne vendez pas un produit, vendez un rendez-vous.</b> N'en dites pas trop, sinon le prospect n'a plus besoin de vous rencontrer : « c'est justement l'intérêt du rendez-vous ».",
+                        "<b>Looping :</b> traitez l'objection, puis revenez toujours au rendez-vous, sans laisser de blanc."
+                      ]
+                    },
+                    {
+                      "k": "said",
+                      "v": "« Nous intervenons auprès de 1 000 sociétés en France sur l'optimisation des taxes. Je vous appelle aujourd'hui car nous avons un nouveau levier sur la TVA applicable chez vous ; nous l'avons mis en place avec plusieurs sociétés de votre secteur. Les enjeux financiers sont importants : je vous propose un rendez-vous de 30 minutes. Le jeudi 18 à 11h, ça vous irait ? »"
+                    },
+                    {
+                      "k": "rule",
+                      "v": "après chaque objection traitée, reproposez une date précise. Jamais de blanc, jamais de « je vous rappelle »."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ic": "hand",
+          "id": "rendez-vous",
+          "n": "02",
+          "t": "Le rendez-vous",
+          "h": "Motiver et rassurer, du début à la fin.",
+          "lede": "Sept étapes, une heure. Chaque minute a une fonction : capter, comprendre, convaincre, conclure.",
+          "chapitres": [
+            {
+              "t": "Le cadre",
+              "fiches": [
+                {
+                  "i": "compass",
+                  "t": "Motiver et rassurer",
+                  "s": "L'essentiel du métier",
+                  "b": [
+                    {
+                      "k": "text",
+                      "v": "Dans notre métier, vous passez votre temps à faire deux choses : motiver, et rassurer."
+                    },
+                    {
+                      "k": "pairs",
+                      "v": [
+                        [
+                          "Motiver",
+                          "Enjeux financiers · mission peu chronophage pour eux · références de ceux qui l'ont fait · sécurisation de leurs pratiques"
+                        ],
+                        [
+                          "Rassurer",
+                          "Références locales · appui juridique · storytelling · sécurisation des leviers · accompagnement en cas de contrôle · présentation du groupe"
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "listNum",
+                  "t": "Le plan du rendez-vous",
+                  "s": "7 étapes, du bonjour à la signature",
+                  "b": [
+                    {
+                      "k": "steps",
+                      "v": [
+                        "Introduction — 1 minute",
+                        "Questions sur l'interlocuteur et sa structure — 5 à 10 minutes",
+                        "Présentation du cabinet — 3 minutes",
+                        "Découverte technique — 5 à 10 minutes",
+                        "Argumentaire — 5 à 10 minutes",
+                        "Présentation du déroulement de la mission — 5 minutes",
+                        "Closing — 5 minutes"
+                      ]
+                    },
+                    {
+                      "k": "rule",
+                      "v": "la présentation du cabinet ne dure que 3 minutes. Le reste du temps, c'est lui qui parle."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "t": "Introduction",
+              "fiches": [
+                {
+                  "i": "hand",
+                  "t": "La première impression",
+                  "s": "Vous n'aurez qu'une seule occasion",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Poignée de main ferme</b> — une pression légèrement plus ferme que celle de l'interlocuteur — et <b>sourire</b>.",
+                        "<b>Pas de mauvais brise-glace</b> du type « il fait beau aujourd'hui ».",
+                        "<b>Installez-vous d'abord :</b> ne commencez pas le rendez-vous avant d'être correctement installé.",
+                        "<b>Regardez-le dans les yeux</b> dès le début : c'est de la confiance.",
+                        "<b>Présentez-vous</b>, nom et prénom, carte de visite.",
+                        "<b>Rappelez l'objet</b> du rendez-vous, <b>validez le timing</b>, <b>rappelez l'objectif</b> : identifier des pistes d'économies et expliquer comment vous pouvez l'accompagner."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "brain",
+                  "t": "Parler au reptilien",
+                  "s": "Passer le filtre avant de convaincre",
+                  "b": [
+                    {
+                      "k": "text",
+                      "v": "Notre cerveau est une colocation : le reptilien (200 millions d'années) trie les messages, le limbique gère les émotions, et Einstein (4 millions d'années) pense l'abstrait. Le reptilien filtre pour nous préserver de la fatigue et de la perte de temps : il faut capter son intérêt et attiser son désir, pas l'effrayer."
+                    },
+                    {
+                      "k": "list",
+                      "l": "Deux techniques",
+                      "v": [
+                        "<b>L'appât</b> — présenter une expérience récente avec une société, si possible un concurrent du prospect. Du storytelling, tout de suite.",
+                        "<b>La provocation</b> — poser le non sur la table."
+                      ]
+                    },
+                    {
+                      "k": "said",
+                      "v": "« Je vais vous présenter une offre que certains de vos confrères ont suivie avec intérêt, d'autres n'ont pas donné suite. N'hésitez pas à me dire si vous ne souhaitez pas aller plus loin. »"
+                    },
+                    {
+                      "k": "rule",
+                      "v": "évitez les formulations bateau — « j'aimerais vous présenter une solution en adéquation avec votre stratégie ». Le reptilien les traite comme une menace."
+                    }
+                  ]
+                },
+                {
+                  "i": "bulb",
+                  "t": "Parler à Einstein",
+                  "s": "Le maintenir éveillé",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Posez des « pourquoi »</b> pour comprendre ce qui compte vraiment, avant le « quoi » et le « comment ».",
+                        "<b>Ne faites pas d'hypothèse :</b> interrogez, écoutez. Optimiste sur l'attitude, maniaque sur le détail.",
+                        "<b>Évitez les questions bateau,</b> celles dont la réponse est évidente, les questions agressives ou maladroites : on se décrédibilise avec des questions idiotes, on se crédibilise avec des questions intelligentes.",
+                        "<b>Faites vos devoirs :</b> l'interlocuteur (poste, relations communes, opinions sur le sujet) et l'entreprise (actualité, difficultés du secteur).",
+                        "<b>Posez des questions stratégiques</b> qui le forcent à réfléchir : « comment pensez-vous mesurer les résultats ? »",
+                        "<b>Interrogez ses douleurs</b> : les difficultés, les coûts, les chiffres.",
+                        "<b>Osez la question personnelle :</b> « au-delà du cahier des charges, qu'est-ce qui est vraiment important pour vous ? »",
+                        "<b>Proposez des alternatives.</b>"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "t": "La découverte",
+              "fiches": [
+                {
+                  "i": "user",
+                  "t": "S'intéresser à la personne et à sa structure",
+                  "s": "Quand on parle on plaît parfois, quand on écoute on plaît toujours",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "« Vous êtes bien le DRH… ? Depuis combien de temps ? »",
+                        "« Avez-vous travaillé dans d'autres secteurs avant ? »",
+                        "« Au niveau de votre structure, j'ai vu que vous aviez tels établissements, c'est bien ça ? »",
+                        "« Quelles sont vos sources de financement ? »",
+                        "« Avez-vous des difficultés financières ? Êtes-vous à l'équilibre ? En recherche d'économies ? »",
+                        "« Avez-vous travaillé avec un cabinet de conseil ? Lequel, sur quel sujet ? Si non, pourquoi ? »",
+                        "« Avez-vous mené des actions d'optimisation en interne ? »"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "building",
+                  "t": "Présenter le cabinet",
+                  "s": "Court et concis — 3 minutes",
+                  "b": [
+                    {
+                      "k": "steps",
+                      "v": [
+                        "Qui nous sommes : un cabinet de conseil spécialisé dans l'optimisation budgétaire des entreprises.",
+                        "Quelques chiffres clés : effectifs, pays, nombre de clients, économies générées chaque année.",
+                        "L'appui juridique : sécurisation des leviers, courriers à l'administration, veille réglementaire.",
+                        "Les engagements du groupe.",
+                        "Les labels et certifications.",
+                        "Les références — prenez votre temps sur ce point : interrogez le prospect pour voir s'il connaît certains de nos clients, et faites du storytelling.",
+                        "Les domaines d'expertise et le modèle de rémunération."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "ask",
+                  "t": "Les questions ouvertes",
+                  "s": "Faire parler",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "« Quelles sont vos attentes par rapport à notre rendez-vous ? »",
+                        "« Avez-vous des sujets sur lesquels vous vous questionnez ? »",
+                        "« À quand remonte votre dernier audit de la paie ? »",
+                        "« Quelles actions d'optimisation avez-vous mises en place en interne ces dernières années ? »",
+                        "« Comment faites-vous pour suivre les évolutions réglementaires et jurisprudentielles ? »",
+                        "« Quelle organisation avez-vous mise en place pour le recouvrement des IJSS ? »",
+                        "« Qu'est-ce qui est le plus compliqué chez vous dans la gestion des dossiers ? »",
+                        "« Que souhaiteriez-vous supprimer dans votre chaîne de gestion de l'absentéisme ? »",
+                        "« Qu'est-ce qui ferait que nous ne travaillions pas ensemble sur ce sujet ? »"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "search",
+                  "t": "Les questions rhétoriques",
+                  "s": "Faire apparaître le manque",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "« Vous n'avez pas fait vérifier votre paie par un cabinet depuis plus de 3 ans ? »",
+                        "« Vous n'avez pas fait d'audit de taxe foncière récemment ? Même depuis la réforme ? »",
+                        "« Avez-vous le temps de suivre les évolutions réglementaires tous les mois ? »",
+                        "« Êtes-vous sûr à 100 % que tous les dispositifs sont pris en compte chez vous ? »",
+                        "« Étant donné que vous ne faites pas de pré-calcul, vous n'avez pas d'alerte comptable sur les sommes dehors ? »",
+                        "« J'imagine qu'en ce moment vos gestionnaires n'ont pas le temps de relancer les CPAM ? »",
+                        "« Êtes-vous, comme beaucoup de DAF et DRH que je rencontre, challengé sur les économies et la conformité ? »"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "repeat",
+                  "t": "Reformuler",
+                  "s": "Verrouiller ce qui vient d'être dit",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "« Donc si je résume, vous n'avez pas fait d'audit depuis au moins 5 ans ? »",
+                        "« On est d'accord que vous n'avez rien fait depuis la dernière réforme des valeurs locatives ? »",
+                        "« Si je comprends bien, vous n'êtes pas totalement certain de la conformité de votre paramétrage, c'est bien ça ? »",
+                        "« Si vous aviez la bande passante, vous feriez cette action, c'est bien ça ? »",
+                        "« Ce que l'on se dit, c'est que vous ne voyez pas d'intérêt sur ce sujet, mais que sur celui-là vous en validez un. C'est bien ça ? »",
+                        "« De mon point de vue il n'y a pas de sujet sur X ; en revanche il est pertinent de regarder Y. Vous partagez ? »"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "award",
+                  "t": "Passer pour un expert",
+                  "s": "Des questions de qualité, dans le bon ordre",
+                  "b": [
+                    {
+                      "k": "text",
+                      "v": "Une bonne découverte vous fait passer pour un expert et rassure votre prospect. Ne switchez pas de sujet en permanence : des questions de qualité, dans le bon ordre, de manière fluide."
+                    },
+                    {
+                      "k": "list",
+                      "v": [
+                        "« Avez-vous fait appel à un cabinet sur les cotisations sociales ces dernières années ? »",
+                        "« Avez-vous eu un contrôle URSSAF ? Qu'est-ce que ça a donné ? »",
+                        "« Quel est votre logiciel de paie ? Votre niveau de satisfaction ? Des mises à jour importantes récemment ? »",
+                        "« Avez-vous fait des régularisations par bloc de DSN récemment ? Sur quel point ? »",
+                        "« Quel effectif est concerné par l'allègement Fillon ? »",
+                        "« Avez-vous eu des absences ou des départs dans votre équipe paie ces deux dernières années ? »",
+                        "« Vous pratiquez la subrogation ? Pour tous vos salariés ? Quelle est votre assiette d'IJSS ? »",
+                        "« Faites-vous le pré-calcul ? Un cadrage régulier ? Connaissez-vous votre taux de recouvrement ? »"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "t": "L'argumentation",
+              "fiches": [
+                {
+                  "i": "puzzle",
+                  "t": "SONCAS",
+                  "s": "Détecter le levier de motivation",
+                  "b": [
+                    {
+                      "k": "soncas"
+                    },
+                    {
+                      "k": "rule",
+                      "v": "un interlocuteur n'achète jamais pour les six raisons à la fois. Trouvez la sienne, et appuyez dessus."
+                    }
+                  ]
+                },
+                {
+                  "i": "target",
+                  "t": "Bien utiliser ses cartouches",
+                  "s": "La différence entre le bon et le mauvais chasseur",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Pour être convaincant, il faut être convaincu</b> — l'enthousiasme est contagieux.",
+                        "<b>Notez les freins, ne les traitez pas tout de suite.</b> Vous pouvez même reposer des questions sur le frein pour l'amplifier, avant de le traiter.",
+                        "<b>Évitez les digressions :</b> « c'est intéressant, je comprends que vous aimiez cela. Pour en revenir à la mission… »",
+                        "<b>Soignez la transition :</b> « par rapport aux informations que vous m'avez transmises, je vous confirme l'intérêt de… »",
+                        "<b>Variez vos arguments</b> — enjeux financiers chiffrés, storytelling, vérification des bonnes pratiques, explication des leviers, statistiques.",
+                        "<b>Ne donnez pas tous vos arguments au début :</b> gardez-en sous le pied."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "gift",
+                  "t": "Motiver et rassurer, concrètement",
+                  "s": "Bénéfices plutôt que caractéristiques",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Marquez des blancs entre chaque argument</b> : le prospect assimile, et vous observez sa réaction.",
+                        "<b>Parlez des bénéfices, pas des caractéristiques.</b> « La mission n'est pas chronophage pour vous » plutôt que « il faudra nous envoyer une extraction des absences, les bulletins… »",
+                        "<b>L'humain est égoïste :</b> expliquez ce que la mission lui apporte, à lui.",
+                        "<b>Insistez davantage sur la perte que sur le gain :</b> la peur de perdre 100 € est plus intense que le plaisir d'en gagner 150."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "brake",
+                  "t": "Identifier et traiter les freins",
+                  "s": "Attention aux faux freins",
+                  "b": [
+                    {
+                      "k": "text",
+                      "v": "Pour traiter les freins, encore faut-il les repérer : un blanc, une question, une hésitation. Et méfiez-vous des faux freins — « je n'ai pas le temps » signifie le plus souvent « je n'ai pas perçu l'intérêt pour moi »."
+                    },
+                    {
+                      "k": "pairs",
+                      "v": [
+                        [
+                          "Remise en question de son travail",
+                          "Dédramatiser : la réglementation est complexe, son métier est large quand nous ne sommes spécialistes que d'un point"
+                        ],
+                        [
+                          "Manque de temps",
+                          "La mission est peu chronophage : quelques documents à envoyer, nous travaillons par échantillonnage, puis nous sommes autonomes"
+                        ],
+                        [
+                          "Ok, mais plus tard",
+                          "D'expérience ces sujets ne sont jamais prioritaires. L'intérêt est de nous les confier et de bloquer la prescription en mois glissants"
+                        ],
+                        [
+                          "Le levier n'est pas applicable chez moi",
+                          "Exemples de clients comparables. Et aucun intérêt à pousser une mission non sécurisée : nous sommes rémunérés au pourcentage"
+                        ],
+                        [
+                          "Pas besoin d'économies",
+                          "Bilan de conformité, valorisation des équipes, ne pas surcotiser pour rien"
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "book",
+                  "t": "Le storytelling",
+                  "s": "Le meilleur argument, parce que ce n'en est pas un",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "Les gens adorent qu'on leur raconte des histoires — c'est un souvenir d'enfance.",
+                        "L'histoire fait travailler la <b>partie émotive</b> du cerveau, pas la rationnelle : bien plus puissant pour déclencher l'achat.",
+                        "Nous croyons décider rationnellement ; en réalité l'intuition nous guide — souvenirs, idées, émotions qui se renforcent mutuellement.",
+                        "Racontez de manière <b>authentique, sans filtre</b>, pour que le prospect y voie de la sincérité."
+                      ]
+                    },
+                    {
+                      "k": "steps",
+                      "v": [
+                        "Le contexte — il était une fois : la scène, les personnages.",
+                        "Le problème à résoudre — le grand méchant loup.",
+                        "La solution — la fin heureuse."
+                      ]
+                    },
+                    {
+                      "k": "rule",
+                      "v": "le storytelling est le meilleur des arguments, justement parce que ce n'en est pas un : c'est un fait."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "t": "Conclure",
+              "fiches": [
+                {
+                  "i": "steps",
+                  "t": "Présenter la méthodologie",
+                  "s": "Uniquement si l'intérêt est acquis",
+                  "b": [
+                    {
+                      "k": "text",
+                      "v": "On ne déroule le fonctionnement de la mission que lorsque le client a montré un intérêt pendant l'argumentaire. Avant, c'est du temps perdu — et un aveu que vous n'avez rien vendu."
+                    }
+                  ]
+                },
+                {
+                  "i": "flag",
+                  "t": "Le closing",
+                  "s": "Ne tournez pas autour du pot",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Transition :</b> « est-ce que c'est clair ? Qu'en pensez-vous ? »",
+                        "<b>Créez toujours de l'urgence</b> : prescription, réunion de placement d'audit, calendrier.",
+                        "<b>Dédramatisez la signature :</b> « pour le moment il s'agit uniquement de valider l'étude, il n'y a pas d'engagement ».",
+                        "<b>Validez le circuit de décision</b> et identifiez le signataire.",
+                        "<b>Positionnez le deuxième rendez-vous au plus proche</b> dans l'agenda."
+                      ]
+                    },
+                    {
+                      "k": "rule",
+                      "v": "vous perdez environ 10 % de chances de signer par semaine qui passe."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ic": "shield",
+          "id": "objections",
+          "n": "03",
+          "t": "Objections",
+          "h": "Cinq objections couvrent l'essentiel des refus.",
+          "lede": "Elles reviennent dans tous les pôles. Ce qui change, c'est votre réflexe — pas l'objection.",
+          "chapitres": [
+            {
+              "fiches": [
+                {
+                  "i": "shield",
+                  "t": "Les objections communes",
+                  "s": "Et la réponse à apporter",
+                  "b": [
+                    {
+                      "k": "pairs",
+                      "v": [
+                        [
+                          "Pas le temps",
+                          "La mission est peu chronophage : quelques documents à nous envoyer, nous travaillons par échantillonnage, puis nous sommes autonomes"
+                        ],
+                        [
+                          "Ok, mais plus tard",
+                          "D'expérience, ces sujets ne seront jamais prioritaires. L'intérêt est de nous les confier et de bloquer la prescription en mois glissants"
+                        ],
+                        [
+                          "Remise en question de son travail",
+                          "Dédramatiser les erreurs : la réglementation est complexe et son métier est varié, quand nous ne sommes spécialistes que de ce point"
+                        ],
+                        [
+                          "Vos leviers ne sont pas applicables chez moi",
+                          "Exemples de clients comparables. Nous n'avons aucun intérêt à pousser une mission non sécurisée : nous sommes rémunérés au pourcentage"
+                        ],
+                        [
+                          "Pas besoin d'économies",
+                          "Bilan de conformité, valorisation des équipes, et ne pas surcotiser pour rien"
+                        ]
+                      ]
+                    },
+                    {
+                      "k": "rule",
+                      "v": "un faux frein cache presque toujours un intérêt mal perçu. Creusez avant de répondre."
+                    }
+                  ]
+                },
+                {
+                  "i": "layers",
+                  "t": "Les objections par pôle",
+                  "s": "Innovation · Énergie · Efficience",
+                  "b": [
+                    {
+                      "k": "text",
+                      "v": "Le support prévoit une grille d'objections propre à chaque pôle — Innovation, Énergie, Efficience. Elles reprennent aujourd'hui les objections communes et restent à compléter avec les cas spécifiques de chaque expertise."
+                    },
+                    {
+                      "k": "list",
+                      "l": "À alimenter par pôle",
+                      "v": [
+                        "L'objection technique la plus fréquente sur le levier",
+                        "La réponse type, avec un ordre de grandeur chiffré",
+                        "Un cas client comparable à raconter"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ic": "scales",
+          "id": "negociation",
+          "n": "04",
+          "t": "Négociation",
+          "h": "La meilleure négociation, c'est quand il n'y en a pas.",
+          "lede": "Annoncer son prix fermement, ne jamais se justifier, et n'accorder aucune baisse sans contrepartie.",
+          "chapitres": [
+            {
+              "fiches": [
+                {
+                  "i": "scales",
+                  "t": "L'assertivité",
+                  "s": "S'exprimer sans empiéter sur l'autre",
+                  "b": [
+                    {
+                      "k": "text",
+                      "v": "L'assertivité, c'est la capacité à s'exprimer, à défendre ses droits et son opinion sans empiéter sur ceux des autres. Trois travers à éviter : la manipulation, la passivité, l'agressivité."
+                    },
+                    {
+                      "k": "split",
+                      "v": [
+                        {
+                          "t": "Quelques conseils",
+                          "l": [
+                            "Écoute active et acquiescement",
+                            "Être ferme, savoir dire non en laissant la négociation ouverte",
+                            "Laisser des blancs pour faire parler le client",
+                            "Valoriser son service",
+                            "Obtenir une contrepartie"
+                          ]
+                        },
+                        {
+                          "t": "Posture physique",
+                          "l": [
+                            "Garder son calme",
+                            "Regard soutenu",
+                            "Pas de signe de stress",
+                            "Pas d'agitation",
+                            "Pas de repli sur soi, pas d'agacement"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "tag",
+                  "t": "Annoncer son prix",
+                  "s": "Ce qu'il faut faire, ce qu'il ne faut pas faire",
+                  "b": [
+                    {
+                      "k": "split",
+                      "v": [
+                        {
+                          "t": "À faire",
+                          "l": [
+                            "Analyser rapidement l'environnement : missions passées, habitude des cabinets, concurrent en face",
+                            "Si un concurrent est en lice, obtenir une fourchette de prix dès le début du rendez-vous, et le niveau de satisfaction",
+                            "Annoncer son prix fermement : pas de doute, regard dans les yeux, pas de blanc interminable après l'annonce",
+                            "Valoriser plutôt que justifier : « notre taux intègre l'analyse, les frais d'avocats, l'instruction du dossier, la seconde régularisation, l'aide au paramétrage, la veille juridique… »"
+                          ]
+                        },
+                        {
+                          "t": "À éviter",
+                          "l": [
+                            "Annoncer une fourchette : « entre 30 et 35 % », « environ 30 % »",
+                            "Reporter la proposition commerciale à plus tard : cela ouvre le débat sur le prix",
+                            "Se mettre un frein sur un prix jugé élevé face à une ancienne mission ou à un concurrent",
+                            "Mettre le prix au centre au détriment de l'assiette d'économie"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "shield",
+                  "t": "Résister à la première attaque",
+                  "s": "« Vous êtes trop cher »",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "Face à une tentative sans conviction — « c'est négociable ? » — répondez simplement <b>non, malheureusement</b>.",
+                        "« Vous êtes trop cher » → <b>prenez l'air étonné</b> : « cher ? Non, par rapport aux coûts de la mission, ce n'est pas cher. »",
+                        "<b>Rappelez les coûts</b> de la mission : avocats, consultants séniors, accompagnement en cas de contrôle.",
+                        "<b>Rappelez que c'est nous qui absorbons le risque :</b> pas de rémunération si aucune piste n'est identifiée, si les préconisations sont refusées, si l'administration refuse. Cela se paie dans le prix.",
+                        "<b>Baisser nos conditions reviendrait à baisser la qualité</b> de la prestation, notamment sur les économies futures. Ce n'est pas ce que nous souhaitons.",
+                        "<b>Racontez un cas concret</b> plutôt que d'argumenter dans l'abstrait.",
+                        "Nous appliquons des <b>marges classiques du conseil</b>, et l'inflation s'applique à nous aussi."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "versus",
+                  "t": "Face à un concurrent",
+                  "s": "Dévaloriser sans dénigrer",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Commencez par reconnaître un point fort</b> du concurrent : la critique frontale décrédibilise.",
+                        "Puis mettez en avant vos avantages : <b>audit plus exhaustif</b>, <b>plus de leviers</b> grâce à la veille juridique, <b>étude plus sécurisée</b> avec analyse des risques de redressement, <b>prise en charge intégrale des frais d'avocats</b> sans avance du client, expérience et références.",
+                        "<b>Assumez d'être plus cher</b> : c'est le prix de la qualité.",
+                        "<b>L'assiette d'économie compte plus que le taux.</b>"
+                      ]
+                    },
+                    {
+                      "k": "said",
+                      "v": "Il vaut mieux régulariser 200 000 € avec un taux à 35 % que régulariser 100 000 € avec un taux à 25 %."
+                    }
+                  ]
+                },
+                {
+                  "i": "steps",
+                  "t": "Quand la négociation est inévitable",
+                  "s": "Trois étapes, dans cet ordre",
+                  "b": [
+                    {
+                      "k": "steps",
+                      "v": [
+                        "<b>Validez que tout le reste est acquis.</b> « Nous sommes d'accord que si nous trouvons un accord sur le prix, vous validez le reste et nous démarrons l'analyse rapidement ? » Si ce n'est pas le cas, faites d'abord valider le principe de la mission : sans cela vous n'obtiendrez rien de votre direction.",
+                        "<b>Descendez petit à petit.</b> Justifiez chaque baisse — « compte tenu du fait que nous avons déjà travaillé ensemble », « dans la mesure où vous lancez deux études ». Descendre d'un coup vous décrédibilise et prive votre interlocuteur de la satisfaction d'avoir négocié.",
+                        "<b>Demandez toujours une contrepartie</b> : retour de la convention dans la semaine, lancement de deux missions, mise en relation avec une autre structure."
+                      ]
+                    },
+                    {
+                      "k": "rule",
+                      "v": "présentez une baisse en pourcentage du prix, jamais en points : « une baisse de 10 % de nos conditions », soit 31,5 % au lieu de 35 %."
+                    }
+                  ]
+                },
+                {
+                  "i": "pause",
+                  "t": "Les blancs et le prix psychologique",
+                  "s": "Savoir parler en dernier",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>La gestion des blancs est une arme</b> : savoir parler en dernier.",
+                        "Sur un enjeu financier important, <b>demander le prix psychologique</b> peut avoir un intérêt : la plupart n'oseront pas demander un geste trop important.",
+                        "<b>Privilégiez la baisse de taux à l'allongement de la durée</b> : l'impact financier est moindre."
+                      ]
+                    },
+                    {
+                      "k": "said",
+                      "v": "« Sans vous dire que nous puissions le valider, avez-vous un taux en tête ? » — « Écoutez, 30 % me va. » — « 30 % ne sera pas possible, mais je veux bien demander à ma direction de passer à 32 %. Ok pour vous ? »"
+                    },
+                    {
+                      "k": "rule",
+                      "v": "« On se souvient de la qualité bien plus longtemps que du prix. »"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ic": "network",
+          "id": "reseau",
+          "n": "05",
+          "t": "Réseau",
+          "h": "La recommandation se demande. Toujours.",
+          "lede": "Elle ne coûte rien, elle raccourcit tout : le cycle, la confiance, la négociation.",
+          "chapitres": [
+            {
+              "fiches": [
+                {
+                  "i": "clock",
+                  "t": "Quand la demander",
+                  "s": "Les moments où elle passe le mieux",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "À la remise du rapport",
+                        "Au bilan de fin de mission",
+                        "À la fin d'un rendez-vous commercial avec un client",
+                        "À la fin d'un rendez-vous avec un prospect où il n'y a rien à vendre",
+                        "Pendant un déjeuner d'affaires",
+                        "Pendant la négociation du taux, avant la signature — en contrepartie",
+                        "Après la signature, contre une remise sur facture",
+                        "Dans votre réseau personnel"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "speech",
+                  "t": "Comment la demander",
+                  "s": "Les phrases qui marchent",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "Faites ces rendez-vous <b>en physique</b>.",
+                        "« Avez-vous dans votre réseau, professionnel ou personnel, des personnes que nos missions pourraient intéresser ? »",
+                        "« Vous connaissez des DRH dans le secteur ? »",
+                        "« Connaissez-vous des réseaux de directeurs dans le coin ? »",
+                        "« Seriez-vous prêt à nous recommander ? »"
+                      ]
+                    },
+                    {
+                      "k": "rule",
+                      "v": "l'apport d'affaires, lié à une structure ou à une personne, peut aller jusqu'à 10 % de l'encaissé."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "soncas": [
+        {
+          "l": "S",
+          "t": "Sympathie",
+          "d": "Bon feeling avec vous, il connaît certains de nos clients."
+        },
+        {
+          "l": "O",
+          "t": "Orgueil",
+          "d": "Des économies qu'il présentera à sa direction, la validation de ses bonnes pratiques."
+        },
+        {
+          "l": "N",
+          "t": "Nouveauté",
+          "d": "Un sujet neuf, une action rapide."
+        },
+        {
+          "l": "C",
+          "t": "Confort",
+          "d": "Une mission peu chronophage, une équipe autonome."
+        },
+        {
+          "l": "A",
+          "t": "Argent",
+          "d": "Un besoin d'économies, tout simplement."
+        },
+        {
+          "l": "S",
+          "t": "Sécurité",
+          "d": "Appui juridique, processus de sécurisation, certifications."
+        }
+      ],
+      "objectionTrainer": [
+        {
+          "m": "Barrage — l'assistante",
+          "q": "C'est à quel sujet ?",
+          "b": "Elle est payée pour filtrer les commerciaux. Toute justification longue vous trahit.",
+          "h": "Restez direct, restez flou, montrez qu'elle ne maîtrise pas le sujet, et concluez par une demande.",
+          "s": "Ça concerne les cotisations que vous acquittez à l'URSSAF, j'ai besoin d'échanger rapidement avec lui. Vous pouvez me le passer ?"
+        },
+        {
+          "m": "Prospection — le dirigeant",
+          "q": "Je n'ai pas le temps.",
+          "b": "Un faux frein neuf fois sur dix : il n'a pas perçu l'intérêt pour lui.",
+          "h": "Ne négociez pas le temps, donnez l'intérêt. Puis revenez au rendez-vous avec une date précise.",
+          "s": "C'est justement pour ça que je vous propose 30 minutes et pas une heure. Nous avons un levier applicable chez vous, mis en place avec plusieurs sociétés de votre secteur. Jeudi 18 à 11h, ça vous irait ?"
+        },
+        {
+          "m": "Rendez-vous — le DAF",
+          "q": "Ok, mais plus tard.",
+          "b": "Le sujet n'est pas prioritaire — et il ne le sera jamais.",
+          "h": "Assumez-le, et transformez l'attente en urgence : la prescription court.",
+          "s": "D'expérience, ces sujets ne seront jamais prioritaires. Tout l'intérêt est de nous les confier maintenant : nous bloquons la prescription en mois glissants, et vous n'avez presque rien à faire."
+        },
+        {
+          "m": "Rendez-vous — le responsable paie",
+          "q": "On fait déjà ça très bien en interne.",
+          "b": "Une remise en question de son travail. L'ego est en jeu, pas la technique.",
+          "h": "Dédramatisez immédiatement : ce n'est pas une faute, c'est un métier différent du sien.",
+          "s": "La réglementation est complexe et votre métier est très large, quand nous ne sommes spécialistes que de ce point précis. Personne ne peut tout suivre : c'est exactement pour ça que nos audits trouvent presque toujours quelque chose."
+        },
+        {
+          "m": "Rendez-vous — le DAF",
+          "q": "Vos leviers ne sont pas applicables chez moi.",
+          "b": "Une conviction, rarement vérifiée. Et une crainte de perdre du temps.",
+          "h": "Répondez par des cas comparables, et rappelez que le risque est de votre côté.",
+          "s": "Nous avons le même retour chez des structures très proches de la vôtre, et nous y avons trouvé des pistes. Nous n'avons aucun intérêt à pousser une mission qui ne serait pas sécurisée : nous sommes rémunérés au pourcentage de ce que vous récupérez."
+        },
+        {
+          "m": "Rendez-vous — le dirigeant",
+          "q": "On n'a pas besoin d'économies.",
+          "b": "Le sujet est vu comme un sujet de trésorerie. Il ne l'est pas seulement.",
+          "h": "Déplacez la conversation sur la conformité et la valorisation des équipes.",
+          "s": "C'est une bonne nouvelle. Voyez alors la mission comme un bilan de conformité : vous sécurisez vos pratiques, vous valorisez le travail de vos équipes, et vous arrêtez de surcotiser pour rien."
+        },
+        {
+          "m": "Négociation — l'acheteur",
+          "q": "C'est négociable ?",
+          "b": "Une tentative sans conviction. Elle teste votre fermeté, pas votre prix.",
+          "h": "Répondez simplement non, sans blanc et sans justification.",
+          "s": "Non, malheureusement. Nos conditions intègrent l'analyse, les frais d'avocats, l'instruction du dossier et l'accompagnement en cas de contrôle."
+        },
+        {
+          "m": "Négociation — le DAF",
+          "q": "Vous êtes trop cher.",
+          "b": "Souvent un réflexe. Le prix n'a pas encore été rapproché de l'assiette d'économie.",
+          "h": "Prenez l'air étonné, rappelez les coûts et le risque que vous absorbez.",
+          "s": "Cher ? Non, par rapport aux coûts de la mission ce n'est pas cher : avocats, consultants séniors, accompagnement en cas de contrôle. Et si nous ne trouvons rien, vous ne payez rien : c'est nous qui portons le risque."
+        },
+        {
+          "m": "Négociation — l'acheteur",
+          "q": "Votre concurrent est moins cher.",
+          "b": "Souvent vrai, et sur un périmètre différent.",
+          "h": "Reconnaissez un point fort chez lui, puis déplacez le débat du taux vers l'assiette.",
+          "s": "Ils sont bons sur ce sujet, c'est vrai. Notre audit est plus exhaustif, plus sécurisé, et les frais d'avocats sont intégralement pris en charge. Il vaut mieux régulariser 200 000 € à 35 % que 100 000 € à 25 %."
+        },
+        {
+          "m": "Closing — le dirigeant",
+          "q": "Je dois en parler à ma direction.",
+          "b": "Soit un circuit de décision que vous n'avez pas identifié, soit une échappatoire polie.",
+          "h": "Validez le circuit, dédramatisez la signature et posez le prochain rendez-vous tout de suite.",
+          "s": "Bien sûr. À ce stade il s'agit uniquement de valider l'étude, il n'y a pas d'engagement. Qui valide avec vous, et qui signe ? Je vous propose qu'on se reparle jeudi prochain pour caler le démarrage."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Combien d'appels faut-il passer, en moyenne, pour obtenir 5 rendez-vous ?",
+          "o": [
+            "20",
+            "50",
+            "100",
+            "300"
+          ],
+          "a": 2,
+          "w": "100 appels = 20 conversations = 5 rendez-vous. C'est le volume qui fait la performance, pas le talent isolé."
+        },
+        {
+          "q": "Quel est l'objectif d'un appel de prospection ?",
+          "o": [
+            "Vendre la mission",
+            "Vendre le rendez-vous",
+            "Qualifier le budget",
+            "Envoyer une documentation"
+          ],
+          "a": 1,
+          "w": "Ne vendez pas un produit, vendez un rendez-vous. Si vous en dites trop, le prospect n'a plus besoin de vous rencontrer : « c'est justement l'intérêt du rendez-vous »."
+        },
+        {
+          "q": "Pourquoi ne faut-il jamais demander « vous avez une minute ? »",
+          "o": [
+            "C'est trop familier",
+            "Cela permet de répondre non",
+            "C'est trop long",
+            "Cela sonne trop technique"
+          ],
+          "a": 1,
+          "w": "Ne posez jamais de question qui permette de répondre non. Partez du principe qu'il est d'accord et proposez directement un créneau."
+        },
+        {
+          "q": "Face au barrage secrétaire, quelle est la bonne attitude ?",
+          "o": [
+            "Expliquer précisément l'objet de votre appel",
+            "Être direct, rester flou et ne pas se justifier",
+            "Demander quand rappeler",
+            "Laisser un message détaillé"
+          ],
+          "a": 1,
+          "w": "Une formulation longue est une justification, et une justification trahit le commercial. Restez direct, jouez sur le flou, et concluez par « vous pouvez me le passer ? »."
+        },
+        {
+          "q": "Dans l'introduction du rendez-vous, à qui parlez-vous en premier ?",
+          "o": [
+            "Au cerveau reptilien, pour passer le filtre",
+            "À Einstein, pour argumenter",
+            "Au limbique, pour émouvoir",
+            "Peu importe, l'ordre n'a pas d'effet"
+          ],
+          "a": 0,
+          "w": "Le reptilien filtre pour préserver l'énergie. Il faut capter son intérêt — par l'appât ou la provocation — avant de pouvoir parler à Einstein."
+        },
+        {
+          "q": "Que signifie SONCAS ?",
+          "o": [
+            "Six étapes de la vente conseil",
+            "Six leviers de motivation d'achat",
+            "Six objections types",
+            "Six phases de négociation"
+          ],
+          "a": 1,
+          "w": "Sympathie, Orgueil, Nouveauté, Confort, Argent, Sécurité. Un interlocuteur n'achète jamais pour les six raisons : trouvez la sienne."
+        },
+        {
+          "q": "Le prospect exprime un frein pendant votre argumentaire. Que faites-vous ?",
+          "o": [
+            "Vous le traitez immédiatement",
+            "Vous le notez et le traitez plus tard",
+            "Vous l'ignorez",
+            "Vous changez de sujet"
+          ],
+          "a": 1,
+          "w": "Notez les freins sans chercher à les traiter tout de suite. Vous pouvez même reposer des questions dessus pour l'amplifier, avant de le traiter."
+        },
+        {
+          "q": "Sur quoi faut-il insister le plus dans l'argumentation ?",
+          "o": [
+            "Sur le gain potentiel",
+            "Sur la perte évitée",
+            "Sur les caractéristiques techniques",
+            "Sur la notoriété du cabinet"
+          ],
+          "a": 1,
+          "w": "La peur de perdre 100 € est plus intense que le plaisir d'en gagner 150. Et parlez toujours bénéfices plutôt que caractéristiques."
+        },
+        {
+          "q": "Comment annonce-t-on son prix ?",
+          "o": [
+            "Sous forme de fourchette",
+            "Fermement, sans justification",
+            "En le comparant au concurrent",
+            "Par écrit, après le rendez-vous"
+          ],
+          "a": 1,
+          "w": "Pas de fourchette, pas de blanc interminable après l'annonce, pas de justification — mais de la valorisation : ce que le taux comprend."
+        },
+        {
+          "q": "Vous accordez une baisse de taux. Que devez-vous obtenir ?",
+          "o": [
+            "Rien, c'est un geste commercial",
+            "Une contrepartie",
+            "Un engagement oral",
+            "Une recommandation LinkedIn"
+          ],
+          "a": 1,
+          "w": "Toujours une contrepartie : retour de la convention dans la semaine, lancement de deux missions, mise en relation avec une autre structure."
+        },
+        {
+          "q": "Comment présenter une baisse de prix ?",
+          "o": [
+            "En points de taux",
+            "En pourcentage du prix",
+            "En euros",
+            "Peu importe"
+          ],
+          "a": 1,
+          "w": "« Une baisse de 10 % de nos conditions », soit 31,5 % au lieu de 35 %. C'est la même chose, mais cela s'entend beaucoup mieux."
+        },
+        {
+          "q": "Pourquoi positionner le second rendez-vous au plus tôt ?",
+          "o": [
+            "Pour occuper l'agenda",
+            "On perd environ 10 % de chances de signer par semaine",
+            "Pour devancer le concurrent",
+            "Pour boucler le mois"
+          ],
+          "a": 1,
+          "w": "Chaque semaine qui passe coûte environ 10 % de chances de signature. Créez de l'urgence et posez la date devant lui."
+        }
+      ],
+      "uiStrings": {
+        "train": "S'entraîner",
+        "trainH": "Répondez à voix haute. Puis comparez.",
+        "trainLede": "Dix objections tirées du support. Répondez d'abord, lisez ensuite — c'est le réflexe qui compte, pas la récitation.",
+        "behind": "Ce que ça cache",
+        "answer": "La réponse",
+        "objNext": "Objection suivante",
+        "objShow": "Voir la réponse",
+        "objHide": "Masquer la réponse",
+        "quizTitle": "Quiz — 12 questions",
+        "quizNext": "Question suivante",
+        "quizResult": "Voir mon résultat",
+        "quizAgain": "Recommencer",
+        "quizDone": "Terminé",
+        "exact": "Exact.",
+        "reponse": "Réponse : ",
+        "rule": "Règle —",
+        "markDone": "Marquer la fiche comme terminée",
+        "markTitle": "Marquer comme terminé",
+        "chapterDone": "Chapitre",
+        "ofCourse": "% du parcours.",
+        "allDone": "🏆 <b>Formation terminée !</b> &nbsp;Les {n} étapes sont validées. Bravo.",
+        "doneWord": "terminé",
+        "progress": "Ma progression",
+        "scroll": "Faites défiler",
+        "contents": "Sommaire",
+        "close": "Fermer",
+        "music": "Musique",
+        "pdf": "Télécharger le PDF",
+        "langBtn": "English version",
+        "heroTitle": "L'excellence commerciale pour les <em>Ingénieurs d'affaires</em>",
+        "heroLede": "Le support de formation, en une page. Prospecter, mener le rendez-vous, traiter les objections, négocier, développer son réseau.",
+        "fact1": "parties",
+        "fact2": "étapes de rendez-vous",
+        "fact3": "leviers SONCAS",
+        "fact4": "appels = 5 rendez-vous",
+        "footer": "L'excellence commerciale pour les Ingénieurs d'affaires",
+        "railSub": "Excellence commerciale",
+        "quizKey": "Quiz — corrigé",
+        "docTitle": "Sales Academy — L'excellence commerciale pour les Ingénieurs d'affaires",
+        "score11": "Le support est acquis. Ce qui vous fera progresser maintenant, c'est le volume d'appels et de rendez-vous.",
+        "score8": "Bon niveau. Reprenez les questions manquées et la partie correspondante du support.",
+        "score5": "Les bases sont là mais fragiles. Priorité à la prospection et au plan de rendez-vous.",
+        "score0": "Reprenez le support depuis la prospection : les explications du quiz en condensent l'essentiel."
+      }
+    },
+    "en": {
+      "sections": [
+        {
+          "ic": "phone",
+          "id": "prospection",
+          "n": "01",
+          "t": "Prospecting",
+          "h": "Sell the meeting, not the product.",
+          "lede": "100 calls, 20 conversations, 5 meetings. Everything else in this job starts here.",
+          "chapitres": [
+            {
+              "fiches": [
+                {
+                  "i": "zap",
+                  "t": "The right mindset",
+                  "s": "Volume drives performance",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Yes, it's hard</b> — that's exactly why so few people succeed at it, and why salespeople are well paid.",
+                        "<b>Don't fear rejection.</b> It's the rejections that make the wins taste so good.",
+                        "<b>You have to lose a few to win:</b> 100 calls = 20 conversations = 5 meetings.",
+                        "<b>Be sure of your value</b> and your products: if the prospect says no, it's their loss.",
+                        "<b>Question yourself</b> — but not after every rejection.",
+                        "<b>Be persistent:</b> don't give up at the first pushback.",
+                        "<b>Call early in the morning and late in the day,</b> when your prospects are actually reachable."
+                      ]
+                    },
+                    {
+                      "k": "rule",
+                      "v": "call volume is not an execution detail — it's the engine of your results."
+                    }
+                  ]
+                },
+                {
+                  "i": "clock",
+                  "t": "The first ten seconds",
+                  "s": "They decide everything that follows",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "Always <b>enthusiastic</b> from the very first second.",
+                        "<b>Smile</b> — people can hear it.",
+                        "<b>Speak up.</b>",
+                        "<b>Take control from the start:</b> no hesitation, no dead air.",
+                        "<b>Be sharp:</b> say quickly why you're calling them, and why today.",
+                        "The prospect must <b>see what's in it for them immediately</b>: money saved, time saved.",
+                        "<b>Short sentences, present tense</b> — energy, action."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "mask",
+                  "t": "Don't sound like a salesperson",
+                  "s": "A trusted expert, not a telemarketer",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Stand out</b> from every other cold caller.",
+                        "Don't sound like a salesperson — no <i>“touching base”</i>, no <i>“our new offer”</i> — sound like <b>a friend who happens to be an expert</b>. The prospect must quickly see what they stand to gain.",
+                        "<b>Don't read a script.</b> An over-rehearsed pitch is easy to spot — stay authentic.",
+                        "Keep the tone <b>fairly casual</b>, respectful but not formal."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "speech",
+                  "t": "Assertiveness & adaptability",
+                  "s": "Words that put you on equal footing",
+                  "b": [
+                    {
+                      "k": "pairs",
+                      "v": [
+                        [
+                          "No conditionals",
+                          "“I need to reach…” rather than “I was hoping to speak with…”"
+                        ],
+                        [
+                          "No belittling words",
+                          "Ban “just a quick…” and “a tiny minute…”"
+                        ],
+                        [
+                          "Equal to equal",
+                          "No apologetic openers — never “sorry to bother you”"
+                        ],
+                        [
+                          "No negatives",
+                          "Always frame things positively"
+                        ],
+                        [
+                          "No hedging",
+                          "Avoid “I think it might be worth our meeting…”"
+                        ],
+                        [
+                          "Adaptability",
+                          "Adjust to every situation and every objection, in real time"
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "alert",
+                  "t": "Mistakes to avoid",
+                  "s": "Never give them the chance to say no",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Never ask a question that can be answered with no</b> — “do you have a minute?”, “would you be interested in a meeting?”. Assume they're on board.",
+                        "<b>Phrase questions to invite a yes:</b> “what day works for you next week?” rather than “would you be available?”",
+                        "<b>No dead air:</b> close after every statement. To an assistant: “can you put me through?”. To a decision-maker: “are you free on the…?”",
+                        "<b>No negative words</b> — problem, difficulty, risk, small, maybe."
+                      ]
+                    },
+                    {
+                      "k": "said",
+                      "v": "There won't be any issue · you can rest easy · you're taking no risk at all · you'll be in safe hands · are we agreed? · you won't regret it · you'll be glad you did"
+                    },
+                    {
+                      "k": "rule",
+                      "v": "swap every negative word for its positive twin: success, win, benefit, efficiency, reliability, savings."
+                    }
+                  ]
+                },
+                {
+                  "i": "key",
+                  "t": "Getting past the gatekeeper",
+                  "s": "They're paid to filter out salespeople",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Be assertive and direct.</b> Don't come across as a salesperson — come across as a professional contact who needs a quick word.",
+                        "<b>Don't justify yourself:</b> a long explanation is a justification, and a justification gives you away.",
+                        "<b>Make it clear the subject is technical</b> — one specialist term is usually enough.",
+                        "<b>Keep it vague.</b>",
+                        "<b>Don't be too formal:</b> formality signals a sales call."
+                      ]
+                    },
+                    {
+                      "k": "said",
+                      "v": "“I need to reach Mr. X.” — “May I ask what it's regarding?” — “It's about the URSSAF contributions you're paying — I need a quick word with him. Can you put me through?”"
+                    }
+                  ]
+                },
+                {
+                  "i": "calendar",
+                  "t": "Booking the meeting",
+                  "s": "The only goal of the call",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Introduce yourself quickly.</b>",
+                        "<b>Tie your call to something prior</b> or topical: “we met with your predecessor a while back…”",
+                        "<b>Get to the point fast</b> — what you can do for them.",
+                        "<b>Match your arguments to the person:</b> for a CFO, figures, a few technical points, references; for an HR director, added value, time savings, references.",
+                        "<b>Don't sell the product — sell the meeting.</b> Say too much and the prospect no longer needs to meet you: “that's exactly what the meeting is for.”",
+                        "<b>Looping:</b> handle the objection, then come straight back to the meeting, without a pause."
+                      ]
+                    },
+                    {
+                      "k": "said",
+                      "v": "“We work with 1,000 companies in France on tax optimization. I'm calling because we have a new VAT lever that applies to your business — we've rolled it out with several companies in your sector. The financial stakes are significant, so I'd suggest a 30-minute meeting. Would Thursday the 18th at 11 work for you?”"
+                    },
+                    {
+                      "k": "rule",
+                      "v": "after every objection you handle, offer a specific date again. Never dead air, never “I'll call you back.”"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ic": "hand",
+          "id": "rendez-vous",
+          "n": "02",
+          "t": "The meeting",
+          "h": "Motivate and reassure, start to finish.",
+          "lede": "Seven steps, one hour. Every minute has a job: hook, understand, convince, close.",
+          "chapitres": [
+            {
+              "t": "The framework",
+              "fiches": [
+                {
+                  "i": "compass",
+                  "t": "Motivate and reassure",
+                  "s": "The heart of the job",
+                  "b": [
+                    {
+                      "k": "text",
+                      "v": "In this business you spend your time doing two things: motivating, and reassuring."
+                    },
+                    {
+                      "k": "pairs",
+                      "v": [
+                        [
+                          "Motivate",
+                          "Financial upside · minimal time required on their side · references who have done it · securing their practices"
+                        ],
+                        [
+                          "Reassure",
+                          "Local references · legal backing · storytelling · secured levers · support in case of an audit · the group's credentials"
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "listNum",
+                  "t": "The meeting plan",
+                  "s": "Seven steps from hello to signature",
+                  "b": [
+                    {
+                      "k": "steps",
+                      "v": [
+                        "Introduction — 1 minute",
+                        "Questions about the person and their organization — 5 to 10 minutes",
+                        "Presenting the firm — 3 minutes",
+                        "Technical discovery — 5 to 10 minutes",
+                        "Making the case — 5 to 10 minutes",
+                        "Walking through how the engagement works — 5 minutes",
+                        "Closing — 5 minutes"
+                      ]
+                    },
+                    {
+                      "k": "rule",
+                      "v": "the firm's presentation gets three minutes. The rest of the time, they do the talking."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "t": "The opening",
+              "fiches": [
+                {
+                  "i": "hand",
+                  "t": "First impressions",
+                  "s": "You only get one shot",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>A firm handshake</b> — slightly firmer than theirs — and a <b>smile</b>.",
+                        "<b>No weak icebreakers</b> like “lovely weather today”.",
+                        "<b>Get settled first:</b> don't start the meeting until you're properly seated.",
+                        "<b>Look them in the eye</b> from the start — it reads as confidence.",
+                        "<b>Introduce yourself</b>, full name, business card.",
+                        "<b>Restate why you're here</b>, confirm the timing, restate the goal: identify savings opportunities and explain how you can help capture them."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "brain",
+                  "t": "Speak to the lizard brain",
+                  "s": "Get past the filter before you persuade",
+                  "b": [
+                    {
+                      "k": "text",
+                      "v": "Our brain is a house-share: the reptilian brain (200 million years old) filters incoming messages, the limbic system handles emotion, and Einstein (4 million years old) does the abstract thinking. The reptilian brain filters to save energy and time — you have to catch its interest and spark desire, not scare it off."
+                    },
+                    {
+                      "k": "list",
+                      "l": "Two techniques",
+                      "v": [
+                        "<b>The lure</b> — open with a recent experience at another company, ideally one of the prospect's competitors. Storytelling, right away.",
+                        "<b>The challenge</b> — put the no on the table."
+                      ]
+                    },
+                    {
+                      "k": "said",
+                      "v": "“I'm going to show you an offer that some of your peers have taken up with real interest — others passed. Feel free to tell me if you'd rather not go further.”"
+                    },
+                    {
+                      "k": "rule",
+                      "v": "avoid boilerplate like “I'd love to present a solution aligned with your strategy”. The lizard brain treats that patter as a threat."
+                    }
+                  ]
+                },
+                {
+                  "i": "bulb",
+                  "t": "Speak to Einstein",
+                  "s": "Keep him awake",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Ask “why”</b> to understand what really matters, before the “what” and the “how”.",
+                        "<b>Don't assume — ask and listen.</b> Optimistic in attitude, obsessive about detail.",
+                        "<b>Skip the lazy questions</b> — the obvious ones, the aggressive or clumsy ones. Silly questions cost you credibility; smart ones build it.",
+                        "<b>Do your homework:</b> the person (role, mutual connections, hobbies, views on the topic) and the company (news, sector-specific challenges).",
+                        "<b>Ask strategic questions</b> that force them to think: “how do you plan to measure results?”",
+                        "<b>Probe their pain points:</b> the difficulties, the costs, the numbers.",
+                        "<b>Dare the personal question:</b> “beyond the spec sheet, what really matters to you here?”",
+                        "<b>Offer alternatives.</b>"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "t": "Discovery",
+              "fiches": [
+                {
+                  "i": "user",
+                  "t": "Show interest in the person and the organization",
+                  "s": "Talk and you sometimes please; listen and you always do",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "“You're the HR director, correct? How long have you been in the role?”",
+                        "“Have you worked in other sectors before?”",
+                        "“Looking at your organization, I saw you run these facilities — is that right?”",
+                        "“What are your sources of funding?”",
+                        "“Any financial pressure at the moment? Are you at break-even? Looking for savings?”",
+                        "“Have you worked with a consulting firm? Which one, on what? If not, why not?”",
+                        "“Have you run any optimization work internally?”"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "building",
+                  "t": "Presenting the firm",
+                  "s": "Short and sharp — three minutes",
+                  "b": [
+                    {
+                      "k": "steps",
+                      "v": [
+                        "Who we are: a consulting firm specializing in budget optimization for organizations.",
+                        "A few key figures: headcount, countries, client base, savings delivered each year.",
+                        "Legal backing: secured levers, correspondence with the authorities, regulatory watch.",
+                        "The group's commitments.",
+                        "Labels and certifications.",
+                        "References — take your time here: linger, ask whether they know any of our clients, and tell a story or two.",
+                        "Areas of expertise and the fee model."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "ask",
+                  "t": "Open questions",
+                  "s": "Get them talking",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "“What are you hoping to get out of our meeting?”",
+                        "“Are there topics you've been wondering about on your side?”",
+                        "“When was your payroll last audited?”",
+                        "“What optimization work have you done internally in recent years?”",
+                        "“How do you keep up with the constant regulatory and case-law changes?”",
+                        "“How is the recovery of sickness benefits (IJSS) organized here?”",
+                        "“What's the hardest part of managing those files for your team?”",
+                        "“If you could remove one step from your absence-management chain, which one?”",
+                        "“What would stop us from working together on this?”"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "search",
+                  "t": "Rhetorical questions",
+                  "s": "Surface the gap",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "“So your payroll hasn't been checked by an outside firm in more than three years?”",
+                        "“No property-tax audit recently? Even since the reform?”",
+                        "“Do you have time to track the regulatory changes every single month?”",
+                        "“Are you one hundred percent sure every scheme is being applied in your setup?”",
+                        "“Since you don't pre-calculate, there's no accounting alert telling you what money is left outside?”",
+                        "“I imagine your payroll team doesn't have time to chase the CPAM right now?”",
+                        "“Are you, like most CFOs and HR directors I meet, being challenged on savings and compliance?”"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "repeat",
+                  "t": "Reframe and confirm",
+                  "s": "Lock in what was just said",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "“So if I sum up, there's been no audit for at least five years?”",
+                        "“We agree nothing has been done since the last property-value reform?”",
+                        "“If I understand correctly, you're not entirely sure your setup is compliant — is that right?”",
+                        "“If you had the bandwidth, you'd do this — is that right?”",
+                        "“What I'm hearing is: no interest on this topic, but a confirmed interest on that one. Correct?”",
+                        "“From where I sit there's nothing to gain on X — but Y is genuinely worth a look. Would you agree?”"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "award",
+                  "t": "Come across as an expert",
+                  "s": "Quality questions, in the right order",
+                  "b": [
+                    {
+                      "k": "text",
+                      "v": "A good discovery makes you look like an expert and puts your prospect at ease. Don't hop between topics: quality questions, in the right order, flowing naturally."
+                    },
+                    {
+                      "k": "list",
+                      "v": [
+                        "“Have you used a firm for social-contribution work in recent years?”",
+                        "“Have you had an URSSAF inspection? How did it go?”",
+                        "“Which payroll software do you run? How happy are you with it? Any major updates recently?”",
+                        "“Have you filed any DSN block corrections recently? On what?”",
+                        "“How much of your headcount is covered by the Fillon relief?”",
+                        "“Any absences or departures in your payroll team over the past two years?”",
+                        "“Do you advance sick pay for all employees? What's your IJSS base?”",
+                        "“Do you pre-calculate? Reconcile regularly? Do you know your recovery rate?”"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "t": "Making the case",
+              "fiches": [
+                {
+                  "i": "puzzle",
+                  "t": "SONCAS",
+                  "s": "Spot the buying motive",
+                  "b": [
+                    {
+                      "k": "soncas"
+                    },
+                    {
+                      "k": "rule",
+                      "v": "nobody buys for all six reasons at once. Find theirs, and press on it."
+                    }
+                  ]
+                },
+                {
+                  "i": "target",
+                  "t": "Use your ammunition wisely",
+                  "s": "What separates the good hunter from the bad one",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>To be convincing, be convinced</b> — enthusiasm is contagious.",
+                        "<b>Note the blockers, don't tackle them straight away.</b> You can even ask further questions about a blocker to amplify it — then deal with it.",
+                        "<b>Avoid tangents:</b> “that's interesting, I can see why you enjoy it. Coming back to the engagement…”",
+                        "<b>Use a clean transition:</b> “based on what you've told me, I can confirm this is worth pursuing because…”",
+                        "<b>Vary your arguments</b> — quantified financial stakes, storytelling, validating good practices, explaining the levers, statistics.",
+                        "<b>Don't fire every argument at once:</b> keep some in reserve."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "gift",
+                  "t": "Motivate and reassure, in practice",
+                  "s": "Benefits over features",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Pause between arguments</b> — the prospect absorbs, and you read their reaction.",
+                        "<b>Talk benefits, not features.</b> “The engagement takes almost none of your time” rather than “you'll need to send us an absence extract, the payslips…”",
+                        "<b>People are fundamentally self-interested:</b> explain what the engagement brings them, personally.",
+                        "<b>Lean harder on the loss than on the gain:</b> the fear of losing €100 is stronger than the pleasure of gaining €150."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "brake",
+                  "t": "Spot and handle the blockers",
+                  "s": "Beware of false objections",
+                  "b": [
+                    {
+                      "k": "text",
+                      "v": "To handle blockers you first have to spot them: a silence, a question, a hesitation. And watch out for false ones — “I don't have time” usually means “I haven't seen what's in it for me.”"
+                    },
+                    {
+                      "k": "pairs",
+                      "v": [
+                        [
+                          "Their work being questioned",
+                          "Defuse it: the rules are complex and their job is broad, while we specialize in this one narrow point"
+                        ],
+                        [
+                          "No time",
+                          "The engagement takes little of theirs: a few documents to send, we work by sampling, then we run autonomously"
+                        ],
+                        [
+                          "Fine, but later",
+                          "In our experience these topics never make it to the top of the list. Hand them over now and we stop the clock on the statute of limitations"
+                        ],
+                        [
+                          "Your levers don't apply here",
+                          "Examples of comparable clients. And we have no interest in pushing an unsecured engagement: we're paid a percentage"
+                        ],
+                        [
+                          "No need for savings",
+                          "A compliance check, recognition for the team, and no more over-contributing for nothing"
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "book",
+                  "t": "Storytelling",
+                  "s": "The best argument, precisely because it isn't one",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "People love being told stories — it's a childhood thing.",
+                        "A story engages the <b>emotional</b> brain, not the rational one: far more powerful at triggering a decision.",
+                        "We believe we decide rationally; in truth intuition drives us — memories, ideas and emotions working as a network, reinforcing one another.",
+                        "Tell the story <b>authentically, unpolished</b>, so the prospect can feel it's genuine."
+                      ]
+                    },
+                    {
+                      "k": "steps",
+                      "v": [
+                        "The setting — once upon a time: the scene, the characters.",
+                        "The problem — the big bad wolf.",
+                        "The resolution — the happy ending."
+                      ]
+                    },
+                    {
+                      "k": "rule",
+                      "v": "storytelling is the best argument precisely because it isn't one: it's a fact."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "t": "Closing",
+              "fiches": [
+                {
+                  "i": "steps",
+                  "t": "Present the methodology",
+                  "s": "Only once interest is established",
+                  "b": [
+                    {
+                      "k": "text",
+                      "v": "Walk through how the engagement works only once the client has shown interest during your pitch. Any earlier is wasted breath — and an admission that you haven't sold anything yet."
+                    }
+                  ]
+                },
+                {
+                  "i": "flag",
+                  "t": "The close",
+                  "s": "Don't dance around it",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Transition:</b> “is that clear? What do you think?”",
+                        "<b>Always create urgency:</b> the statute of limitations, the audit scheduling meeting, the calendar.",
+                        "<b>Take the drama out of signing:</b> “at this stage you're only approving the study — there's no commitment.”",
+                        "<b>Confirm the decision path</b> and identify the signatory.",
+                        "<b>Book the second meeting as close as possible</b> in the calendar."
+                      ]
+                    },
+                    {
+                      "k": "rule",
+                      "v": "you lose roughly 10% of your chances of signing with every week that passes."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ic": "shield",
+          "id": "objections",
+          "n": "03",
+          "t": "Objections",
+          "h": "Five objections cover most refusals.",
+          "lede": "They come up across every practice. What changes is your reflex — not the objection.",
+          "chapitres": [
+            {
+              "fiches": [
+                {
+                  "i": "shield",
+                  "t": "The common objections",
+                  "s": "And how to answer them",
+                  "b": [
+                    {
+                      "k": "pairs",
+                      "v": [
+                        [
+                          "No time",
+                          "The engagement takes little of yours: a few documents to send, we work by sampling, then we run autonomously"
+                        ],
+                        [
+                          "Fine, but later",
+                          "In our experience these topics never become a priority. Hand them over now and we stop the clock on the statute of limitations"
+                        ],
+                        [
+                          "Their work being questioned",
+                          "Defuse it: the rules are complex and their job is broad, while we specialize in this one point"
+                        ],
+                        [
+                          "Your levers don't apply here",
+                          "Examples of comparable clients. We have no interest in pushing an unsecured engagement: we're paid a percentage"
+                        ],
+                        [
+                          "No need for savings",
+                          "A compliance check, recognition for the team, and no more over-contributing for nothing"
+                        ]
+                      ]
+                    },
+                    {
+                      "k": "rule",
+                      "v": "a false objection almost always hides a benefit that wasn't landed. Dig before you answer."
+                    }
+                  ]
+                },
+                {
+                  "i": "layers",
+                  "t": "Objections by practice",
+                  "s": "Innovation · Energy · Efficiency",
+                  "b": [
+                    {
+                      "k": "text",
+                      "v": "The playbook includes an objection grid per practice — Innovation, Energy, Efficiency. Today they mirror the common objections and are waiting to be enriched with each specialty's specific cases."
+                    },
+                    {
+                      "k": "list",
+                      "l": "To fill in per practice",
+                      "v": [
+                        "The most frequent technical objection on the lever",
+                        "The standard answer, with an order of magnitude",
+                        "A comparable client story to tell"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ic": "scales",
+          "id": "negociation",
+          "n": "04",
+          "t": "Negotiation",
+          "h": "The best negotiation is the one that never happens.",
+          "lede": "State your price firmly, never justify it, and never give ground without getting something back.",
+          "chapitres": [
+            {
+              "fiches": [
+                {
+                  "i": "scales",
+                  "t": "Assertiveness",
+                  "s": "Stand your ground without stepping on theirs",
+                  "b": [
+                    {
+                      "k": "text",
+                      "v": "Assertiveness is the ability to express yourself and defend your position without encroaching on the other side's. Three traps to avoid: manipulation, passivity, aggression."
+                    },
+                    {
+                      "k": "split",
+                      "v": [
+                        {
+                          "t": "A few pointers",
+                          "l": [
+                            "Active listening and acknowledgment",
+                            "Be firm — know how to say no while keeping the negotiation open",
+                            "Leave silences and let the client talk",
+                            "Talk up the value of your service",
+                            "Always get something in return"
+                          ]
+                        },
+                        {
+                          "t": "Body language",
+                          "l": [
+                            "Stay calm",
+                            "Hold eye contact",
+                            "No visible stress",
+                            "No fidgeting",
+                            "No closing up, no irritation"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "tag",
+                  "t": "Stating your price",
+                  "s": "What to do, what to avoid",
+                  "b": [
+                    {
+                      "k": "split",
+                      "v": [
+                        {
+                          "t": "Do",
+                          "l": [
+                            "Read the landscape fast: past engagements, used to working with firms, a competitor in the running",
+                            "If a competitor is in play, get a price range early in the meeting — and their satisfaction level",
+                            "State your price firmly: no doubt, eye contact, no endless silence after the number",
+                            "Add value rather than justify: “our rate includes the analysis, legal fees, the case filing, the second correction run, setup support, regulatory watch…”"
+                          ]
+                        },
+                        {
+                          "t": "Avoid",
+                          "l": [
+                            "Quoting a range: “between 30 and 35%”, “around 30%”",
+                            "Pushing the proposal to later: it reopens the price debate",
+                            "Holding yourself back on a price that feels high versus an old engagement or a competitor",
+                            "Making price the whole conversation at the expense of the savings base"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "shield",
+                  "t": "Withstanding the first push",
+                  "s": "“You're too expensive”",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "Against a half-hearted probe — “is that negotiable?” — answer simply: <b>no, unfortunately</b>.",
+                        "“You're too expensive” → <b>look surprised</b>: “expensive? No — set against the cost of the engagement, it isn't.”",
+                        "<b>Recall the real costs</b>: lawyers, senior consultants, support through any audit.",
+                        "<b>Recall that we carry the risk:</b> no fee if nothing is found, if you decline our recommendations, if the authorities refuse. That has to be priced in — it's the economics of the deal.",
+                        "<b>Cutting our terms would mean cutting quality</b> — especially on future savings — and that's not something we're willing to do.",
+                        "<b>Tell a concrete story</b> rather than argue in the abstract.",
+                        "We apply the <b>standard margins of the consulting business</b> — and inflation applies to us too."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "versus",
+                  "t": "Up against a competitor",
+                  "s": "Undermine without trashing",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Start by conceding a strength</b> of theirs — frontal criticism costs you credibility.",
+                        "Then land your advantages: a <b>more exhaustive audit</b>, <b>more levers</b> thanks to our regulatory watch, a <b>more secure study</b> with reassessment-risk analysis, <b>legal fees fully covered</b> with nothing advanced by the client, track record and references.",
+                        "<b>Own being more expensive:</b> that's what quality costs.",
+                        "<b>The savings base matters more than the rate.</b>"
+                      ]
+                    },
+                    {
+                      "k": "said",
+                      "v": "Better to recover €200,000 at a 35% rate than €100,000 at 25%."
+                    }
+                  ]
+                },
+                {
+                  "i": "steps",
+                  "t": "When negotiation is unavoidable",
+                  "s": "Three steps, in order",
+                  "b": [
+                    {
+                      "k": "steps",
+                      "v": [
+                        "<b>Confirm that everything else is settled.</b> “Are we agreed that if we find common ground on price, the rest is approved and we can start the analysis right away?” If not, get the principle of the engagement approved first — without it you'll obtain nothing from your management.",
+                        "<b>Come down in small steps.</b> Justify every concession — “given that we've worked together before”, “since you're launching two studies”. Dropping fast undermines your opening offer, and denies the other side the satisfaction of having negotiated.",
+                        "<b>Always ask for something in return:</b> the signed agreement back within the week, two engagements launched, an introduction to another organization."
+                      ]
+                    },
+                    {
+                      "k": "rule",
+                      "v": "present a reduction as a percentage of the price, never in points: “a 10% reduction in our terms”, i.e. 31.5% instead of 35%."
+                    }
+                  ]
+                },
+                {
+                  "i": "pause",
+                  "t": "Silence and the psychological price",
+                  "s": "Learn to speak last",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "<b>Managing silence is a weapon</b> — learn to speak last.",
+                        "When the stakes are high, <b>asking for their psychological price</b> can pay off: most people won't dare ask for too much.",
+                        "<b>Prefer a rate cut to a longer term</b> — the financial impact is smaller."
+                      ]
+                    },
+                    {
+                      "k": "said",
+                      "v": "“Without promising we can approve it — do you have a rate in mind?” — “Look, 30% works for me.” — “30% won't be possible, but I'm willing to ask my management for 32%. Deal?”"
+                    },
+                    {
+                      "k": "rule",
+                      "v": "“Quality is remembered long after the price is forgotten.”"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ic": "network",
+          "id": "reseau",
+          "n": "05",
+          "t": "Referrals",
+          "h": "Referrals are asked for. Always.",
+          "lede": "They cost nothing and shorten everything: the cycle, the trust-building, the negotiation.",
+          "chapitres": [
+            {
+              "fiches": [
+                {
+                  "i": "clock",
+                  "t": "When to ask",
+                  "s": "The moments it lands best",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "When delivering the report",
+                        "At the end-of-engagement review",
+                        "At the end of a business meeting with a client",
+                        "At the end of a meeting with a prospect where there's nothing to sell",
+                        "Over a business lunch",
+                        "During the rate negotiation, before signing — as the counterpart",
+                        "After signing, against a discount on invoices",
+                        "In your personal network"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "i": "speech",
+                  "t": "How to ask",
+                  "s": "Lines that work",
+                  "b": [
+                    {
+                      "k": "list",
+                      "v": [
+                        "Hold these meetings <b>in person</b>.",
+                        "“Is there anyone in your professional or personal network who might be interested in what we do?”",
+                        "“Do you know any HR directors in the sector?”",
+                        "“Are you part of any local directors' networks?”",
+                        "“Would you be willing to recommend us?”"
+                      ]
+                    },
+                    {
+                      "k": "rule",
+                      "v": "a referral fee — tied to a company or an individual — can reach 10% of the amount collected."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "soncas": [
+        {
+          "l": "S",
+          "t": "Sympathy",
+          "d": "Good rapport with you; knows some of our clients."
+        },
+        {
+          "l": "O",
+          "t": "Pride",
+          "d": "Savings they'll present to their board; validation of their good practices."
+        },
+        {
+          "l": "N",
+          "t": "Novelty",
+          "d": "A fresh topic, quick action."
+        },
+        {
+          "l": "C",
+          "t": "Comfort",
+          "d": "Little time required, a team that runs on its own."
+        },
+        {
+          "l": "A",
+          "t": "Money",
+          "d": "A plain and simple need for savings."
+        },
+        {
+          "l": "S",
+          "t": "Security",
+          "d": "Legal backing, secured processes, certifications."
+        }
+      ],
+      "objectionTrainer": [
+        {
+          "m": "Gatekeeper — the assistant",
+          "q": "May I ask what it's regarding?",
+          "b": "They're paid to filter out salespeople. Any long justification gives you away.",
+          "h": "Stay direct, stay vague, make it clear the subject is technical, and end with a request.",
+          "s": "It's about the URSSAF contributions you're paying — I need a quick word with him. Can you put me through?"
+        },
+        {
+          "m": "Prospecting — the CEO",
+          "q": "I don't have time.",
+          "b": "A false objection nine times out of ten: they haven't seen what's in it for them.",
+          "h": "Don't negotiate the time — deliver the benefit. Then come back to the meeting with a specific date.",
+          "s": "That's exactly why I'm suggesting 30 minutes and not an hour. We have a lever that applies to your business, already rolled out with several companies in your sector. Would Thursday the 18th at 11 work?"
+        },
+        {
+          "m": "Meeting — the CFO",
+          "q": "Fine, but later.",
+          "b": "The topic isn't a priority — and it never will be.",
+          "h": "Own that, and turn the delay into urgency: the statute of limitations is running.",
+          "s": "In our experience, these topics never make it to the top of the list. That's the whole point of handing them over now: we stop the clock on the statute of limitations, and there's almost nothing for you to do."
+        },
+        {
+          "m": "Meeting — the payroll manager",
+          "q": "We already handle this very well in-house.",
+          "b": "Their work is being questioned. It's about ego, not technique.",
+          "h": "Defuse it immediately: this isn't a fault of theirs — it's a different job from theirs.",
+          "s": "The rules are complex and your role is very broad, while we specialize in this one narrow point. Nobody can track everything — which is exactly why our audits almost always find something."
+        },
+        {
+          "m": "Meeting — the CFO",
+          "q": "Your levers don't apply to us.",
+          "b": "A conviction, rarely verified. And a fear of wasting time.",
+          "h": "Answer with comparable cases, and point out that the risk sits on your side.",
+          "s": "We hear the same thing from organizations very much like yours — and we found opportunities there. We have no interest in pushing an engagement that isn't solid: we're paid a percentage of what you recover."
+        },
+        {
+          "m": "Meeting — the CEO",
+          "q": "We don't need savings.",
+          "b": "The topic is seen as a cash matter. It isn't only that.",
+          "h": "Move the conversation to compliance and recognition for the team.",
+          "s": "That's good news. Then think of the engagement as a compliance check: you secure your practices, you validate your team's work, and you stop over-contributing for nothing."
+        },
+        {
+          "m": "Negotiation — the buyer",
+          "q": "Is that negotiable?",
+          "b": "A half-hearted probe. It's testing your firmness, not your price.",
+          "h": "Answer simply no — no pause, no justification.",
+          "s": "No, unfortunately. Our terms include the analysis, legal fees, the case filing and support through any audit."
+        },
+        {
+          "m": "Negotiation — the CFO",
+          "q": "You're too expensive.",
+          "b": "Often a reflex. The price hasn't yet been set against the savings base.",
+          "h": "Look surprised, recall the costs and the risk you carry.",
+          "s": "Expensive? No — set against the cost of the engagement it isn't: lawyers, senior consultants, support through any audit. And if we find nothing, you pay nothing: we carry the risk."
+        },
+        {
+          "m": "Negotiation — the buyer",
+          "q": "Your competitor is cheaper.",
+          "b": "Often true — and often on a different scope.",
+          "h": "Concede one of their strengths, then move the debate from the rate to the base.",
+          "s": "They're good on that topic, it's true. Our audit is more exhaustive, more secure, and legal fees are fully covered. Better to recover €200,000 at 35% than €100,000 at 25%."
+        },
+        {
+          "m": "Closing — the CEO",
+          "q": "I need to run it past my board.",
+          "b": "Either a decision path you haven't mapped, or a polite exit.",
+          "h": "Confirm the path, take the drama out of signing, and book the next meeting on the spot.",
+          "s": "Of course. At this stage it's only about approving the study — there's no commitment. Who approves this with you, and who signs? Let's speak again next Thursday to set the start date."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "On average, how many calls does it take to book five meetings?",
+          "o": [
+            "20",
+            "50",
+            "100",
+            "300"
+          ],
+          "a": 2,
+          "w": "100 calls = 20 conversations = 5 meetings. Volume drives performance — not isolated talent."
+        },
+        {
+          "q": "What is the goal of a prospecting call?",
+          "o": [
+            "Sell the engagement",
+            "Sell the meeting",
+            "Qualify the budget",
+            "Send a brochure"
+          ],
+          "a": 1,
+          "w": "Don't sell the product — sell the meeting. Say too much and the prospect no longer needs to meet you: “that's exactly what the meeting is for.”"
+        },
+        {
+          "q": "Why should you never ask “do you have a minute?”",
+          "o": [
+            "It's too casual",
+            "It invites a no",
+            "It takes too long",
+            "It sounds too technical"
+          ],
+          "a": 1,
+          "w": "Never ask a question that can be answered with no. Assume they're on board and offer a slot directly."
+        },
+        {
+          "q": "Facing the gatekeeper, what's the right stance?",
+          "o": [
+            "Explain precisely why you're calling",
+            "Be direct, stay vague, don't justify yourself",
+            "Ask when to call back",
+            "Leave a detailed message"
+          ],
+          "a": 1,
+          "w": "A long explanation is a justification, and a justification gives you away. Stay direct, keep it vague, and close with “can you put me through?”"
+        },
+        {
+          "q": "In the meeting's opening, who do you speak to first?",
+          "o": [
+            "The lizard brain, to get past the filter",
+            "Einstein, to argue the case",
+            "The limbic system, to stir emotion",
+            "It doesn't matter"
+          ],
+          "a": 0,
+          "w": "The lizard brain filters to save energy. Catch its interest — with the lure or the challenge — before you can talk to Einstein."
+        },
+        {
+          "q": "What does SONCAS stand for?",
+          "o": [
+            "Six steps of consultative selling",
+            "Six buying motives",
+            "Six standard objections",
+            "Six phases of negotiation"
+          ],
+          "a": 1,
+          "w": "Sympathy, Pride, Novelty, Comfort, Money, Security. Nobody buys for all six reasons: find theirs."
+        },
+        {
+          "q": "The prospect raises a blocker during your pitch. What do you do?",
+          "o": [
+            "Deal with it immediately",
+            "Note it and deal with it later",
+            "Ignore it",
+            "Change the subject"
+          ],
+          "a": 1,
+          "w": "Note the blockers without tackling them straight away. You can even ask more about one to amplify it — then deal with it."
+        },
+        {
+          "q": "What should you lean on hardest when making the case?",
+          "o": [
+            "The potential gain",
+            "The loss avoided",
+            "The technical features",
+            "The firm's reputation"
+          ],
+          "a": 1,
+          "w": "The fear of losing €100 is stronger than the pleasure of gaining €150. And always talk benefits over features."
+        },
+        {
+          "q": "How do you state your price?",
+          "o": [
+            "As a range",
+            "Firmly, without justification",
+            "By comparing it to the competitor",
+            "In writing, after the meeting"
+          ],
+          "a": 1,
+          "w": "No range, no endless silence after the number, no justification — add value instead: what the rate includes."
+        },
+        {
+          "q": "You grant a rate reduction. What must you get?",
+          "o": [
+            "Nothing — it's a goodwill gesture",
+            "Something in return",
+            "A verbal commitment",
+            "A LinkedIn recommendation"
+          ],
+          "a": 1,
+          "w": "Always something in return: the signed agreement back within the week, two engagements launched, an introduction to another organization."
+        },
+        {
+          "q": "How do you present a price reduction?",
+          "o": [
+            "In rate points",
+            "As a percentage of the price",
+            "In euros",
+            "It doesn't matter"
+          ],
+          "a": 1,
+          "w": "“A 10% reduction in our terms”, i.e. 31.5% instead of 35%. Same thing — but it sounds far better."
+        },
+        {
+          "q": "Why book the second meeting as early as possible?",
+          "o": [
+            "To fill the calendar",
+            "You lose roughly 10% of your chances of signing per week",
+            "To beat the competitor",
+            "To close the month"
+          ],
+          "a": 1,
+          "w": "Every week that passes costs about 10% of your chances of signing. Create urgency and set the date in front of them."
+        }
+      ],
+      "uiStrings": {
+        "train": "Practice",
+        "trainH": "Answer out loud. Then compare.",
+        "trainLede": "Ten objections straight from the playbook. Answer first, read after — it's the reflex that counts, not the recitation.",
+        "behind": "What's really behind it",
+        "answer": "How to answer",
+        "objNext": "Next objection",
+        "objShow": "Show the answer",
+        "objHide": "Hide the answer",
+        "quizTitle": "Quiz — 12 questions",
+        "quizNext": "Next question",
+        "quizResult": "See my score",
+        "quizAgain": "Try again",
+        "quizDone": "Done",
+        "exact": "Correct.",
+        "reponse": "Answer: ",
+        "rule": "Rule —",
+        "markDone": "Mark this card as done",
+        "markTitle": "Mark as done",
+        "chapterDone": "Chapter",
+        "ofCourse": "% of the course.",
+        "allDone": "🏆 <b>Course complete!</b> &nbsp;All {n} steps checked off. Well done.",
+        "doneWord": "complete",
+        "progress": "My progress",
+        "scroll": "Scroll",
+        "contents": "Contents",
+        "close": "Close",
+        "music": "Music",
+        "pdf": "Download the PDF",
+        "langBtn": "Version française",
+        "heroTitle": "Sales excellence for <em>Business Developers</em>",
+        "heroLede": "The training playbook, on one page. Prospect, run the meeting, handle objections, negotiate, grow your referrals.",
+        "fact1": "parts",
+        "fact2": "meeting steps",
+        "fact3": "SONCAS motives",
+        "fact4": "calls = 5 meetings",
+        "footer": "Sales excellence for Business Developers",
+        "railSub": "Sales excellence",
+        "quizKey": "Quiz — answer key",
+        "docTitle": "Sales Academy — Sales excellence for Business Developers",
+        "score11": "The playbook is yours. What moves the needle now is volume — calls and meetings, not more theory.",
+        "score8": "Solid. Revisit the questions you missed and the matching part of the playbook.",
+        "score5": "The basics are there but shaky. Start with Prospecting and the meeting plan.",
+        "score0": "Go back through the playbook from the top — the quiz explanations condense the essentials."
+      }
+    }
+  },
+  "contentSchema": {
+    "section": "{ ic: icône, id: ancre (identique dans les 2 langues), n: numéro affiché, t: titre nav, h: titre de section, lede: chapeau, chapitres: [{t?: titre de chapitre, fiches: [...] }] }",
+    "fiche": "{ i: icône, t: titre, s: sous-titre, b: [blocs] } — la clé de progression est id-de-section:index-global-de-fiche",
+    "blocs": {
+      "text": "paragraphe",
+      "list": "puces (l = intitulé optionnel) ; <b>/<i> autorisés",
+      "steps": "liste numérotée 01, 02…",
+      "pairs": "tableau 2 colonnes [terme, définition]",
+      "split": "deux colonnes À faire (vert) / À éviter (rouge) : [{t, l:[...]}, {t, l:[...]}]",
+      "said": "citation à liseré orange, italique (mots à dire)",
+      "rule": "ligne « Règle — … » en accent",
+      "soncas": "insère la grille de cartes SONCAS"
+    },
+    "objection": "{ m: contexte, q: objection, b: ce que ça cache, h: la réponse, s: phrase modèle }",
+    "quizItem": "{ q: question, o: [4 choix], a: index de la bonne réponse, w: explication }"
+  }
+}
